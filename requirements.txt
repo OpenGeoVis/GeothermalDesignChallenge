@@ -1,0 +1,8 @@
+PVGeo>=1.2.0
+vtki>=0.15.1
+discretize>=0.3.8
+omfvtk>=0.0.5
+numpy
+matplotlib
+jupyter
+xlrd>=1.1.0

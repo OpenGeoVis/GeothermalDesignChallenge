@@ -7,8 +7,7 @@ def get_point(gcp):
     return np.array([gcp.GCPX, gcp.GCPY, gcp.GCPZ])
 
 def load_attach_texture(dataset, filename, name):
-    """Loads a texture and a ready to go vtk.TextureMapper.
-    Be sure to set the input data object to the mapper and update it.
+    """Loads a texture and attaches it to the dataset inplace.
     """
     # Load a raster
     ds = gdal.Open(filename)

@@ -1,5 +1,6 @@
 import PVGeo
 import vtki
+import vtk
 import numpy as np
 import pandas as pd
 
@@ -25,3 +26,12 @@ def read_surface_verts(filename, grid=False):
     if grid:
         return grid_surface(surf.values)
     return PVGeo.pointsToPolyData(surf.values)
+
+
+def delauney(polydata):
+    """Run a delauney filter on a dataset"""
+    alg = vtk.vtkDelaunay2D()
+    alg.SetProjectionPlaneMode(vtk.VTK_BEST_FITTING_PLANE)
+    alg.SetInputDataObject(polydata)
+    alg.Update()
+    return vtki.wrap(alg.GetOutputDataObject(0))

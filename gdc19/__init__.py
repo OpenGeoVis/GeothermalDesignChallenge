@@ -5,6 +5,8 @@ Utah FORGE Geothermal Design Challenge
 DATA_DIRECTORY = None
 
 from gdc19.path import *
+from gdc19.surfaces import *
+from gdc19.textures import *
 
 # Project MetaData
 __author__ = 'Bane Sullivan'

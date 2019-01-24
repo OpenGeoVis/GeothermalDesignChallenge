@@ -14,3 +14,17 @@ prioritized for this project:
 ```bash
 pip install -r requirements.txt
 ```
+
+
+## Resources
+
+- [Competition details](https://utahforge.com/studentcomp/?utm_source=Hubspot%20intro%20email010719&utm_source=hs_automation&utm_campaign=INL%20GDC%2019&utm_medium=email&utm_content=68794775&_hsenc=p2ANqtz--LMrr-vFzFD78-VnPLfeSy2tBImWRaDKacFvVBB19ebQ_Ry9Sm0hUEzE1GbNz0iRLniFjYKGNcFFJ_8V9_kxtKabsoMQ&_hsmi=68794775)
+
+## Notes:
+
+- LIVE webinar on January 25.
+
+
+## Spatial Reference:
+
+- UTM, zone 12N, NAD 83, NAVD 88.

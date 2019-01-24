@@ -50,3 +50,6 @@ def list_filenames(folder):
     full = glob.glob(os.path.join(_get_path(folder), '*'))
     ignore = ['Icon',]
     return [os.path.basename(f.strip()) for f in full if os.path.basename(f.strip()) not in ignore]
+
+def get_omf_project_filename():
+    return os.path.join(get_data_directory(), 'FORGE.omf')

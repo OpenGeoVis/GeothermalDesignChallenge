@@ -4,6 +4,8 @@ This repository hosts all the code for [Bane Sullivan](https://github.com/banesu
 and [Adam Kinard](https://github.com/akinard96)'s work on the
 [2019 Utah FORGE Geothermal Design Challenge](https://utahforge.com/studentcomp/).
 
+![sample-viz](./integrated_view.png)
+
 
 ## Getting Started
 

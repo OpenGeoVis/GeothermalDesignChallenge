@@ -1,7 +1,7 @@
 PVGeo>=1.2.0
 vtki>=0.16.0
 discretize>=0.3.8
-omfvtk>=0.0.5
+omfvtk>=0.0.6
 numpy
 matplotlib
 jupyter

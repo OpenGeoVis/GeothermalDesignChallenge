@@ -14,18 +14,21 @@ def get_point(gcp):
 def load_texture_to_omf(filename, name, description):
     """Loads a PNG Image texture to an ``omf.ImageTexture`` object"""
     # Load a raster
-    ds = gdal.Open(filename)
+    ds = gdal.Open(filename.replace('.png', '.tif'))
     # Grab the Groung Control Points
-    points = [get_point(gcp) for gcp in ds.GetGCPs()]
+    points = np.array([get_point(gcp) for gcp in ds.GetGCPs()])
+    if points.size < 1:
+        raise RuntimeError('No associated tif file to recover spatial reference.')
     # Now Grab the three corners of their bounding box
     #-- This guarantees we grab the right points
-    bounds = vtki.PolyData(np.array(points)).bounds
+    bounds = vtki.PolyData(points).bounds
     origin = np.array([bounds[0], bounds[2], bounds[4]]) # BOTTOM LEFT CORNER
     point_u = np.array([bounds[1], bounds[2], bounds[4]]) # BOTTOM RIGHT CORNER
     point_v = np.array([bounds[0], bounds[3], bounds[4]]) # TOP LEFT CORNER
     axis_u = point_u - origin
     axis_v = point_v - origin
     the_texture = omf.ImageTexture(
+        origin=origin,
         axis_u=axis_u, axis_v=axis_v,
         name=name, description=description,
         image=filename,
@@ -39,10 +42,10 @@ def load_attach_texture(dataset, filename, name):
     ds = gdal.Open(filename)
     texture = vtki.load_texture(filename)
     # Grab the Groung Control Points
-    points = [get_point(gcp) for gcp in ds.GetGCPs()]
+    points = np.array([get_point(gcp) for gcp in ds.GetGCPs()])
     # Now Grab the three corners of their bounding box
     #-- This guarantees we grab the right points
-    bounds = vtki.PolyData(np.array(points)).bounds
+    bounds = vtki.PolyData(points).bounds
     origin = [bounds[0], bounds[2], bounds[4]] # BOTTOM LEFT CORNER
     point_u = [bounds[1], bounds[2], bounds[4]] # BOTTOM RIGHT CORNER
     point_v = [bounds[0], bounds[3], bounds[4]] # TOP LEFT CORNER

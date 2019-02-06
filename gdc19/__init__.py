@@ -21,5 +21,4 @@ def setup_bane():
     return set_data_directory('/Volumes/GoogleDrive/My Drive/utah-forge')
 
 def setup_adam():
-    # TODO: Adam, fill this out
     return set_data_directory('/Volumes/GoogleDrive/My Drive/utah-forge')

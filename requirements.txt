@@ -1,7 +1,7 @@
 PVGeo>=1.2.1
 git+git://github.com/akaszynski/vtki@master
 discretize>=0.3.8
-omfvtk>=0.0.8
+omfvtk>=0.0.9
 numpy
 matplotlib
 jupyter

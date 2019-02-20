@@ -57,6 +57,9 @@ def get_well_vtm_path(filename=None):
 def get_well_vtm_file():
     return get_well_path('VTM-AGGREGATED/WELLS.vtm')
 
+def get_tem_path(filename=None):
+    return _get_path('TEM', filename)
+
 def list_filenames(folder):
     """List all the filenames in a given subfolder of the project data"""
     full = glob.glob(os.path.join(_get_path(folder), '*'))

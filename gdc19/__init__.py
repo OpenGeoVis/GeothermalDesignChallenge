@@ -9,6 +9,7 @@ from gdc19.surfaces import *
 from gdc19.textures import *
 from gdc19.shapefiles import *
 from gdc19.wells import *
+from gdc19.project import *
 
 # Project MetaData
 __author__ = 'Bane Sullivan'

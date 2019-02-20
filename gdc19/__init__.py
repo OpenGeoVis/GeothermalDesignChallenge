@@ -8,6 +8,7 @@ from gdc19.path import *
 from gdc19.surfaces import *
 from gdc19.textures import *
 from gdc19.shapefiles import *
+from gdc19.wells import *
 
 # Project MetaData
 __author__ = 'Bane Sullivan'
@@ -25,3 +26,5 @@ def setup_bane():
 
 def setup_adam():
     return setup()
+
+setup()

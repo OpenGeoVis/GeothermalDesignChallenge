@@ -48,6 +48,15 @@ def get_well_path(filename=None):
 def get_lane_path(filename=None):
     return _get_path('lane', filename)
 
+def get_bad_path(filename=None):
+    return get_well_path('bad-conversions/{}'.format(filename))
+
+def get_well_vtm_path(filename=None):
+    return get_well_path('VTM-AGGREGATED/{}'.format(filename))
+
+def get_well_vtm_file():
+    return get_well_path('VTM-AGGREGATED/WELLS.vtm')
+
 def list_filenames(folder):
     """List all the filenames in a given subfolder of the project data"""
     full = glob.glob(os.path.join(_get_path(folder), '*'))

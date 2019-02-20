@@ -1,4 +1,4 @@
-PVGeo>=1.2.1
+PVGeo>=1.2.2
 git+git://github.com/akaszynski/vtki@master
 discretize>=0.3.8
 omfvtk>=0.0.9

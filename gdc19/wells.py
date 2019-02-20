@@ -1,5 +1,8 @@
 import numpy as np
 import vtki
+import os
+
+import gdc19
 
 def build_well_trajectory(depth, start_x, start_y, start_z):
     r = np.arange(0.0, depth + 0.5, 0.5)
@@ -23,3 +26,18 @@ def build_well_trajectory(depth, start_x, start_y, start_z):
 
     elevation = np.cumsum(z) + start_z
     return vtki.PolyData(np.c_[x,y,elevation])
+
+
+def load_well_db():
+    """
+    WELLS = gdc19.load_well_db()
+    """
+    if not os.path.exists(gdc19.get_well_vtm_file()):
+        return vtki.MultiBlock()
+    return vtki.read(gdc19.get_well_vtm_file())
+
+def save_well_db(wells):
+    """
+    gdc19.save_well_db(WELLS)
+    """
+    return wells.save(gdc19.get_well_vtm_file())

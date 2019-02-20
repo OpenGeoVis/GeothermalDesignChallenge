@@ -1,5 +1,5 @@
 PVGeo>=1.2.1
-vtki>=0.16.8
+vtki>=0.16.10
 discretize>=0.3.8
 omfvtk>=0.0.8
 numpy

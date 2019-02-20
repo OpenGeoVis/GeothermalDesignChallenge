@@ -45,6 +45,9 @@ def get_temperature_path(filename=None):
 def get_well_path(filename=None):
     return _get_path('well', filename)
 
+def get_lane_path(filename=None):
+    return _get_path('lane', filename)
+
 def list_filenames(folder):
     """List all the filenames in a given subfolder of the project data"""
     full = glob.glob(os.path.join(_get_path(folder), '*'))

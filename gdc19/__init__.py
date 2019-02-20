@@ -17,8 +17,11 @@ __version__ = '0.0.0'
 __displayname__ = '2019 Utah FORGE Geothermal Design Challenge'
 
 
-def setup_bane():
+def setup():
     return set_data_directory('/Volumes/GoogleDrive/My Drive/utah-forge')
 
+def setup_bane():
+    return setup()
+
 def setup_adam():
-    return set_data_directory('/Volumes/GoogleDrive/My Drive/utah-forge')
+    return setup()

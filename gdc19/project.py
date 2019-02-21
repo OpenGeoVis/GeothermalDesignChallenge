@@ -7,8 +7,8 @@ import gdc19
 
 
 def get_roi_bounds():
-    """The ROI"""
-    return [329924.98816, 344152.930125, 4252833.48213, 4270951.09811, -2700.0, 2300.0]
+    """The ROI. Note Z-range is bigger than needed"""
+    return [329924.98816, 344152.930125, 4252833.48213, 4270951.09811, -5000.0, 5000.0]
 
 
 def load_project():

@@ -60,6 +60,9 @@ def get_well_vtm_file():
 def get_tem_path(filename=None):
     return _get_path('TEM', filename)
 
+def get_gravity_path(filename=None):
+    return _get_path('gravity', filename)
+
 def list_filenames(folder):
     """List all the filenames in a given subfolder of the project data"""
     full = glob.glob(os.path.join(_get_path(folder), '*'))

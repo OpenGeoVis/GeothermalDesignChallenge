@@ -29,6 +29,9 @@ def get_drilling_path(filename=None):
 def get_gis_path(filename=None):
     return _get_path('gis', filename)
 
+def get_web_path(filename=None):
+    return get_gis_path('web-friendly/{}'.format(filename))
+
 def get_shp_path(filename=''):
     filename = os.path.join('Roosevelt Hot Springs FORGE Site Outline', filename)
     return get_gis_path(filename=filename)

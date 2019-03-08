@@ -48,3 +48,10 @@ package-lock.json
 *.csv
 *.vtm
 *.npy
+*.zip
+*.mod
+*.topo
+*.mesh
+*.msh
+*.grv
+*.vtu

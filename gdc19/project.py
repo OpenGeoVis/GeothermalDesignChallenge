@@ -15,6 +15,14 @@ def load_project():
     return omfvtk.load_project(gdc19.get_omf_project_filename())
 
 
+def load_topo():
+    proj = omf.OMFReader(gdc19.get_omf_project_filename()).get_project()
+    for el in proj.elements:
+        if el.name == 'land_surface':
+            return omfvtk.wrap(el)
+    raise RuntimeError('Topo is not in project file. Some one messed up.')
+
+
 def load_kriged_temp(clip=True):
     """Load the kriged temperature model from Lane Boyd"""
     fkrig = gdc19.get_lane_path("geotherm-export/Geotherm_kriged_0.sgems")

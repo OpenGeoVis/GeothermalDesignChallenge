@@ -1,4 +1,3 @@
-import gdal
 import vtk
 import vtki
 import numpy as np
@@ -14,6 +13,7 @@ def get_point(gcp):
 def load_texture_to_omf(filename, name, description):
     """Loads a PNG Image texture to an ``omf.ImageTexture`` object"""
     # Load a raster
+    import gdal
     ds = gdal.Open(filename.replace('.png', '.tif'))
     # Grab the Groung Control Points
     points = np.array([get_point(gcp) for gcp in ds.GetGCPs()])
@@ -38,6 +38,7 @@ def load_texture_to_omf(filename, name, description):
 def load_attach_texture(dataset, filename, name):
     """Loads a texture and attaches it to the dataset inplace.
     """
+    import gdal
     # Load a raster
     ds = gdal.Open(filename)
     texture = vtki.load_texture(filename)

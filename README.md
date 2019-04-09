@@ -14,8 +14,14 @@ Be sure to regularly keep up with the project dependencies defined in the
 prioritized for this project:
 
 ```bash
+conda install -c conda-forge gdal
+conda install verde geopandas numpy matplotlib jupyter scikit-learn
+```
+
+```bash
 pip install -r requirements.txt
 ```
+
 
 
 ## Resources

@@ -3,9 +3,13 @@
 ################################
 
 
+.. image:: https://img.shields.io/travis/OpenGeoVis/GeothermalDesignChallenge/master.svg?label=build&logo=travis
+   :target: https://travis-ci.org/OpenGeoVis/GeothermalDesignChallenge
+
 .. image:: https://img.shields.io/github/stars/OpenGeoVis/GeothermalDesignChallenge.svg?style=social&label=Stars
   :target: https://github.com/OpenGeoVis/GeothermalDesignChallenge
   :alt: GitHub
+
 
 About
 *****

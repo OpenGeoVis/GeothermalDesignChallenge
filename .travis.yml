@@ -15,10 +15,10 @@ addons:
     packages:
       - xvfb
 
-# env:
-#   global:
-#     # Doctr deploy key for vtkiorg/vtki
-#     - secure: #TODO
+env:
+  global:
+    # Doctr deploy key for OpenGeoVis/GeothermalDesignChallenge
+    - secure: "O1KfN8j83H1Wyki/+r7y4QySqA6ooGb/fuhP9aA1PaKH3UaDy775BZ+kWlO0oBrlRWhiSsR5i/BhPOVaNSfFL07KfEBystZCJhoStXhjz+rGh3c6MjqjOjsLLto7p4jPGOhgWN2DpC95ahwgE5w7M1VMhXX59E4KWlauuEfx9DaCY3fYoWUuALZDjFz8xpPXO6gYpsAWIDMBqKa2czWJcIjfKI2GsH+mnY8xuby+j8ohEgk1C5f80QCbv+QYLUtN4TIWY3RwJ+QKbGPahYrB0tINnGabjG8LSdwAiXUdmqryrt+/JfgF2D0izOSBsGuZCqlD4ohe94Khck9f1aeuWIiMA+0S0dk5TAOcQw1zDp1h8rH/26FzD4k1MekiwE1jl7xs/XlnflO23cTmYRl1q03AYWlhn/20GWW3UeY7xhb4VMRY/hw47omC/pOIXA6N+IpZp3WaL7+quLan6zhpTICj+w1rHxCWRG63OdIJ8VO46xt2HCFpXPYKcjthPMFhga+PDc/WDYkRJDcPkcCRbrXiQ4F7jzH/19TNJ3v0g7kVueexZNSbgSmHnDRyo+xeuUaHQVWS37pZPFxUCsMGj06NAxV+z5YjkMl/inYzxAsvgdNgoxH2MAJVNGb7mA72qV/6Hhcn+UDm+wVtHt6/4F6FXz75PQo+uSkMuzBSLiM="
 
 before_script: # configure a headless display
   - export DISPLAY=:99.0
@@ -48,7 +48,7 @@ script:
   - set -e;
   - make html;
   - cd ..
-  # - doctr deploy --built-docs ./docs/_build/html .;
+  - doctr deploy --built-docs ./docs/_build/html .;
 
 cache:
   directories:

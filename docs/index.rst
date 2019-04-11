@@ -11,10 +11,58 @@ About
 *****
 
 
-This website outlines
+This website outlines our work (see who we are on :ref:`meet_the_team`) for the
+`2019 Geothermal Design Challenge`_ put on by the Department of Energy's Utah
+FORGE Team.
+
+.. _2019 Geothermal Design Challenge: https://utahforge.com/studentcomp/
+
+All of the code to reproduce our figures and findings is included in the
+`OpenGeoVis/GeothermalDesignChallenge`_ GitHub repository. The website
+consolidates that code and our finding for others to learn about the the tools
+we implemented and be able to reproduce our work.
+
+.. _OpenGeoVis/GeothermalDesignChallenge: https://github.com/OpenGeoVis/GeothermalDesignChallenge
 
 
+Summary
+*******
 
+
+Members of the W-Team have created a suite of open-source Python packages making
+3D visualization more accessible to the geoscientific community - enabling
+researchers to rapidly explore their data, communicate their spatial findings,
+and facilitate reproducibility amongst stakeholders and colleagues.
+This portfolio demonstrates the ability to tackle spatial questions through a
+workflow that incrementally integrates available data and yields more insight as
+new data is added to a 3D scene.
+
+The tools used in this effort include tools maybe by W-Team members and other
+open-source tools common in the geosciences:
+
+- vtki: http://docs.vtki.org (W-Team)
+- PVGeo: http://pvgeo.org (W-Team)
+- The Open Mining Format: https://omf.readthedocs.io/en/latest/
+- omfvtk: https://github.com/OpenGeoVis/omfvtk (W-Team)
+- ParaView: http://paraview.org
+- SGeMS: http://sgems.sourceforge.net
+- SimPEG: http://www.simpeg.xyz
+
+
+The modern open-source software paradigm has brought on the rise of countless
+tools available to researchers - as users and developers of these tools, we
+wrangled the project data into an emerging, open-source file specification:
+the Open Mining Format (OMF).
+Once we collected the FORGE site project data into the OMF specification, we
+were able to seamlessly work across a range of software packages, creating
+geostatistical models from the given temperature data, and running inversions of
+the given geophysical data to produce regional-scale models and data products
+that could be integrated into a single visualization environment for making
+spatial decisions.
+
+
+Report
+******
 
 Our team has made the entire project available for the geothermal community to
 interact with our findings and reproduce the results shown in this portfolio.

@@ -1,3 +1,5 @@
+.. _meet_the_team:
+
 Meet the Team
 =============
 

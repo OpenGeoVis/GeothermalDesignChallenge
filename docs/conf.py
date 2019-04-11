@@ -11,9 +11,9 @@ vtki.set_error_output_file('errors.txt')
 # Ensure that offscreen rendering is used for docs generation
 vtki.OFF_SCREEN = True # Not necessary - simply an insurance policy
 
-# -- vtki configuration ---------------------------------------------------
-sys.path.append('../')
-import gdc19
+# -- gdc19 configuration ---------------------------------------------------
+# sys.path.append('../')
+# import gdc19
 
 
 # -- General configuration ------------------------------------------------

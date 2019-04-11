@@ -9,9 +9,7 @@ Here we load all the surface data and create `omf.SurfaceElement` objects.
 
 """
 
-import sys
-# This makes the gdc19 package avaialble
-sys.path.append('../../')
+# Import project package
 import gdc19
 
 ###############################################################################

@@ -3,9 +3,7 @@ Proposed Well
 ~~~~~~~~~~~~~
 """
 
-import sys
-# This makes the gdc19 package avaialble
-sys.path.append('../../')
+# Import project package
 import gdc19
 
 ###############################################################################

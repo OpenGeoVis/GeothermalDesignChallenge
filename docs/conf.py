@@ -29,7 +29,7 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.autosummary',
               'notfound.extension',
               'sphinx_copybutton',
-              # 'sphinx_gallery.gen_gallery',
+              'sphinx_gallery.gen_gallery',
              ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -161,26 +161,26 @@ notfound_no_urls_prefix = True
 # -- Sphinx Gallery Options
 from sphinx_gallery.sorting import FileNameSortKey
 
-# sphinx_gallery_conf = {
-#     # path to your examples scripts
-#     "examples_dirs": [
-#         "../examples/",
-#     ],
-#     # path where to save gallery generated examples
-#     "gallery_dirs": ["examples"],
-#     # Patter to search for example files
-#     "filename_pattern": r"\.py",
-#     # Remove the "Download all examples" button from the top level gallery
-#     "download_all_examples": False,
-#     # Sort gallery example by file name instead of number of lines (default)
-#     "within_subsection_order": FileNameSortKey,
-#     # directory where function granular galleries are stored
-#     "backreferences_dir": False,
-#     # Modules for which function level galleries are created.  In
-#     "doc_module": "vtki",
-#     "image_scrapers": (vtki.Scraper(), 'matplotlib'),
-#     "thumbnail_size": (350, 350),
-# }
+sphinx_gallery_conf = {
+    # path to your examples scripts
+    "examples_dirs": [
+        "../project/",
+    ],
+    # path where to save gallery generated examples
+    "gallery_dirs": ["project"],
+    # Patter to search for example files
+    "filename_pattern": r"(?!\.py)", #'filename_pattern': '/plot_(?!long_examples)',
+    # Remove the "Download all examples" button from the top level gallery
+    "download_all_examples": False,
+    # Sort gallery example by file name instead of number of lines (default)
+    "within_subsection_order": FileNameSortKey,
+    # directory where function granular galleries are stored
+    "backreferences_dir": False,
+    # Modules for which function level galleries are created.  In
+    "doc_module": "vtki",
+    "image_scrapers": (vtki.Scraper(), 'matplotlib'),
+    "thumbnail_size": (350, 350),
+}
 
 
 # -- Autosummary options

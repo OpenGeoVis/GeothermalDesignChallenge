@@ -27,6 +27,8 @@ before_script: # configure a headless display
   # - ls -l /etc/init.d/
   # - sh -e /etc/init.d/xvfb start
   - sleep 3 # give xvfb some time to start
+  # Set up environmental variables for running the project code on a server
+  - export VTKI_OFFSCREEN=True
 
 install:
   - pip install -r requirements.txt
@@ -40,8 +42,6 @@ install:
 script:
   # And make the documentation
   - cd ./docs/
-  # Add environmental varaible for offscreen plotting after pytest executes
-  - export VTKI_OFFSCREEN=True
   # Do not run doc testing on python 2.7
   # Run `make html` before `make doctest` to avoid segfault.
   # Then rerun `make html` to use updated figures from `make doctest`

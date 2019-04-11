@@ -56,3 +56,5 @@ package-lock.json
 *.grv
 *.vtu
 *.vtkjs
+
+docs/project/

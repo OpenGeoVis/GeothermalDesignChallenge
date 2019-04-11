@@ -10,6 +10,7 @@ from gdc19.textures import *
 from gdc19.shapefiles import *
 from gdc19.wells import *
 from gdc19.project import *
+from gdc19.download import *
 
 # Project MetaData
 __author__ = 'Bane Sullivan'
@@ -26,6 +27,16 @@ if not os.path.exists(EXPORT_PATH):
 EXPORT_PATH = os.path.join(EXPORT_PATH, r'{}')
 
 
+import appdirs
+import os
+USER_DATA_PATH = appdirs.user_data_dir('gdc19')
+if not os.path.exists(USER_DATA_PATH):
+    os.makedirs(USER_DATA_PATH)
+
+# Make sure user has all the data
+download_data()
+
+
 def setup():
     # Make consistent figures
     vtki.set_plot_theme('doc')
@@ -34,17 +45,16 @@ def setup():
     vtki.rcParams['font']['label_size'] = 12
     vtki.rcParams['use_panel'] = False
     # Save figures in specified directory
-    import os
     vtki.FIGURE_PATH = os.path.abspath('../images/')
     if not os.path.exists(vtki.FIGURE_PATH):
         os.makedirs(vtki.FIGURE_PATH)
     # Set up path to datafiles
-    return set_data_directory('/Volumes/GoogleDrive/My Drive/utah-forge')
-
-def setup_bane():
-    return setup()
-
-def setup_adam():
-    return setup()
+    # try:
+    #     _ = os.environ['VTKI_OFF_SCREEN']
+    #     travis = True
+    # except KeyError
+    #     travis = False
+    # if travis:
+    return
 
 setup()

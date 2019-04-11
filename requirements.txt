@@ -5,3 +5,13 @@ omfvtk>=0.0.9
 xlrd>=1.1.0
 lasio
 pyshp
+Sphinx
+sphinx-autobuild
+sphinx-rtd-theme
+sphinxcontrib-napoleon
+sphinxcontrib-websupport
+pytest-sphinx
+git+git://github.com/rtfd/sphinx-notfound-page@master
+sphinx-copybutton
+sphinx-gallery
+nbval

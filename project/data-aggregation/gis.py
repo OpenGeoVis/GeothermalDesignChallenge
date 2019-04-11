@@ -56,3 +56,21 @@ boundary.validate()
 
 ###############################################################################
 omfvtk.wrap(boundary).plot(show_edges=False)
+
+
+###############################################################################
+# Now save out the GIS data to an OMF project file
+
+proj = omf.Project(
+    name='FORGE GIS Data',
+    description='All GIS data for the 2019 FORGE Geothermal Student Competition '
+)
+
+proj.elements = [ boundary ]
+
+proj.validate()
+
+###############################################################################
+# Save the GIS project file
+
+omf.OMFWriter(proj, gdc19.get_project_path('gis.omf'))

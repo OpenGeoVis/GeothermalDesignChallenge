@@ -8,7 +8,7 @@ Open Mining Format (OMF) project file.
 Here we load all the surface data and create `omf.SurfaceElement` objects.
 
 """
-
+# sphinx_gallery_thumbnail_number = 6
 # Import project package
 import gdc19
 
@@ -154,3 +154,26 @@ topo = omfvtk.wrap(land_surface)
 ###############################################################################
 
 topo.plot(show_edges=False, texture=True)
+
+###############################################################################
+# And now create an OMF project file for the surfaces
+
+proj = omf.Project(
+    name='FORGE Surfaces',
+    description='All surfaces for the 2019 FORGE Geothermal Student Competition '
+)
+
+proj.elements = [land_surface,
+                 temp_225c,
+                 temp_175c,
+                 opal_mound_fault,
+                 negro_mag_fault,
+                 top_granitoid,
+                ]
+
+proj.validate()
+
+###############################################################################
+# Save the GIS project file
+
+omf.OMFWriter(proj, gdc19.get_project_path('surfaces.omf'))

@@ -6,6 +6,7 @@ xlrd>=1.1.0
 lasio
 pyshp
 sklearn
+matplotlib
 Sphinx
 sphinx-autobuild
 sphinx-rtd-theme

@@ -12,8 +12,8 @@ vtki.set_error_output_file('errors.txt')
 vtki.OFF_SCREEN = True # Not necessary - simply an insurance policy
 
 # -- gdc19 configuration ---------------------------------------------------
-# sys.path.append('../')
-# import gdc19
+sys.path.append('../')
+import gdc19
 
 
 # -- General configuration ------------------------------------------------

@@ -1,0 +1,60 @@
+sudo: required
+
+dist: xenial
+
+os:
+  - linux
+
+language: python
+
+python:
+  - '3.7'
+
+addons:
+  apt:
+    packages:
+      - xvfb
+
+# env:
+#   global:
+#     # Doctr deploy key for vtkiorg/vtki
+#     - secure: #TODO
+
+before_script: # configure a headless display to test plot generation
+  - export DISPLAY=:99.0
+  - which Xvfb
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+  # - ls -l /etc/init.d/
+  # - sh -e /etc/init.d/xvfb start
+  - sleep 3 # give xvfb some time to start
+
+install:
+  - pip install -r requirements.txt
+  - pip install -U doctr
+  - pip install cookiecutter
+  - pip install -e .
+  - which python
+  - python -c "import vtk; print(vtk.VTK_VERSION)"
+  - python -c "import imageio; imageio.plugins.ffmpeg.download()"
+  - pip list
+
+script:
+  # And make the documentation
+  - cd ./docs/
+  # Add environmental varaible for offscreen plotting after pytest executes
+  - export VTKI_OFFSCREEN=True
+  # Do not run doc testing on python 2.7
+  # Run `make html` before `make doctest` to avoid segfault.
+  # Then rerun `make html` to use updated figures from `make doctest`
+  - set -e;
+  - make html;
+  - cd ..
+  # - doctr deploy --built-docs ./docs/_build/html .;
+
+cache:
+  directories:
+  - "$HOME/.cache/pip"
+
+
+notifications:
+  email: false

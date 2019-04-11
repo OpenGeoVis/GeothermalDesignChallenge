@@ -1,5 +1,5 @@
-Portfolio
-=========
+Static Portfolio
+================
 
 
 .. figure:: ../images/figure-01.png

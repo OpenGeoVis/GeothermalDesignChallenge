@@ -1,6 +1,6 @@
 """
 Surface Data
-------------
+~~~~~~~~~~~~
 
 This notebook aggregates all the surface data for the FORGE site into a single
 Open Mining Format (OMF) project file.

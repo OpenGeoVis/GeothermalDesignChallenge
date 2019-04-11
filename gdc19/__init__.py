@@ -21,7 +21,7 @@ __displayname__ = '2019 Utah FORGE Geothermal Design Challenge'
 
 
 # Save VTKjs files in a particular location
-EXPORT_PATH = os.path.abspath('../vtkjs/')
+EXPORT_PATH = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__))), '../vtkjs/')
 if not os.path.exists(EXPORT_PATH):
     os.makedirs(EXPORT_PATH)
 EXPORT_PATH = os.path.join(EXPORT_PATH, r'{}')
@@ -45,7 +45,7 @@ def setup():
     vtki.rcParams['font']['label_size'] = 12
     vtki.rcParams['use_panel'] = False
     # Save figures in specified directory
-    vtki.FIGURE_PATH = os.path.abspath('../images/')
+    vtki.FIGURE_PATH = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__))), '../images/')
     if not os.path.exists(vtki.FIGURE_PATH):
         os.makedirs(vtki.FIGURE_PATH)
     # Set up path to datafiles

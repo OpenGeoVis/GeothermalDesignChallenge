@@ -41,15 +41,15 @@ Summary
 *******
 
 
-Members of the W-Team have created a suite of open-source Python packages making
-3D visualization more accessible to the geoscientific community - enabling
-researchers to rapidly explore their data, communicate their spatial findings,
-and facilitate reproducibility amongst stakeholders and colleagues.
+Bane Sullivan, member of the W-Team, has created a suite of open-source Python
+packages making 3D visualization more accessible to the geoscientific community
+- enabling researchers to rapidly explore their data, communicate their spatial
+findings, and facilitate reproducibility amongst stakeholders and colleagues.
 This portfolio demonstrates the ability to tackle spatial questions through a
 workflow that incrementally integrates available data and yields more insight as
 new data is added to a 3D scene.
 
-The tools used in this effort include tools maybe by W-Team members and other
+The tools used in this effort include tools made by W-Team members and other
 open-source tools common in the geosciences:
 
 - vtki: http://docs.vtki.org (W-Team)
@@ -64,13 +64,16 @@ open-source tools common in the geosciences:
 The modern open-source software paradigm has brought on the rise of countless
 tools available to researchers - as users and developers of these tools, we
 wrangled the project data into an emerging, open-source file specification:
-the Open Mining Format (OMF).
+the `Open Mining Format (OMF)`_.
 Once we collected the FORGE site project data into the OMF specification, we
 were able to seamlessly work across a range of software packages, creating
 geostatistical models from the given temperature data, and running inversions of
 the given geophysical data to produce regional-scale models and data products
 that could be integrated into a single visualization environment for making
 spatial decisions.
+
+
+.. _Open Mining Format (OMF): https://omf.readthedocs.io/en/stable/
 
 
 Portfolio
@@ -80,8 +83,8 @@ Our team has made the entire project available for the geothermal community to
 interact with our findings and reproduce the results shown in this portfolio.
 Furthermore, a video is included where a team member immerses themselves into
 the FORGE site’s data via Virtual Reality (VR) and directly engages with the
-visualizations to address the question posed by the US Department of Energy’s
-Utah FORGE team.
+visualizations to address the question of where to place a new production well
+posed by the US Department of Energy’s Utah FORGE team.
 
 
 .. raw:: html
@@ -99,8 +102,6 @@ Utah FORGE team.
    portfolio/dynamic
 
 
-Reproducible Project
-********************
 
 
 .. toctree::

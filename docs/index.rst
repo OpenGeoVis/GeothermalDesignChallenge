@@ -29,6 +29,11 @@ we implemented and be able to reproduce our work.
 .. _OpenGeoVis/GeothermalDesignChallenge: https://github.com/OpenGeoVis/GeothermalDesignChallenge
 
 
+You can also launch this project on Binder!
+
+.. image:: https://mybinder.org/badge_logo.svg
+   :target: https://mybinder.org/v2/gh/OpenGeoVis/GeothermalDesignChallenge/master
+
 .. toctree::
    :hidden:
    :caption: About

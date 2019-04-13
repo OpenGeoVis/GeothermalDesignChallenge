@@ -93,13 +93,15 @@ contours.plot(cmap='coolwarm', clim=clipped.get_data_range())
 ncx, ncy, ncz = np.array(grid.dimensions) - 1
 sx, sy, sz = grid.spacing
 
+
 temp_model = omf.VolumeElement(
         name='kriged_temperature_model',
         description='kriged temoerature model built from temperature probe data',
         geometry=omf.VolumeGridGeometry(
             tensor_u=np.full(ncx, sx),
             tensor_v=np.full(ncy, sy),
-            tensor_w=np.full(ncz, sz)
+            tensor_w=np.full(ncz, sz),
+            origin=grid.origin,
         ),
         data=[omf.ScalarData(
                 name='temperature (C)',
@@ -115,7 +117,8 @@ temp_model.validate()
 
 ###############################################################################
 # And one final sanity check
-omfvtk.wrap(temp_model).plot(cmap='coolwarm')
+
+omfvtk.wrap(temp_model).clip_box(gdc19.get_roi_bounds(), invert=False).plot(cmap='coolwarm')
 
 
 ###############################################################################

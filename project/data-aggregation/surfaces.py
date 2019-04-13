@@ -79,8 +79,12 @@ temp_175c = gdc19.surf_to_omf(
     'temp_175c',
     description
     )
+temp_175c.data = [
+        omf.ScalarData(
+            name='constant temperature value of 175 for surface',
+            array=np.full(temp_175c.geometry.num_nodes, 175.),
+            location='vertices'),]
 temp_175c.validate()
-
 ###############################################################################
 
 omfvtk.wrap(temp_175c).plot(show_edges=False)
@@ -98,6 +102,11 @@ temp_225c = gdc19.surf_to_omf(
     'temp_225c',
     description
     )
+temp_225c.data = [
+        omf.ScalarData(
+            name='constant temperature value of 225 for surface',
+            array=np.full(temp_225c.geometry.num_nodes, 225.),
+            location='vertices'),]
 temp_225c.validate()
 
 

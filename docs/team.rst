@@ -31,9 +31,15 @@ this project. Learn more about Bane on `his website`_.
 Adam Kinard
 -----------
 
-Adam Kinard is a senior at Colorado School of Mines from Dallas, TX.
-He is graduating in May 2019 with a Bachelor’s of Science Geophysical
-Engineering and December 2019 with an Masters of Science in Computer Science.
+Adam is a student at the Colorado School of Mines from Dallas, TX.
+He will be graduating with a B.S. in Geophysical Engineering in May 2019 and
+a M.S. in Computer Science in December 2019.
+In his career, Adam is interested in the application of machine-learning and
+data analytics to investigate potential subsurface reservoirs and maximize
+production. Later in his career, Adam is interested in collaborating on an
+open-sourced, worldwide subsurface platform to better understand the true
+amount of natural resources remaining on this Earth, especially for the aid
+of those less fortunate.
 
 Learn more about Adam on `his LinkedIn profile`_.
 

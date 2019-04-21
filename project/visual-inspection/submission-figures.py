@@ -41,9 +41,9 @@ temp_225c = surfaces['temp_225c']
 
 ###############################################################################
 boundary = gis_data['boundary']
-boundary_tube = PVGeo.filters.AddCellConnToPoints(cellConn=4).Apply(boundary).tube(radius=30)
+boundary_tube = PVGeo.filters.AddCellConnToPoints(cell_type=4).apply(boundary).tube(radius=30)
 walls = PVGeo.filters.BuildSurfaceFromPoints(
-                zcoords=[0., 4.5e3]).Apply(boundary)
+                zcoords=[0., 4.5e3]).apply(boundary)
 
 ###############################################################################
 temp_grid = temperature_data['kriged_temperature_model']
@@ -54,21 +54,21 @@ temp_grid_cropped = temp_grid.clip_box(gdc19.get_roi_bounds(), invert=False)
 temp_grid_no_topo = PVGeo.grids.ExtractTopography(
                 remove=True, # remove the inactive cells
                 tolerance=10.0 # buffer around the topo surface
-               ).Apply(temp_grid_cropped, topo)
+               ).apply(temp_grid_cropped, topo)
 
 temp_roi = temp_grid_no_topo.threshold([175., 225.])
 
 ###############################################################################
 well_locs = pd.read_csv(gdc19.get_well_path('well_location_from_earth_model.csv'))
-well_locs = PVGeo.pointsToPolyData(well_locs[['x', 'y', 'z (land surface)']].values).clip_box(
+well_locs = PVGeo.points_to_poly_data(well_locs[['x', 'y', 'z (land surface)']].values).clip_box(
                     gdc19.get_roi_bounds(), invert=False)
 
 WELLS = gdc19.load_well_db()
-proposed = PVGeo.filters.AddCellConnToPoints().Apply(WELLS.pop('well_new2'))#vtki.MultiBlock()
+proposed = PVGeo.filters.AddCellConnToPoints().apply(WELLS.pop('well_new2'))#vtki.MultiBlock()
 
-well_5832 = PVGeo.filters.AddCellConnToPoints().Apply(WELLS.pop('well_5832'))
+well_5832 = PVGeo.filters.AddCellConnToPoints().apply(WELLS.pop('well_5832'))
 #well_5832.set_active_scalar('ECGR')
-well_Acord1 = PVGeo.filters.AddCellConnToPoints().Apply(WELLS.pop('well_Acord1'))
+well_Acord1 = PVGeo.filters.AddCellConnToPoints().apply(WELLS.pop('well_Acord1'))
 #well_Acord1 = WELLS.set_active_scalar('GR_SPLICE (GAPI)')
 
 ###############################################################################

@@ -58,7 +58,7 @@ p.show()
 granitoid = PVGeo.grids.ExtractTopography(
                 remove=True, # remove the inactive cells
                 tolerance=10.0 # buffer around the topo surface
-            ).Apply(granitoid, topo)
+            ).apply(granitoid, topo)
 
 p = vtki.Plotter()
 p.add_mesh(topo)
@@ -96,7 +96,7 @@ temp_grid_cropped.plot(**temp_kwargs)
 temp_grid_no_topo = PVGeo.grids.ExtractTopography(
                 remove=True, # remove the inactive cells
                 tolerance=10.0 # buffer around the topo surface
-               ).Apply(temp_grid_cropped, topo)
+               ).apply(temp_grid_cropped, topo)
 
 temp_grid_no_topo.plot(**temp_kwargs)
 
@@ -128,7 +128,7 @@ p.show()
 # plume is in relation to the FRGE site
 
 boundary = gis_data['boundary']
-boundary_tube = PVGeo.filters.AddCellConnToPoints(cellConn=4).Apply(boundary).tube(radius=30)
+boundary_tube = PVGeo.filters.AddCellConnToPoints(cell_type=4).apply(boundary).tube(radius=30)
 
 p = vtki.Plotter()
 p.add_mesh(topo, opacity=0.7)

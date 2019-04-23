@@ -41,7 +41,8 @@ temp_225c = surfaces['temp_225c']
 
 ###############################################################################
 boundary = gis_data['boundary']
-boundary_tube = PVGeo.filters.AddCellConnToPoints(cell_type=4).apply(boundary).tube(radius=30)
+boundary_tube = PVGeo.filters.AddCellConnToPoints(cell_type=4,
+                        close_loop=True).apply(boundary).tube(radius=30)
 walls = PVGeo.filters.BuildSurfaceFromPoints(
                 zcoords=[0., 4.5e3]).apply(boundary)
 

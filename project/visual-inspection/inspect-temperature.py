@@ -128,7 +128,8 @@ p.show()
 # plume is in relation to the FRGE site
 
 boundary = gis_data['boundary']
-boundary_tube = PVGeo.filters.AddCellConnToPoints(cell_type=4).apply(boundary).tube(radius=30)
+boundary_tube = PVGeo.filters.AddCellConnToPoints(cell_type=4,
+                    close_loop=True).apply(boundary).tube(radius=30)
 
 p = vtki.Plotter()
 p.add_mesh(topo, opacity=0.7)

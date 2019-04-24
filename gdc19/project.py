@@ -28,8 +28,8 @@ def load_kriged_temp(clip=True):
     fkrig = gdc19.get_krig_path("Geotherm_kriged_0.sgems")
     fvar = gdc19.get_krig_path("Geotherm_kriged_0_krig_var.sgems")
     # Read the kirgged model and variance
-    grid = PVGeo.gslib.SGeMSGridReader().Apply(fkrig)
-    grid_var = PVGeo.gslib.SGeMSGridReader().Apply(fvar)
+    grid = PVGeo.gslib.SGeMSGridReader().apply(fkrig)
+    grid_var = PVGeo.gslib.SGeMSGridReader().apply(fvar)
     grid.rename_scalar('Getherm_kriged_0', 'Temperature')
     grid.cell_arrays['Temperature_var'] = grid_var.cell_arrays['Getherm_kriged_0_krig_var']
     # FROM SGeMS:

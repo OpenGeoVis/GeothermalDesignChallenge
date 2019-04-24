@@ -28,7 +28,7 @@ def read_surface_verts(filename, grid=False):
     surf = pd.read_csv(filename)
     if grid:
         return grid_surface(surf.values)
-    return PVGeo.pointsToPolyData(surf.values)
+    return PVGeo.points_to_poly_data(surf.values)
 
 
 def delauney(polydata):

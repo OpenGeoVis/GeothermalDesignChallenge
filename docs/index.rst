@@ -47,7 +47,7 @@ Summary
 *******
 
 
-Bane Sullivan, member of the W-Team, has created a suite of open-source Python
+Bane Sullivan has created a suite of open-source Python
 packages making 3D visualization more accessible to the geoscientific community
 - enabling researchers to rapidly explore their data, communicate their spatial
 findings, and facilitate reproducibility amongst stakeholders and colleagues.
@@ -55,13 +55,13 @@ This portfolio demonstrates the ability to tackle spatial questions through a
 workflow that incrementally integrates available data and yields more insight as
 new data is added to a 3D scene.
 
-The tools used in this effort include tools made by W-Team members and other
-open-source tools common in the geosciences:
+The tools used in this effort include tools made by Bane and other open-source
+software common in the geosciences:
 
-- vtki: http://docs.vtki.org (W-Team)
-- PVGeo: http://pvgeo.org (W-Team)
+- vtki: http://docs.vtki.org (Bane Sullivan)
+- PVGeo: http://pvgeo.org (Bane Sullivan)
 - The Open Mining Format: https://omf.readthedocs.io/en/latest/
-- omfvtk: https://github.com/OpenGeoVis/omfvtk (W-Team)
+- omfvtk: https://github.com/OpenGeoVis/omfvtk (Bane Sullivan)
 - ParaView: http://paraview.org
 - SGeMS: http://sgems.sourceforge.net
 - SimPEG: http://www.simpeg.xyz

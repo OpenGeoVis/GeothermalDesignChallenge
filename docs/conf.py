@@ -43,8 +43,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'2019 Geothermal Design Challenge'
-copyright = u'2019, Bane Sullivan & Adam Kinard'
-author = u'Bane Sullivan & Adam Kinard'
+copyright = u'2019, Bane Sullivan'
+author = u'Bane Sullivan'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

@@ -13,9 +13,9 @@ Meet the Team
 Bane Sullivan
 -------------
 
-Bane previously graduated from the Colorado School of Mines with a B.S. in
-Geophysical Engineering and currently is continuing his education in the
-Hydrological Science and Engineering graduate program at CSM focusing on
+Bane, project lead, previously graduated from the Colorado School of Mines with
+a B.S. in Geophysical Engineering and currently is continuing his education in
+the Hydrological Science and Engineering graduate program at CSM focusing on
 Hydrogeophysics.
 In his career, Bane is interested in integrating characterizations of water
 resources as a critical tool for resource managers in securing a freshwater

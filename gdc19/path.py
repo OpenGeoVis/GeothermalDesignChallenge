@@ -48,8 +48,8 @@ def get_temperature_path(filename=None):
 def get_well_path(filename=None):
     return _get_path('well', filename)
 
-def get_lane_path(filename=None):
-    return _get_path('lane', filename)
+def get_krig_path(filename=None):
+    return _get_path('geotherm-export', filename)
 
 def get_bad_path(filename=None):
     return get_well_path('bad-conversions/{}'.format(filename))
@@ -72,5 +72,8 @@ def list_filenames(folder):
     ignore = ['Icon',]
     return [os.path.basename(f.strip()) for f in full if os.path.basename(f.strip()) not in ignore]
 
+def get_project_path(filename):
+    return os.path.join(get_data_directory(), filename)
+
 def get_omf_project_filename():
-    return os.path.join(get_data_directory(), 'FORGE.omf')
+    return get_project_path('FORGE.omf')

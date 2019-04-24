@@ -56,3 +56,9 @@ package-lock.json
 *.grv
 *.vtu
 *.vtkjs
+
+report/
+**/Untitled*.ipynb
+
+
+docs/project/

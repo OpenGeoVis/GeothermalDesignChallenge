@@ -25,8 +25,8 @@ def load_topo():
 
 def load_kriged_temp(clip=True):
     """Load the kriged temperature model from Lane Boyd"""
-    fkrig = gdc19.get_lane_path("geotherm-export/Geotherm_kriged_0.sgems")
-    fvar = gdc19.get_lane_path("geotherm-export/Geotherm_kriged_0_krig_var.sgems")
+    fkrig = gdc19.get_krig_path("Geotherm_kriged_0.sgems")
+    fvar = gdc19.get_krig_path("Geotherm_kriged_0_krig_var.sgems")
     # Read the kirgged model and variance
     grid = PVGeo.gslib.SGeMSGridReader().Apply(fkrig)
     grid_var = PVGeo.gslib.SGeMSGridReader().Apply(fvar)

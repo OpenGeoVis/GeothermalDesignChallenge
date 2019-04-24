@@ -1,0 +1,10 @@
+#!/bin/bash
+export DISPLAY=:99.0
+export VTKI_OFF_SCREEN=True
+export PYTHONPATH=${PYTHONPATH}:${PWD}
+which Xvfb
+Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+sleep 3
+exec "$@"
+# Now import the gdc19 package so data is downloaded
+python -c "import gdc19"

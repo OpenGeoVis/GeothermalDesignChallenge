@@ -1,0 +1,21 @@
+name: vtki-environment
+channels:
+  - bokeh/label/dev
+  - pyviz/label/dev
+  - conda-forge
+dependencies:
+  - python
+  - bokeh
+  - panel
+  - gdal
+  - numpy
+  - pip:
+    - git+git://github.com/vtkiorg/vtki@master
+    - git+git://github.com/OpenGeoVis/PVGeo@master
+    - discretize>=0.3.8
+    - omfvtk>=0.0.9
+    - xlrd>=1.1.0
+    - lasio
+    - pyshp
+    - sklearn
+    - matplotlib

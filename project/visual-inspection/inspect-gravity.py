@@ -1,8 +1,8 @@
 """
-Inspect Temperature Model
+Inspect Gravity Model
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This notebook examines the temperature model and shows off a usefule PVGeo
+This notebook examines the inverted gravity model and shows off a useful PVGeo
 algorithm for rmeove parts of a mesh/model that are baove a topographic surface.
 """
 
@@ -73,7 +73,7 @@ p.show()
 #
 # This type of topography extraction is often very useful with 3D models where
 # the model domain goes above the topographic surface - thus we may want to
-# parts of a 3D model above the topography. Let's try this with the temoerature
+# parts of a 3D model above the topography. Let's try this with the gravity
 # model.
 
 grav_kwargs = dict(
@@ -107,11 +107,12 @@ grav_roi = grav_model.threshold(0.07)
 grav_roi.plot(**grav_kwargs)
 
 ###############################################################################
-# And just out of curiosity, how big of a volume is that temperature range?
-print('Grav model Region is {:.2f} cubic kilometers.'.format(grav_roi.volume * 1e-9))
+# And just out of curiosity, how big of a volume is that density range?
+print('Gravity model Region is {:.2f} cubic kilometers.'.format(grav_roi.volume * 1e-9))
 
 ###############################################################################
-#  How do the provided temperature surfaces match our geostatisical model?
+# How do the provided temperature surface contours look next to the inverted
+# gravity model?
 
 temp_175c = surfaces['temp_175c']
 temp_225c = surfaces['temp_225c']
@@ -123,8 +124,8 @@ p.add_mesh(temp_225c, **temp_kwargs)
 p.show()
 
 ###############################################################################
-# Now lets put this all together to gain insight on where that temperature
-# plume is in relation to the FRGE site
+# Now lets put this all together to gain insight on where that dense
+# body is in relation to the FRGE site
 
 boundary = gis_data['boundary']
 boundary_tube = PVGeo.filters.AddCellConnToPoints(cell_type=4,

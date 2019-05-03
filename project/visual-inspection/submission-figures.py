@@ -39,6 +39,14 @@ granitoid = surfaces['top_granitoid']
 temp_175c = surfaces['temp_175c']
 temp_225c = surfaces['temp_225c']
 
+
+###############################################################################
+# Remove granite surface intereseting topography
+granitoid = PVGeo.grids.ExtractTopography(
+                remove=True, # remove the inactive cells
+                tolerance=10.0 # buffer around the topo surface
+               ).apply(granitoid, topo)
+
 ###############################################################################
 boundary = gis_data['boundary']
 boundary_tube = PVGeo.filters.AddCellConnToPoints(cell_type=4,
@@ -52,12 +60,12 @@ temp_grid = temperature_data['kriged_temperature_model']
 temp_grid_cropped = temp_grid.clip_box(gdc19.get_roi_bounds(), invert=False)
 
 # Remove values above topography
-temp_grid_no_topo = PVGeo.grids.ExtractTopography(
+temp_grid = PVGeo.grids.ExtractTopography(
                 remove=True, # remove the inactive cells
                 tolerance=10.0 # buffer around the topo surface
                ).apply(temp_grid_cropped, topo)
 
-temp_roi = temp_grid_no_topo.threshold([175., 225.])
+temp_roi = temp_grid.threshold([175., 225.])
 
 ###############################################################################
 well_locs = pd.read_csv(gdc19.get_well_path('well_location_from_earth_model.csv'))

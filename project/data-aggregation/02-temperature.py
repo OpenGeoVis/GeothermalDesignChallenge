@@ -3,7 +3,7 @@ Temperature Data
 ~~~~~~~~~~~~~~~~
 
 """
-# sphinx_gallery_thumbnail_number = 3
+# sphinx_gallery_thumbnail_number = 4
 # Import project package
 import gdc19
 
@@ -48,14 +48,52 @@ temperature.validate()
 
 
 ###############################################################################
-omfvtk.wrap(temperature).plot(show_edges=False)
+temp = omfvtk.wrap(temperature)
+temp.plot()
 
 
 ###############################################################################
 # Geostatistical Model
 # ++++++++++++++++++++
 #
-# Load the kriged temperature model
+# Prep temperature data for kriging in SGeMS
+
+# First, load the topography surface that was previously aggregated:
+surfaces = omfvtk.load_project(gdc19.get_project_path('surfaces.omf'))
+topo = surfaces['land_surface']
+
+
+p = vtki.Plotter()
+p.add_mesh(temp, cmap='coolwarm', point_size=10,
+           render_points_as_spheres=True, stitle='Temperature')
+p.add_mesh(topo)
+p.camera_position = [1,1,-1]
+p.show()
+
+###############################################################################
+# Make tables of the temperature and topography data
+
+# Make pandas data frame of the temps
+df_temp = pd.DataFrame(data=np.c_[temp.points, temp.point_arrays['temperature (C)']],
+                    columns=['x', 'y', 'z', 'temp_c'])
+df_temp.header = 'temperature (degrees C)'
+print(df_temp.head())
+
+###############################################################################
+
+# And of the topography surface
+df_topo = pd.DataFrame(data=topo.points, columns=['x','y','z'])
+df_topo.header = 'Land Surface'
+print(df_topo.head())
+
+###############################################################################
+# Save these tabular data frames to GSLib formatted files for use in SGeMS
+
+gdc19.save_gslib(gdc19.get_krig_path('temperature.gslib'), df_temp)
+gdc19.save_gslib(gdc19.get_krig_path('topography.gslib'), df_topo)
+
+###############################################################################
+# Load the kriged temperature model from SGeMS
 
 fkrig = gdc19.get_krig_path("Geotherm_kriged_0.sgems")
 fvar = gdc19.get_krig_path("Geotherm_kriged_0_krig_var.sgems")
@@ -77,7 +115,7 @@ grid.spacing = (250, 250, 50)
 grid.plot(cmap='coolwarm')
 
 ###############################################################################
-#  Lets quickly inspect the model
+# Lets quickly inspect the model
 
 bounds = gdc19.get_roi_bounds()
 clipped = grid.clip_box(bounds, invert=False)

@@ -2,7 +2,7 @@
 Inspect Temperature Model
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This notebook examines the temperature model and shows off a usefule PVGeo
+This notebook examines the temperature model and shows off a useful PVGeo
 algorithm for rmeove parts of a mesh/model that are baove a topographic surface.
 """
 

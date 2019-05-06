@@ -1,7 +1,10 @@
+import datetime
 import vtki
 import omf
 import omfvtk
+import pandas as pd
 import PVGeo
+import warnings
 
 import gdc19
 
@@ -39,3 +42,25 @@ def load_kriged_temp(clip=True):
         bounds = get_roi_bounds()
         grid = grid.clip_box(bounds, invert=False)
     return grid
+
+
+def save_gslib(filename, dataframe, header=None):
+    """This will save a pandas dataframe to a GSLib file"""
+    if not isinstance(dataframe, pd.DataFrame):
+        raise TypeError('This can only save Pandas dataframes to GSLib files.')
+    if header is None:
+        try:
+            header = dataframe.header
+        except AttributeError:
+            warnings.warn('Header not defined. Using date')
+            header = str(datetime.datetime.now())
+    if '\n' in header:
+        raise RuntimeError('`header` can only be 1 line.')
+    datanames = '\n'.join(dataframe.columns)
+    with open(filename, 'w') as f:
+        f.write('%s\n' % header)
+        f.write('%d\n' % len(dataframe.columns))
+        f.write(datanames)
+        f.write('\n')
+        dataframe.to_csv(f, sep=' ', header=None, index=False, float_format='%.9e')
+    return 1

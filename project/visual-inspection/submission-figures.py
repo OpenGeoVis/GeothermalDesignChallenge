@@ -269,6 +269,9 @@ def add_grav_model(p, bounds=None, opacity=1.0, rng=[-0.25,0.25]):
 ###############################################################################
 # Figure 1
 # ++++++++
+#
+# This figure shows the a model of Milford Valley, Utah with topography, fault,
+# granite, FORGE site and well locations and data
 
 def fig_1(p, bounds=None):
     add_topo(p, bounds)
@@ -297,6 +300,9 @@ cpos
 ###############################################################################
 # Figure 2
 # ++++++++
+#
+# This figure shows a model of Milford Valley, Utah with topography, fault,
+# granite, FORGE site and well, well logs, and temperature locations and data
 
 def fig_2(p, bounds=None):
     fig_1(p, bounds)
@@ -322,6 +328,10 @@ cpos
 ###############################################################################
 # Figure 3
 # ++++++++
+#
+# This figure shows a model of Milford Valley, Utah cropped from the north side
+# of the FORGE site to better view the subsurface within the FORGE boundary
+
 ROI_BOX = [329924.98816, 344152.930125, 4252833.48213,
               4264500.,
            -5000.0, 5000.0]
@@ -352,6 +362,11 @@ cpos
 ###############################################################################
 # Figure 4
 # ++++++++
+#
+# This figure shows a model of Milford Valley, Utah cropped to better view the
+# FORGE site subsurface and includes our team's proposed well location and
+# trajectory (red).
+
 def fig_4(p, bounds=None):
     fig_3(p, bounds)
     add_well_traj_proposed(p, bounds)
@@ -379,6 +394,11 @@ cpos
 ###############################################################################
 # Figure 5
 # ++++++++
+#
+# This figure shows a model of Milford Valley, Utah with topography, fault,
+# granite, FORGE site and well, well logs, proposed well, temperature, and
+# gravity locations and data
+
 def fig_5(p, bounds=None):
     fig_4(p, bounds)
     add_grav_model(p, bounds)
@@ -401,6 +421,8 @@ p.close()
 ###############################################################################
 # Figure 6
 # ++++++++
+#
+# Show an aerial view of the proposed well's location
 
 p = vtki.Plotter()
 fig_1(p)

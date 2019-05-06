@@ -1,6 +1,6 @@
-##############################################################################
-Data to Decisions: An Open-Source Approach to 3D Visualization & Communication
-##############################################################################
+################################
+2019 Geothermal Design Challenge
+################################
 
 
 .. image:: https://img.shields.io/travis/OpenGeoVis/GeothermalDesignChallenge/master.svg?label=build&logo=travis

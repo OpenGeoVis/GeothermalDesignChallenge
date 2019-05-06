@@ -44,6 +44,8 @@ for name in ref:
 grav_obs = vtki.PolyData(points.values)
 grav_obs.point_arrays.update(df.to_dict('series'))
 
+grav_obs = grav_obs.clip_box(gdc19.get_roi_bounds(), invert=False)
+
 print(grav_obs)
 
 ###############################################################################

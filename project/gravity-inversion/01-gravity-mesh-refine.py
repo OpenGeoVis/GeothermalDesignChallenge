@@ -137,4 +137,5 @@ plot_vtki(mesh, np.log10(mesh.vol), actv, False, False)
 ###############################################################################
 # Save the mesh for use in an inversion
 
-# TODO:
+model_fname = gdc19.get_gravity_path('actv.mod')
+mesh.writeUBC(gdc19.get_gravity_path('mesh.msh'), {model_fname:actv})

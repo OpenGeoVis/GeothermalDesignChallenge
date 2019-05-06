@@ -34,6 +34,7 @@ before_install:
 install:
   - conda install --quiet --yes pip
   - conda install --quiet --yes -c conda-forge gdal
+  - conda install --quiet --yes dask
   - python -c "import gdal; print(gdal.VersionInfo(''))"
   - pip install -r requirements.txt
   - pip install -U doctr

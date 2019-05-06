@@ -1,6 +1,7 @@
 git+git://github.com/vtkiorg/vtki@master
 git+git://github.com/OpenGeoVis/PVGeo@master
-discretize>=0.3.8
+discretize>=0.4.1
+git+git://github.com/simpeg/simpeg@MagDev_DF_Dask
 omf==1.0.0
 omfvtk>=0.0.9
 xlrd>=1.1.0
@@ -19,3 +20,4 @@ git+git://github.com/rtfd/sphinx-notfound-page@master
 sphinx-copybutton
 sphinx-gallery
 nbval
+SimPEG

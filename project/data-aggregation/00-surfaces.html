@@ -1,0 +1,426 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Surface Data &mdash; 2019 Geothermal Design Challenge 0.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+        <script type="text/javascript" src="../../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="GIS Data" href="01-gis.html" />
+    <link rel="prev" title="Reproducible Project" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 2019 Geothermal Design Challenge
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">2019 Geothermal Design Challenge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../team.html">Meet the Team</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Portfolio</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../portfolio/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../portfolio/static.html">Static Portfolio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../portfolio/dynamic.html">Dynamic Portfolio</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reproducible Project</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Reproducible Project</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#omf-data-collection">OMF Data Collection</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Surface Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01-gis.html">GIS Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02-temperature.html">Temperature Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03-well-proposed.html">Proposed Well</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#gravity-inversion">Gravity Inversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#visual-inspection">Visual Inspection</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">2019 Geothermal Design Challenge</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Reproducible Project</a> &raquo;</li>
+        
+      <li>Surface Data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/OpenGeoVis/GeothermalDesignChallenge/blob/master/docs/project/data-aggregation/00-surfaces.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-project-data-aggregation-00-surfaces-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="surface-data">
+<span id="sphx-glr-project-data-aggregation-00-surfaces-py"></span><h1>Surface Data<a class="headerlink" href="#surface-data" title="Permalink to this headline">¶</a></h1>
+<p>This notebook aggregates all the surface data for the FORGE site into a single
+Open Mining Format (OMF) project file.</p>
+<p>Here we load all the surface data and create <cite>omf.SurfaceElement</cite> objects.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 6</span>
+<span class="c1"># Import project package</span>
+<span class="kn">import</span> <span class="nn">gdc19</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span>
+<span class="kn">import</span> <span class="nn">omf</span>
+<span class="kn">import</span> <span class="nn">omfvista</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;This contains vertices of meshed/interpolated &#39;</span> \
+    <span class="s1">&#39;surfaces of the granitoid-basin fill contact used in the &#39;</span> \
+    <span class="s1">&#39;Phase 2B earth model. All data are georeferenced to UTM, &#39;</span> \
+    <span class="s1">&#39;zone 12N, NAD 83, NAVD 88.&#39;</span>
+
+<span class="n">top_granitoid</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">surf_to_omf</span><span class="p">(</span>
+    <span class="s1">&#39;top_granitoid_vertices.csv&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;top_granitoid&#39;</span><span class="p">,</span>
+    <span class="n">description</span>
+    <span class="p">)</span>
+<span class="n">top_granitoid</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">omfvista</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">top_granitoid</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Negro Mag Fault used in the Phase 2B earth model. &#39;</span> \
+    <span class="s1">&#39;All data are georeferenced to UTM, zone 12N, NAD 83, NAVD 88.&#39;</span>
+
+<span class="n">negro_mag_fault</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">surf_to_omf</span><span class="p">(</span>
+    <span class="s1">&#39;Negro_Mag_Fault_vertices.csv&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;negro_mag_fault&#39;</span><span class="p">,</span>
+    <span class="n">description</span>
+    <span class="p">)</span>
+<span class="n">negro_mag_fault</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">omfvista</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">negro_mag_fault</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;surfaces of the Opal Mound Fault used in the Phase &#39;</span> \
+    <span class="s1">&#39;2B earth model. All data are georeferenced to UTM, zone &#39;</span>\
+    <span class="s1">&#39;12N, NAD 83, NAVD 88.&#39;</span>
+
+<span class="n">opal_mound_fault</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">surf_to_omf</span><span class="p">(</span>
+    <span class="s1">&#39;Opal_Mound_Fault_vertices.csv&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;opal_mound_fault&#39;</span><span class="p">,</span>
+    <span class="n">description</span>
+    <span class="p">)</span>
+<span class="n">opal_mound_fault</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">omfvista</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">opal_mound_fault</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># temp_175c: &#39;175C_vertices.csv&#39;</span>
+<span class="n">description</span><span class="o">=</span><span class="s1">&#39;vertices of meshed/interpolated surfaces of the &#39;</span> \
+    <span class="s1">&#39;interpolated temperature isosurfaces for 175 degrees C used &#39;</span> \
+    <span class="s1">&#39;in the Phase 2B earth model. All data are georeferenced to &#39;</span> \
+    <span class="s1">&#39;UTM, zone 12N, NAD 83, NAVD 88.&#39;</span>
+
+<span class="n">temp_175c</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">surf_to_omf</span><span class="p">(</span>
+    <span class="s1">&#39;175C_vertices.csv&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;temp_175c&#39;</span><span class="p">,</span>
+    <span class="n">description</span>
+    <span class="p">)</span>
+<span class="n">temp_175c</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">omf</span><span class="o">.</span><span class="n">ScalarData</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;constant temperature value of 175 for surface&#39;</span><span class="p">,</span>
+            <span class="n">array</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">temp_175c</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">num_nodes</span><span class="p">,</span> <span class="mf">175.</span><span class="p">),</span>
+            <span class="n">location</span><span class="o">=</span><span class="s1">&#39;vertices&#39;</span><span class="p">),]</span>
+<span class="n">temp_175c</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">omfvista</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">temp_175c</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># temp_225c: &#39;225C_vertices.csv&#39;</span>
+<span class="n">description</span><span class="o">=</span><span class="s1">&#39;vertices of meshed/interpolated surfaces of the &#39;</span>\
+    <span class="s1">&#39;interpolated temperature isosurfaces for 225 degrees C used &#39;</span>\
+    <span class="s1">&#39;in the Phase 2B earth model. All data are georeferenced to &#39;</span> \
+    <span class="s1">&#39;UTM, zone 12N, NAD 83, NAVD 88.&#39;</span>
+
+<span class="n">temp_225c</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">surf_to_omf</span><span class="p">(</span>
+    <span class="s1">&#39;225C_vertices.csv&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;temp_225c&#39;</span><span class="p">,</span>
+    <span class="n">description</span>
+    <span class="p">)</span>
+<span class="n">temp_225c</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">omf</span><span class="o">.</span><span class="n">ScalarData</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;constant temperature value of 225 for surface&#39;</span><span class="p">,</span>
+            <span class="n">array</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">temp_225c</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">num_nodes</span><span class="p">,</span> <span class="mf">225.</span><span class="p">),</span>
+            <span class="n">location</span><span class="o">=</span><span class="s1">&#39;vertices&#39;</span><span class="p">),]</span>
+<span class="n">temp_225c</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">omfvista</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">temp_225c</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>land_surface: ‘land_surface_vertices.csv’</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;vertices of meshed/interpolated surfaces of the &#39;</span> \
+    <span class="s1">&#39;land surface (based on 10-meter DEM) used in the Phase 2B &#39;</span>\
+    <span class="s1">&#39;earth model. All data are georeferenced to UTM, zone 12N, &#39;</span>\
+    <span class="s1">&#39;NAD 83, NAVD 88.&#39;</span>
+
+<span class="n">land_surface</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">surf_to_omf</span><span class="p">(</span>
+    <span class="s1">&#39;land_surface_vertices.csv&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;land_surface&#39;</span><span class="p">,</span>
+    <span class="n">description</span>
+    <span class="p">)</span>
+<span class="n">land_surface</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># NOW ADD TEXTURES TO THE LAND SURFACE</span>
+
+<span class="n">fname</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">get_gis_path</span><span class="p">(</span><span class="s1">&#39;Geologic_map_on_air_photo.png&#39;</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;geo_aer&#39;</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;geologic map of the Utah FORGE site with aerial &#39;</span>\
+    <span class="s1">&#39;imagery. All data are georeferenced to UTM, zone 12N, NAD &#39;</span>\
+    <span class="s1">&#39;83, NAVD 88.&#39;</span>
+<span class="n">geo_aer</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">load_texture_to_omf</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">description</span><span class="p">)</span>
+
+<span class="c1"># topographic_map.png</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">get_gis_path</span><span class="p">(</span><span class="s1">&#39;topographic_map.png&#39;</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;topo_map&#39;</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s1">&#39; topographic map of the Utah FORGE site. &#39;</span>\
+    <span class="s1">&#39;All data are georeferenced to UTM, zone 12N, NAD 83, NAVD 88.&#39;</span>
+<span class="n">topo_map</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">load_texture_to_omf</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">description</span><span class="p">)</span>
+
+<span class="c1"># Geologic_map_no_quaternary.tif</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">get_gis_path</span><span class="p">(</span><span class="s1">&#39;Geologic_map_no_quaternary.png&#39;</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;geo_no_aer&#39;</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;geologic map of the Utah FORGE site with &#39;</span>\
+    <span class="s1">&#39;quaternary faults labeled. All data are georeferenced to UTM, &#39;</span>\
+    <span class="s1">&#39;zone 12N, NAD 83, NAVD 88.&#39;</span>
+<span class="n">geo_no_aer</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">load_texture_to_omf</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">description</span><span class="p">)</span>
+
+<span class="n">land_surface</span><span class="o">.</span><span class="n">textures</span> <span class="o">=</span> <span class="p">[</span><span class="n">geo_aer</span><span class="p">,</span> <span class="n">topo_map</span><span class="p">,</span> <span class="n">geo_no_aer</span><span class="p">]</span>
+<span class="n">land_surface</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">topo</span> <span class="o">=</span> <span class="n">omfvista</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">land_surface</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">topo</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">texture</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And now create an OMF project file for the surfaces</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">proj</span> <span class="o">=</span> <span class="n">omf</span><span class="o">.</span><span class="n">Project</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;FORGE Surfaces&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;All surfaces for the 2019 FORGE Geothermal Student Competition &#39;</span>
+<span class="p">)</span>
+
+<span class="n">proj</span><span class="o">.</span><span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="n">land_surface</span><span class="p">,</span>
+                 <span class="n">temp_225c</span><span class="p">,</span>
+                 <span class="n">temp_175c</span><span class="p">,</span>
+                 <span class="n">opal_mound_fault</span><span class="p">,</span>
+                 <span class="n">negro_mag_fault</span><span class="p">,</span>
+                 <span class="n">top_granitoid</span><span class="p">,</span>
+                <span class="p">]</span>
+
+<span class="n">proj</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Save the GIS project file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">omf</span><span class="o">.</span><span class="n">OMFWriter</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">get_project_path</span><span class="p">(</span><span class="s1">&#39;surfaces.omf&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-project-data-aggregation-00-surfaces-py">
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/d029695080e7af920f56d0da56542fed/00-surfaces.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">00-surfaces.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/a845a751d309ebf91a02808a1c766952/00-surfaces.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">00-surfaces.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="01-gis.html" class="btn btn-neutral float-right" title="GIS Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Reproducible Project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Bane Sullivan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

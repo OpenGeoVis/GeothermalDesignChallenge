@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Temperature Data &mdash; 2019 Geothermal Design Challenge 0.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+        <script type="text/javascript" src="../../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Proposed Well" href="03-well-proposed.html" />
+    <link rel="prev" title="GIS Data" href="01-gis.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 2019 Geothermal Design Challenge
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">2019 Geothermal Design Challenge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../team.html">Meet the Team</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Portfolio</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../portfolio/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../portfolio/static.html">Static Portfolio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../portfolio/dynamic.html">Dynamic Portfolio</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reproducible Project</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Reproducible Project</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#omf-data-collection">OMF Data Collection</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="00-surfaces.html">Surface Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01-gis.html">GIS Data</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Temperature Data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#temperature-probe-data">Temperature Probe Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geostatistical-model">Geostatistical Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#write-the-data">Write the data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03-well-proposed.html">Proposed Well</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#gravity-inversion">Gravity Inversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#visual-inspection">Visual Inspection</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">2019 Geothermal Design Challenge</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Reproducible Project</a> &raquo;</li>
+        
+      <li>Temperature Data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/OpenGeoVis/GeothermalDesignChallenge/blob/master/docs/project/data-aggregation/02-temperature.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-project-data-aggregation-02-temperature-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="temperature-data">
+<span id="sphx-glr-project-data-aggregation-02-temperature-py"></span><h1>Temperature Data<a class="headerlink" href="#temperature-data" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 4</span>
+<span class="c1"># Import project package</span>
+<span class="kn">import</span> <span class="nn">gdc19</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span>
+<span class="kn">import</span> <span class="nn">PVGeo</span>
+<span class="kn">import</span> <span class="nn">omf</span>
+<span class="kn">import</span> <span class="nn">omfvista</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<div class="section" id="temperature-probe-data">
+<h2>Temperature Probe Data<a class="headerlink" href="#temperature-probe-data" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the temperature data</span>
+<span class="n">_temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+            <span class="n">gdc19</span><span class="o">.</span><span class="n">get_temperature_path</span><span class="p">(</span><span class="s1">&#39;well_based_temperature.csv&#39;</span><span class="p">)</span>
+            <span class="p">)</span>
+<span class="n">_temp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="n">omf</span><span class="o">.</span><span class="n">PointSetElement</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;temperature&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;cumulative record of one-dimensional temperature modeling &#39;</span>\
+        <span class="s1">&#39;based off of well data. Temperature log data were exampled and &#39;</span>\
+        <span class="s1">&#39;extrapolated below the bottom of a number of wells. Temperatures &#39;</span>\
+        <span class="s1">&#39;are in degrees Celsius, and all location data are georeferenced to &#39;</span>
+        <span class="s1">&#39;UTM, zone 12N, NAD 83, NAVD 88.&#39;</span><span class="p">,</span>
+    <span class="n">subtype</span><span class="o">=</span><span class="s1">&#39;point&#39;</span><span class="p">,</span>
+    <span class="n">geometry</span><span class="o">=</span><span class="n">omf</span><span class="o">.</span><span class="n">PointSetGeometry</span><span class="p">(</span>
+        <span class="n">vertices</span><span class="o">=</span><span class="n">_temp</span><span class="p">[[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+    <span class="p">),</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">omf</span><span class="o">.</span><span class="n">ScalarData</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;temperature (C)&#39;</span><span class="p">,</span>
+        <span class="n">array</span><span class="o">=</span><span class="n">_temp</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+        <span class="n">location</span><span class="o">=</span><span class="s1">&#39;vertices&#39;</span>
+    <span class="p">),]</span>
+<span class="p">)</span>
+<span class="n">temperature</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">omfvista</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span>
+<span class="n">temp</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="geostatistical-model">
+<h2>Geostatistical Model<a class="headerlink" href="#geostatistical-model" title="Permalink to this headline">¶</a></h2>
+<p>Prep temperature data for kriging in SGeMS</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, load the topography surface that was previously aggregated:</span>
+<span class="n">surfaces</span> <span class="o">=</span> <span class="n">omfvista</span><span class="o">.</span><span class="n">load_project</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_project_path</span><span class="p">(</span><span class="s1">&#39;surfaces.omf&#39;</span><span class="p">))</span>
+<span class="n">topo</span> <span class="o">=</span> <span class="n">surfaces</span><span class="p">[</span><span class="s1">&#39;land_surface&#39;</span><span class="p">]</span>
+
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+           <span class="n">render_points_as_spheres</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stitle</span><span class="o">=</span><span class="s1">&#39;Temperature&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">topo</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Make tables of the temperature and topography data</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make pandas data frame of the temps</span>
+<span class="n">df_temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">temp</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">temp</span><span class="o">.</span><span class="n">point_arrays</span><span class="p">[</span><span class="s1">&#39;temperature (C)&#39;</span><span class="p">]],</span>
+                    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;temp_c&#39;</span><span class="p">])</span>
+<span class="n">df_temp</span><span class="o">.</span><span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;temperature (degrees C)&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_temp</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># And of the topography surface</span>
+<span class="n">df_topo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">topo</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;z&#39;</span><span class="p">])</span>
+<span class="n">df_topo</span><span class="o">.</span><span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;Land Surface&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_topo</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Save these tabular data frames to GSLib formatted files for use in SGeMS</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gdc19</span><span class="o">.</span><span class="n">save_gslib</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_krig_path</span><span class="p">(</span><span class="s1">&#39;temperature.gslib&#39;</span><span class="p">),</span> <span class="n">df_temp</span><span class="p">)</span>
+<span class="n">gdc19</span><span class="o">.</span><span class="n">save_gslib</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_krig_path</span><span class="p">(</span><span class="s1">&#39;topography.gslib&#39;</span><span class="p">),</span> <span class="n">df_topo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Load the kriged temperature model from SGeMS</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fkrig</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">get_krig_path</span><span class="p">(</span><span class="s2">&quot;Geotherm_kriged_0.sgems&quot;</span><span class="p">)</span>
+<span class="n">fvar</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">get_krig_path</span><span class="p">(</span><span class="s2">&quot;Geotherm_kriged_0_krig_var.sgems&quot;</span><span class="p">)</span>
+
+<span class="c1"># Read the kirgged model and variance</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">PVGeo</span><span class="o">.</span><span class="n">gslib</span><span class="o">.</span><span class="n">SGeMSGridReader</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">fkrig</span><span class="p">)</span>
+<span class="n">grid_var</span> <span class="o">=</span> <span class="n">PVGeo</span><span class="o">.</span><span class="n">gslib</span><span class="o">.</span><span class="n">SGeMSGridReader</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">fvar</span><span class="p">)</span>
+
+<span class="c1"># Label the array appropriately</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">rename_scalar</span><span class="p">(</span><span class="s1">&#39;Getherm_kriged_0&#39;</span><span class="p">,</span> <span class="s1">&#39;Temperature&#39;</span><span class="p">)</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">cell_arrays</span><span class="p">[</span><span class="s1">&#39;Temperature_var&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">grid_var</span><span class="o">.</span><span class="n">cell_arrays</span><span class="p">[</span><span class="s1">&#39;Getherm_kriged_0_krig_var&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Set the spatial reference of the grid
+Values from SGeMS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="p">(</span><span class="mi">325000</span><span class="p">,</span> <span class="mf">4.245e6</span><span class="p">,</span> <span class="o">-</span><span class="mi">2700</span><span class="p">)</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">spacing</span> <span class="o">=</span> <span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+<span class="n">grid</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Lets quickly inspect the model</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bounds</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">get_roi_bounds</span><span class="p">()</span>
+<span class="n">clipped</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">clip_box</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="n">invert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">contours</span> <span class="o">=</span> <span class="n">clipped</span><span class="o">.</span><span class="n">cell_data_to_point_data</span><span class="p">()</span><span class="o">.</span><span class="n">contour</span><span class="p">()</span>
+<span class="n">contours</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="n">clim</span><span class="o">=</span><span class="n">clipped</span><span class="o">.</span><span class="n">get_data_range</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Now we need to convert the model to the OMF files specification</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># MINUS ONE BECASE WE DEFINE CELL DATA</span>
+<span class="n">ncx</span><span class="p">,</span> <span class="n">ncy</span><span class="p">,</span> <span class="n">ncz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">dimensions</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">spacing</span>
+
+
+<span class="n">temp_model</span> <span class="o">=</span> <span class="n">omf</span><span class="o">.</span><span class="n">VolumeElement</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;kriged_temperature_model&#39;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;kriged temoerature model built from temperature probe data&#39;</span><span class="p">,</span>
+        <span class="n">geometry</span><span class="o">=</span><span class="n">omf</span><span class="o">.</span><span class="n">VolumeGridGeometry</span><span class="p">(</span>
+            <span class="n">tensor_u</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">ncx</span><span class="p">,</span> <span class="n">sx</span><span class="p">),</span>
+            <span class="n">tensor_v</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">ncy</span><span class="p">,</span> <span class="n">sy</span><span class="p">),</span>
+            <span class="n">tensor_w</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">ncz</span><span class="p">,</span> <span class="n">sz</span><span class="p">),</span>
+            <span class="n">origin</span><span class="o">=</span><span class="n">grid</span><span class="o">.</span><span class="n">origin</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">omf</span><span class="o">.</span><span class="n">ScalarData</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s1">&#39;temperature (C)&#39;</span><span class="p">,</span>
+                <span class="n">array</span><span class="o">=</span><span class="n">grid</span><span class="o">.</span><span class="n">cell_arrays</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">ncz</span><span class="p">,</span><span class="n">ncy</span><span class="p">,</span><span class="n">ncx</span><span class="p">),</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span>
+                <span class="n">location</span><span class="o">=</span><span class="s1">&#39;cells&#39;</span><span class="p">),</span>
+              <span class="n">omf</span><span class="o">.</span><span class="n">ScalarData</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Temperature_var&#39;</span><span class="p">,</span>
+                <span class="n">array</span><span class="o">=</span><span class="n">grid</span><span class="o">.</span><span class="n">cell_arrays</span><span class="p">[</span><span class="s1">&#39;Temperature_var&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">ncz</span><span class="p">,</span><span class="n">ncy</span><span class="p">,</span><span class="n">ncx</span><span class="p">),</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span>
+                <span class="n">location</span><span class="o">=</span><span class="s1">&#39;cells&#39;</span><span class="p">),</span>
+             <span class="p">],</span>
+<span class="p">)</span>
+<span class="n">temp_model</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>And one final sanity check</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">omfvista</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">temp_model</span><span class="p">)</span><span class="o">.</span><span class="n">clip_box</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_roi_bounds</span><span class="p">(),</span> <span class="n">invert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="write-the-data">
+<h2>Write the data<a class="headerlink" href="#write-the-data" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">proj</span> <span class="o">=</span> <span class="n">omf</span><span class="o">.</span><span class="n">Project</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;FORGE Temperature Data&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;All temperature data/models for the 2019 FORGE Geothermal Student Competition &#39;</span>
+<span class="p">)</span>
+
+<span class="n">proj</span><span class="o">.</span><span class="n">elements</span> <span class="o">=</span> <span class="p">[</span> <span class="n">temperature</span><span class="p">,</span>  <span class="n">temp_model</span><span class="p">]</span>
+
+<span class="n">proj</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Save the temperature project file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">omf</span><span class="o">.</span><span class="n">OMFWriter</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">get_project_path</span><span class="p">(</span><span class="s1">&#39;temperature.omf&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-project-data-aggregation-02-temperature-py">
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/1a60b965420270e8c6b4cddb438e1d2f/02-temperature.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">02-temperature.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/0c6135a7bdb536865705d49db7ae48a2/02-temperature.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">02-temperature.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="03-well-proposed.html" class="btn btn-neutral float-right" title="Proposed Well" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="01-gis.html" class="btn btn-neutral float-left" title="GIS Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Bane Sullivan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

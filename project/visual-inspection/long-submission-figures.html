@@ -1,0 +1,692 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Submission Figures &mdash; 2019 Geothermal Design Challenge 0.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+        <script type="text/javascript" src="../../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Surface Decimation" href="surface-decimation.html" />
+    <link rel="prev" title="Inspect Temperature Model" href="long-inspect-temperature.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 2019 Geothermal Design Challenge
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">2019 Geothermal Design Challenge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../team.html">Meet the Team</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Portfolio</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../portfolio/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../portfolio/static.html">Static Portfolio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../portfolio/dynamic.html">Dynamic Portfolio</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reproducible Project</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Reproducible Project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#omf-data-collection">OMF Data Collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#gravity-inversion">Gravity Inversion</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#visual-inspection">Visual Inspection</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="long-inspect-gravity.html">Inspect Gravity Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="long-inspect-temperature.html">Inspect Temperature Model</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Submission Figures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#plotting-helpers">Plotting Helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#figure-1">Figure 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#figure-2">Figure 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#figure-3">Figure 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#figure-4">Figure 4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#figure-5">Figure 5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#figure-6">Figure 6</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="surface-decimation.html">Surface Decimation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">2019 Geothermal Design Challenge</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Reproducible Project</a> &raquo;</li>
+        
+      <li>Submission Figures</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/OpenGeoVis/GeothermalDesignChallenge/blob/master/docs/project/visual-inspection/long-submission-figures.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-project-visual-inspection-long-submission-figures-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="submission-figures">
+<span id="sphx-glr-project-visual-inspection-long-submission-figures-py"></span><h1>Submission Figures<a class="headerlink" href="#submission-figures" title="Permalink to this headline">¶</a></h1>
+<p>This notebook will recreate all of the figures for the competition submission.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 5</span>
+
+<span class="c1"># Import project package</span>
+<span class="kn">import</span> <span class="nn">gdc19</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span>
+<span class="kn">import</span> <span class="nn">PVGeo</span>
+<span class="kn">import</span> <span class="nn">omfvista</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>Load all the datasets created in the data aggreagation section</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gis_data</span> <span class="o">=</span> <span class="n">omfvista</span><span class="o">.</span><span class="n">load_project</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_project_path</span><span class="p">(</span><span class="s1">&#39;gis.omf&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gis_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">surfaces</span> <span class="o">=</span> <span class="n">omfvista</span><span class="o">.</span><span class="n">load_project</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_project_path</span><span class="p">(</span><span class="s1">&#39;surfaces.omf&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">surfaces</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temperature_data</span> <span class="o">=</span> <span class="n">omfvista</span><span class="o">.</span><span class="n">load_project</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_project_path</span><span class="p">(</span><span class="s1">&#39;temperature.omf&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temperature_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Grab data to be used</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">topo</span> <span class="o">=</span> <span class="n">surfaces</span><span class="p">[</span><span class="s1">&#39;land_surface&#39;</span><span class="p">]</span>
+<span class="n">granitoid</span> <span class="o">=</span> <span class="n">surfaces</span><span class="p">[</span><span class="s1">&#39;top_granitoid&#39;</span><span class="p">]</span>
+<span class="n">temp_175c</span> <span class="o">=</span> <span class="n">surfaces</span><span class="p">[</span><span class="s1">&#39;temp_175c&#39;</span><span class="p">]</span>
+<span class="n">temp_225c</span> <span class="o">=</span> <span class="n">surfaces</span><span class="p">[</span><span class="s1">&#39;temp_225c&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Remove granite surface intereseting topography</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">granitoid</span> <span class="o">=</span> <span class="n">PVGeo</span><span class="o">.</span><span class="n">grids</span><span class="o">.</span><span class="n">ExtractTopography</span><span class="p">(</span>
+                <span class="n">remove</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># remove the inactive cells</span>
+                <span class="n">tolerance</span><span class="o">=</span><span class="mf">10.0</span> <span class="c1"># buffer around the topo surface</span>
+               <span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">granitoid</span><span class="p">,</span> <span class="n">topo</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">boundary</span> <span class="o">=</span> <span class="n">gis_data</span><span class="p">[</span><span class="s1">&#39;boundary&#39;</span><span class="p">]</span>
+<span class="n">boundary_tube</span> <span class="o">=</span> <span class="n">PVGeo</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">AddCellConnToPoints</span><span class="p">(</span><span class="n">cell_type</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+                        <span class="n">close_loop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">boundary</span><span class="p">)</span><span class="o">.</span><span class="n">tube</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">walls</span> <span class="o">=</span> <span class="n">PVGeo</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">BuildSurfaceFromPoints</span><span class="p">(</span>
+                <span class="n">zcoords</span><span class="o">=</span><span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">4.5e3</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">boundary</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temp_grid</span> <span class="o">=</span> <span class="n">temperature_data</span><span class="p">[</span><span class="s1">&#39;kriged_temperature_model&#39;</span><span class="p">]</span>
+
+<span class="n">temp_grid_cropped</span> <span class="o">=</span> <span class="n">temp_grid</span><span class="o">.</span><span class="n">clip_box</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_roi_bounds</span><span class="p">(),</span> <span class="n">invert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Remove values above topography</span>
+<span class="n">temp_grid</span> <span class="o">=</span> <span class="n">PVGeo</span><span class="o">.</span><span class="n">grids</span><span class="o">.</span><span class="n">ExtractTopography</span><span class="p">(</span>
+                <span class="n">remove</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># remove the inactive cells</span>
+                <span class="n">tolerance</span><span class="o">=</span><span class="mf">10.0</span> <span class="c1"># buffer around the topo surface</span>
+               <span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">temp_grid_cropped</span><span class="p">,</span> <span class="n">topo</span><span class="p">)</span>
+
+<span class="n">temp_roi</span> <span class="o">=</span> <span class="n">temp_grid</span><span class="o">.</span><span class="n">threshold</span><span class="p">([</span><span class="mf">175.</span><span class="p">,</span> <span class="mf">225.</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">well_locs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_well_path</span><span class="p">(</span><span class="s1">&#39;well_location_from_earth_model.csv&#39;</span><span class="p">))</span>
+<span class="n">well_locs</span> <span class="o">=</span> <span class="n">PVGeo</span><span class="o">.</span><span class="n">points_to_poly_data</span><span class="p">(</span><span class="n">well_locs</span><span class="p">[[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z (land surface)&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">clip_box</span><span class="p">(</span>
+                    <span class="n">gdc19</span><span class="o">.</span><span class="n">get_roi_bounds</span><span class="p">(),</span> <span class="n">invert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">WELLS</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">load_well_db</span><span class="p">()</span>
+<span class="n">proposed</span> <span class="o">=</span> <span class="n">PVGeo</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">AddCellConnToPoints</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">WELLS</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;well_new2&#39;</span><span class="p">))</span><span class="c1">#pyvista.MultiBlock()</span>
+
+<span class="n">well_5832</span> <span class="o">=</span> <span class="n">PVGeo</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">AddCellConnToPoints</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">WELLS</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;well_5832&#39;</span><span class="p">))</span>
+<span class="c1">#well_5832.set_active_scalar(&#39;ECGR&#39;)</span>
+<span class="n">well_Acord1</span> <span class="o">=</span> <span class="n">PVGeo</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">AddCellConnToPoints</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">WELLS</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;well_Acord1&#39;</span><span class="p">))</span>
+<span class="c1">#well_Acord1 = WELLS.set_active_scalar(&#39;GR_SPLICE (GAPI)&#39;)</span>
+</pre></div>
+</div>
+<p>load the gravity model</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gf</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">get_gravity_path</span><span class="p">(</span><span class="s1">&#39;forge_inverse_problem/RESULT_THRESHED.vtu&#39;</span><span class="p">)</span>
+<span class="n">grav_model</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">gf</span><span class="p">)</span>
+<span class="n">grav_model</span><span class="o">.</span><span class="n">active_scalar_name</span> <span class="o">=</span> <span class="s1">&#39;Magnitude&#39;</span>
+</pre></div>
+</div>
+<div class="section" id="plotting-helpers">
+<h2>Plotting Helpers<a class="headerlink" href="#plotting-helpers" title="Permalink to this headline">¶</a></h2>
+<p>Functions for adding datasets to a scene in a consistent manner</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POINT_SIZE</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">LINE_WIDTH</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">pyvista</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;window_size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">])</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">legend_color</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">parse_color</span><span class="p">(</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clip_it</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bounds</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">bounds</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">data</span>
+    <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">clip_box</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="n">invert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">add_topo</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">clip_it</span><span class="p">(</span><span class="n">topo</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="c1"># We can update this to change the texture</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">data</span><span class="p">,</span>
+               <span class="n">texture</span><span class="o">=</span><span class="s1">&#39;geo_aer&#39;</span><span class="p">,</span>
+               <span class="n">name</span><span class="o">=</span><span class="s1">&#39;topo&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span><span class="c1">#, opacity=0.85)</span>
+
+<span class="k">def</span> <span class="nf">add_faults</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">clip_it</span><span class="p">(</span><span class="n">surfaces</span><span class="p">[</span><span class="s1">&#39;negro_mag_fault&#39;</span><span class="p">],</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">f1</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;negro_mag_fault&#39;</span><span class="p">,</span>
+           <span class="n">show_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Negro Mag. Fault&#39;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">clip_it</span><span class="p">(</span><span class="n">surfaces</span><span class="p">[</span><span class="s1">&#39;opal_mound_fault&#39;</span><span class="p">],</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">f2</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;opal_mound_fault&#39;</span><span class="p">,</span>
+           <span class="n">show_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                   <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Opal Mound Fault&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">f1</span><span class="p">,</span> <span class="n">f2</span>
+
+<span class="k">def</span> <span class="nf">add_granite</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">clip_it</span><span class="p">(</span><span class="n">granitoid</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;top_granitoid&#39;</span><span class="p">,</span>
+               <span class="n">show_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span>
+               <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.65</span><span class="p">,</span> <span class="n">reset_camera</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+               <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Top of Granite Layer&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">add_boundary</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">clip_it</span><span class="p">(</span><span class="n">boundary_tube</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;boundary&#39;</span><span class="p">,</span>  <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span>
+                      <span class="n">render_lines_as_tubes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                      <span class="n">label</span><span class="o">=</span><span class="s1">&#39;FORGE Boundary&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">add_walls</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">clip_it</span><span class="p">(</span><span class="n">walls</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;walls&#39;</span><span class="p">,</span>
+               <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+
+<span class="n">temp_d_params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="n">stitle</span><span class="o">=</span><span class="s1">&#39;Temperature (C)&#39;</span><span class="p">,</span>
+                     <span class="n">clim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">add_temp_model</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">contour</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">contour</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">temp_grid</span><span class="o">.</span><span class="n">cell_data_to_point_data</span><span class="p">()</span><span class="o">.</span><span class="n">contour</span><span class="p">([</span><span class="mi">175</span><span class="p">,</span> <span class="mi">225</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">temp_grid</span><span class="o">.</span><span class="n">threshold</span><span class="p">([</span><span class="mi">175</span><span class="p">,</span> <span class="mi">225</span><span class="p">])</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">clip_it</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;temp_grid&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="n">opacity</span><span class="p">,</span>
+                      <span class="c1">#label=&#39;Geostatistical Temperature Model&#39;,</span>
+                      <span class="o">**</span><span class="n">temp_d_params</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">add_temp_probes</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">clip_it</span><span class="p">(</span><span class="n">temperature_data</span><span class="p">[</span><span class="s1">&#39;temperature&#39;</span><span class="p">],</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;temp&#39;</span><span class="p">,</span>
+               <span class="n">point_size</span><span class="o">=</span><span class="n">POINT_SIZE</span><span class="p">,</span> <span class="n">render_points_as_spheres</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="c1">#label=&#39;Temperature Probes&#39;,</span>
+               <span class="o">**</span><span class="n">temp_d_params</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">add_temp_surfs</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;surface&#39;</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">clip_it</span><span class="p">(</span><span class="n">temp_175c</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="c1"># add the temperature boundaries</span>
+    <span class="n">s1</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;temp_175c&#39;</span><span class="p">,</span>
+               <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="o">**</span><span class="n">temp_d_params</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">clip_it</span><span class="p">(</span><span class="n">temp_225c</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">s2</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;temp_225c&#39;</span><span class="p">,</span>
+               <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="o">**</span><span class="n">temp_d_params</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span>
+
+
+<span class="k">def</span> <span class="nf">add_well_collars</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">clip_it</span><span class="p">(</span><span class="n">well_locs</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;well_locations&#39;</span><span class="p">,</span>
+                      <span class="n">point_size</span><span class="o">=</span><span class="n">POINT_SIZE</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkorange&#39;</span><span class="p">,</span>
+                      <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Well Locations&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">add_well_traj</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">WELLS</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;WELLS&#39;</span><span class="p">,</span>
+                      <span class="n">reset_camera</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">render_lines_as_tubes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                      <span class="p">)</span>
+
+<span class="n">WELL_COLOR</span> <span class="o">=</span> <span class="s1">&#39;mediumvioletred&#39;</span>
+<span class="k">def</span> <span class="nf">add_well_traj_proposed</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">proposed</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">WELL_COLOR</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;proposed-wells&#39;</span><span class="p">,</span>
+                      <span class="n">reset_camera</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">render_lines_as_tubes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="n">LINE_WIDTH</span><span class="p">,</span>
+                     <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Proposed Well&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">add_wells_with_data</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Gamma Ray Log (GAPI)&#39;</span> <span class="c1"># Shows up as label on scalar bar</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">clip_it</span><span class="p">(</span><span class="n">well_5832</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">w1</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="s1">&#39;ECGR&#39;</span><span class="p">,</span>
+                   <span class="n">name</span><span class="o">=</span><span class="s1">&#39;5832&#39;</span><span class="p">,</span> <span class="n">clim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">200</span><span class="p">],</span>
+                   <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">stitle</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
+                   <span class="n">render_lines_as_tubes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">clip_it</span><span class="p">(</span><span class="n">well_Acord1</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">w2</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">data</span><span class="p">,</span>
+                   <span class="n">scalars</span><span class="o">=</span><span class="s1">&#39; GR_SPLICE (GAPI)&#39;</span><span class="p">,</span>
+                   <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Acord1&#39;</span><span class="p">,</span>
+                   <span class="n">clim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;viridis&#39;</span><span class="p">,</span>
+                   <span class="n">stitle</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
+                   <span class="n">render_lines_as_tubes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span>
+
+
+<span class="k">def</span> <span class="nf">add_wells_with_data_solid</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">clip_it</span><span class="p">(</span><span class="n">well_5832</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">w1</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">data</span><span class="p">,</span>
+                   <span class="n">name</span><span class="o">=</span><span class="s1">&#39;5832&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span>
+                   <span class="n">render_lines_as_tubes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">clip_it</span><span class="p">(</span><span class="n">well_Acord1</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">w2</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">data</span><span class="p">,</span>
+                   <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Acord1&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span>
+                    <span class="n">render_lines_as_tubes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span>
+
+
+
+
+<span class="k">def</span> <span class="nf">add_grav_model</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.25</span><span class="p">]):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">grav_model</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="mf">0.07</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">clip_it</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">n_points</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;grav_model&#39;</span><span class="p">,</span> <span class="n">clim</span><span class="o">=</span><span class="n">rng</span><span class="p">,</span>
+                      <span class="n">opacity</span><span class="o">=</span><span class="n">opacity</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="p">,</span>
+                    <span class="n">stitle</span><span class="o">=</span><span class="s1">&#39;Inverted Density Model&#39;</span>
+                      <span class="c1">#label=&#39;Density Model&#39;,</span>
+                        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="figure-1">
+<h2>Figure 1<a class="headerlink" href="#figure-1" title="Permalink to this headline">¶</a></h2>
+<p>This figure shows the a model of Milford Valley, Utah with topography, fault,
+granite, FORGE site and well locations and data</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fig_1</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">add_topo</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="n">add_faults</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="n">add_granite</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="n">add_boundary</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="n">add_well_collars</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="n">add_well_traj</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="n">add_wells_with_data_solid</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="k">return</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">fig_1</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">314607.07454842806</span><span class="p">,</span> <span class="mf">4234127.240330922</span><span class="p">,</span> <span class="mf">12678.810422767268</span><span class="p">),</span>
+                     <span class="p">(</span><span class="mf">337504.84888541873</span><span class="p">,</span> <span class="mf">4261501.390341784</span><span class="p">,</span> <span class="mf">138.79188840111613</span><span class="p">),</span>
+                     <span class="p">(</span><span class="mf">0.22757507410880431</span><span class="p">,</span> <span class="mf">0.24175047512873185</span><span class="p">,</span> <span class="mf">0.9432742408331761</span><span class="p">)]</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show_grid</span><span class="p">()</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">bcolor</span><span class="o">=</span><span class="n">legend_color</span><span class="p">,</span> <span class="n">border</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">cpos</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">auto_close</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># p.export_vtkjs(gdc19.EXPORT_PATH.format(&#39;figure-01&#39;))</span>
+<span class="n">p</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="s1">&#39;figure-01.png&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">cpos</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="figure-2">
+<h2>Figure 2<a class="headerlink" href="#figure-2" title="Permalink to this headline">¶</a></h2>
+<p>This figure shows a model of Milford Valley, Utah with topography, fault,
+granite, FORGE site and well, well logs, and temperature locations and data</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fig_2</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">fig_1</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="n">add_wells_with_data</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="n">add_temp_probes</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+<span class="c1">#     add_temp_surfs(p, bounds)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">fig_2</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="n">add_temp_model</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="o">.</span><span class="mi">65</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">319034.6767280643</span><span class="p">,</span> <span class="mf">4229153.193113267</span><span class="p">,</span> <span class="mf">2134.2689148357804</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">337792.27022585954</span><span class="p">,</span> <span class="mf">4262182.34857588</span><span class="p">,</span> <span class="o">-</span><span class="mf">528.1616734381239</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">0.03428354122002461</span><span class="p">,</span> <span class="mf">0.060941228582444995</span><span class="p">,</span> <span class="mf">0.9975524073753104</span><span class="p">)]</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">show_grid</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">bcolor</span><span class="o">=</span><span class="n">legend_color</span><span class="p">,</span> <span class="n">border</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">cpos</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">auto_close</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># p.export_vtkjs(gdc19.EXPORT_PATH.format(&#39;figure-02&#39;))</span>
+<span class="n">p</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="s1">&#39;figure-02.png&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">cpos</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="figure-3">
+<h2>Figure 3<a class="headerlink" href="#figure-3" title="Permalink to this headline">¶</a></h2>
+<p>This figure shows a model of Milford Valley, Utah cropped from the north side
+of the FORGE site to better view the subsurface within the FORGE boundary</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ROI_BOX</span> <span class="o">=</span> <span class="p">[</span><span class="mf">329924.98816</span><span class="p">,</span> <span class="mf">344152.930125</span><span class="p">,</span> <span class="mf">4252833.48213</span><span class="p">,</span>
+              <span class="mf">4264500.</span><span class="p">,</span>
+           <span class="o">-</span><span class="mf">5000.0</span><span class="p">,</span> <span class="mf">5000.0</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">fig_3</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">fig_2</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+<span class="c1">#     p.add_mesh(pyvista.Box(gdc19.get_roi_bounds()).outline(), color=&#39;k&#39;)</span>
+<span class="c1">#     p.add_mesh(pyvista.Box(ROI_BOX).outline(), color=&#39;k&#39;)</span>
+
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">fig_3</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">ROI_BOX</span><span class="p">)</span>
+<span class="n">add_temp_model</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">ROI_BOX</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="o">.</span><span class="mi">65</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show_grid</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">bcolor</span><span class="o">=</span><span class="n">legend_color</span><span class="p">,</span> <span class="n">border</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="p">)</span>
+<span class="c1"># p.camera_position = [(343748.9865580256, 4274071.829819304, -45.893656221421054),</span>
+<span class="c1">#      (335873.1170201431, 4261751.962920492, -297.42280206922646),</span>
+<span class="c1">#      (-0.02664145165280376, -0.0033777827209346117, 0.9996393467834896)]</span>
+<span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">334281.36331699195</span><span class="p">,</span> <span class="mf">4276292.535297218</span><span class="p">,</span> <span class="o">-</span><span class="mf">668.3030992158856</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">335928.59853397467</span><span class="p">,</span> <span class="mf">4261761.612826868</span><span class="p">,</span> <span class="o">-</span><span class="mf">771.3399610873013</span><span class="p">),</span>
+ <span class="p">(</span><span class="o">-</span><span class="mf">0.010085221763558642</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.008233535185890598</span><span class="p">,</span> <span class="mf">0.9999152450084572</span><span class="p">)]</span>
+<span class="n">cpos</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">auto_close</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># p.export_vtkjs(gdc19.EXPORT_PATH.format(&#39;figure-03&#39;))</span>
+<span class="n">p</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="s1">&#39;figure-03.png&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">cpos</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="figure-4">
+<h2>Figure 4<a class="headerlink" href="#figure-4" title="Permalink to this headline">¶</a></h2>
+<p>This figure shows a model of Milford Valley, Utah cropped to better view the
+FORGE site subsurface and includes our team’s proposed well location and
+trajectory (red).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fig_4</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">fig_3</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="n">add_well_traj_proposed</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="n">add_walls</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+
+
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">fig_4</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">ROI_BOX</span><span class="p">)</span>
+<span class="n">add_temp_model</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">ROI_BOX</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span> <span class="o">.</span><span class="mi">65</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show_grid</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">bcolor</span><span class="o">=</span><span class="n">legend_color</span><span class="p">,</span> <span class="n">border</span><span class="o">=</span><span class="kc">True</span><span class="p">,)</span>
+<span class="c1"># p.camera_position = [(338420.51700107113, 4274437.238773895, 2955.1608950208406),</span>
+<span class="c1">#                      (336736.7547587104, 4262114.162538592, -288.48406559676073),</span>
+<span class="c1">#                      (-0.04936350860775744, -0.24792338675624506, 0.9675211823610093)]</span>
+<span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">334281.36331699195</span><span class="p">,</span> <span class="mf">4276292.535297218</span><span class="p">,</span> <span class="o">-</span><span class="mf">668.3030992158856</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">335928.59853397467</span><span class="p">,</span> <span class="mf">4261761.612826868</span><span class="p">,</span> <span class="o">-</span><span class="mf">771.3399610873013</span><span class="p">),</span>
+ <span class="p">(</span><span class="o">-</span><span class="mf">0.010085221763558642</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.008233535185890598</span><span class="p">,</span> <span class="mf">0.9999152450084572</span><span class="p">)]</span>
+<span class="n">cpos</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">auto_close</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># p.export_vtkjs(gdc19.EXPORT_PATH.format(&#39;figure-04&#39;))</span>
+<span class="n">p</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="s1">&#39;figure-04.png&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">cpos</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="figure-5">
+<h2>Figure 5<a class="headerlink" href="#figure-5" title="Permalink to this headline">¶</a></h2>
+<p>This figure shows a model of Milford Valley, Utah with topography, fault,
+granite, FORGE site and well, well logs, proposed well, temperature, and
+gravity locations and data</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fig_5</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">fig_4</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+    <span class="n">add_grav_model</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+
+
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">fig_5</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">ROI_BOX</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">remove_actor</span><span class="p">(</span><span class="s1">&#39;walls&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show_grid</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">bcolor</span><span class="o">=</span><span class="n">legend_color</span><span class="p">,</span> <span class="n">border</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">327252.94475250016</span><span class="p">,</span> <span class="mf">4277460.796102717</span><span class="p">,</span> <span class="o">-</span><span class="mf">2027.954347716202</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">335281.2562947662</span><span class="p">,</span> <span class="mf">4260510.214867136</span><span class="p">,</span> <span class="o">-</span><span class="mf">486.54134488200475</span><span class="p">),</span>
+ <span class="p">(</span><span class="o">-</span><span class="mf">0.036117608696067414</span><span class="p">,</span> <span class="mf">0.07352368982670517</span><span class="p">,</span> <span class="mf">0.996639245352271</span><span class="p">)]</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">auto_close</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># p.export_vtkjs(gdc19.EXPORT_PATH.format(&#39;figure-05&#39;))</span>
+<span class="n">p</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="s1">&#39;figure-05.png&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="figure-6">
+<h2>Figure 6<a class="headerlink" href="#figure-6" title="Permalink to this headline">¶</a></h2>
+<p>Show an aerial view of the proposed well’s location</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">fig_1</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+<span class="n">loc</span> <span class="o">=</span> <span class="n">proposed</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># add_well_traj_proposed(p)</span>
+<span class="n">loc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.8e3</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">Sphere</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="n">loc</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Proposed Well&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">WELL_COLOR</span><span class="p">)</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">335111.21558935504</span><span class="p">,</span> <span class="mf">4262955.412897479</span><span class="p">,</span> <span class="mf">10111.108956611326</span><span class="p">),</span>
+                     <span class="p">(</span><span class="mf">335111.21558935504</span><span class="p">,</span> <span class="mf">4262955.412897479</span><span class="p">,</span> <span class="mf">150.0</span><span class="p">),</span>
+                     <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)]</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show_grid</span><span class="p">()</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">bcolor</span><span class="o">=</span><span class="n">legend_color</span><span class="p">,</span> <span class="n">border</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">cpos</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">auto_close</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># p.export_vtkjs(gdc19.EXPORT_PATH.format(&#39;figure-06&#39;))</span>
+<span class="n">p</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="s1">&#39;figure-06.png&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">cpos</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-project-visual-inspection-long-submission-figures-py">
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/33abf3bb3450b2ff9760f9082b3cc03d/long-submission-figures.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">long-submission-figures.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/cb1feb267b0852d7496c0997f0084ca6/long-submission-figures.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">long-submission-figures.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="surface-decimation.html" class="btn btn-neutral float-right" title="Surface Decimation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="long-inspect-temperature.html" class="btn btn-neutral float-left" title="Inspect Temperature Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Bane Sullivan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Reproducible Project &mdash; 2019 Geothermal Design Challenge 0.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+        <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Surface Data" href="data-aggregation/00-surfaces.html" />
+    <link rel="prev" title="Dynamic Portfolio" href="../portfolio/dynamic.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 2019 Geothermal Design Challenge
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">2019 Geothermal Design Challenge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../team.html">Meet the Team</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Portfolio</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../portfolio/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../portfolio/static.html">Static Portfolio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../portfolio/dynamic.html">Dynamic Portfolio</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reproducible Project</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reproducible Project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#omf-data-collection">OMF Data Collection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data-aggregation/00-surfaces.html">Surface Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data-aggregation/01-gis.html">GIS Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data-aggregation/02-temperature.html">Temperature Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data-aggregation/03-well-proposed.html">Proposed Well</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gravity-inversion">Gravity Inversion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gravity-inversion/00-inspect-gravity-data.html">Inspect Gravity Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gravity-inversion/01-gravity-mesh-refine.html">Creating an Inversion Mesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gravity-inversion/02-tile-detrend.html">Tile and De-Trend</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#visual-inspection">Visual Inspection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="visual-inspection/long-inspect-gravity.html">Inspect Gravity Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visual-inspection/long-inspect-temperature.html">Inspect Temperature Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visual-inspection/long-submission-figures.html">Submission Figures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visual-inspection/surface-decimation.html">Surface Decimation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">2019 Geothermal Design Challenge</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Reproducible Project</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/OpenGeoVis/GeothermalDesignChallenge/blob/master/docs/project/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reproducible-project">
+<span id="sphx-glr-project"></span><h1>Reproducible Project<a class="headerlink" href="#reproducible-project" title="Permalink to this headline">¶</a></h1>
+<p>Here is a gallery of our project’s workflow.</p>
+<div style='clear:both'></div><div class="section" id="omf-data-collection">
+<span id="sphx-glr-project-data-aggregation"></span><h2>OMF Data Collection<a class="headerlink" href="#omf-data-collection" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="This notebook aggregates all the surface data for the FORGE site into a single Open Mining Form..."><div class="figure align-center" id="id1">
+<img alt="../_images/sphx_glr_00-surfaces_thumb.png" src="../_images/sphx_glr_00-surfaces_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="data-aggregation/00-surfaces.html#sphx-glr-project-data-aggregation-00-surfaces-py"><span class="std std-ref">Surface Data</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Convert all the GIS data to OMF"><div class="figure align-center" id="id2">
+<img alt="../_images/sphx_glr_01-gis_thumb.png" src="../_images/sphx_glr_01-gis_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="data-aggregation/01-gis.html#sphx-glr-project-data-aggregation-01-gis-py"><span class="std std-ref">GIS Data</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Temperature Data"><div class="figure align-center" id="id3">
+<img alt="../_images/sphx_glr_02-temperature_thumb.png" src="../_images/sphx_glr_02-temperature_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="data-aggregation/02-temperature.html#sphx-glr-project-data-aggregation-02-temperature-py"><span class="std std-ref">Temperature Data</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Proposed Well"><div class="figure align-center" id="id4">
+<img alt="../_images/sphx_glr_03-well-proposed_thumb.png" src="../_images/sphx_glr_03-well-proposed_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="data-aggregation/03-well-proposed.html#sphx-glr-project-data-aggregation-03-well-proposed-py"><span class="std std-ref">Proposed Well</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div style='clear:both'></div></div>
+<div class="section" id="gravity-inversion">
+<span id="sphx-glr-project-gravity-inversion"></span><h2>Gravity Inversion<a class="headerlink" href="#gravity-inversion" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="Here we take a look at what gravity data is available for the FORGE site"><div class="figure align-center" id="id5">
+<img alt="../_images/sphx_glr_00-inspect-gravity-data_thumb.png" src="../_images/sphx_glr_00-inspect-gravity-data_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="gravity-inversion/00-inspect-gravity-data.html#sphx-glr-project-gravity-inversion-00-inspect-gravity-data-py"><span class="std std-ref">Inspect Gravity Data</span></a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This creates a mesh for inverting the gravity data."><div class="figure align-center" id="id6">
+<img alt="../_images/sphx_glr_01-gravity-mesh-refine_thumb.png" src="../_images/sphx_glr_01-gravity-mesh-refine_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="gravity-inversion/01-gravity-mesh-refine.html#sphx-glr-project-gravity-inversion-01-gravity-mesh-refine-py"><span class="std std-ref">Creating an Inversion Mesh</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Tile the Inverse Problem and detrend the data"><div class="figure align-center" id="id7">
+<img alt="../_images/sphx_glr_02-tile-detrend_thumb.png" src="../_images/sphx_glr_02-tile-detrend_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="gravity-inversion/02-tile-detrend.html#sphx-glr-project-gravity-inversion-02-tile-detrend-py"><span class="std std-ref">Tile and De-Trend</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div style='clear:both'></div></div>
+<div class="section" id="visual-inspection">
+<span id="sphx-glr-project-visual-inspection"></span><h2>Visual Inspection<a class="headerlink" href="#visual-inspection" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="This notebook examines the inverted gravity model and shows off a useful PVGeo algorithm for rm..."><div class="figure align-center" id="id8">
+<img alt="../_images/sphx_glr_long-inspect-gravity_thumb.png" src="../_images/sphx_glr_long-inspect-gravity_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="visual-inspection/long-inspect-gravity.html#sphx-glr-project-visual-inspection-long-inspect-gravity-py"><span class="std std-ref">Inspect Gravity Model</span></a></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This notebook examines the temperature model and shows off a useful PVGeo algorithm for rmeove ..."><div class="figure align-center" id="id9">
+<img alt="../_images/sphx_glr_long-inspect-temperature_thumb.png" src="../_images/sphx_glr_long-inspect-temperature_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="visual-inspection/long-inspect-temperature.html#sphx-glr-project-visual-inspection-long-inspect-temperature-py"><span class="std std-ref">Inspect Temperature Model</span></a></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This notebook will recreate all of the figures for the competition submission."><div class="figure align-center" id="id10">
+<img alt="../_images/sphx_glr_long-submission-figures_thumb.png" src="../_images/sphx_glr_long-submission-figures_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="visual-inspection/long-submission-figures.html#sphx-glr-project-visual-inspection-long-submission-figures-py"><span class="std std-ref">Submission Figures</span></a></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Decimate some of the surfaces to make them more manageable with web renderings in VTK.js"><div class="figure align-center" id="id11">
+<img alt="../_images/sphx_glr_surface-decimation_thumb.png" src="../_images/sphx_glr_surface-decimation_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="visual-inspection/surface-decimation.html#sphx-glr-project-visual-inspection-surface-decimation-py"><span class="std std-ref">Surface Decimation</span></a></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div style='clear:both'></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="data-aggregation/00-surfaces.html" class="btn btn-neutral float-right" title="Surface Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../portfolio/dynamic.html" class="btn btn-neutral float-left" title="Dynamic Portfolio" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Bane Sullivan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -39,18 +39,18 @@ download_data()
 
 def setup():
     # Make consistent figures
-    vtki.set_plot_theme('doc')
-    vtki.rcParams['font']['size'] = 12
-    vtki.rcParams['font']['title_size'] = 12
-    vtki.rcParams['font']['label_size'] = 12
-    vtki.rcParams['use_panel'] = False
+    pyvista.set_plot_theme('doc')
+    pyvista.rcParams['font']['size'] = 12
+    pyvista.rcParams['font']['title_size'] = 12
+    pyvista.rcParams['font']['label_size'] = 12
+    pyvista.rcParams['use_panel'] = False
     # Save figures in specified directory
-    vtki.FIGURE_PATH = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__))), '../images/')
-    if not os.path.exists(vtki.FIGURE_PATH):
-        os.makedirs(vtki.FIGURE_PATH)
+    pyvista.FIGURE_PATH = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__))), '../images/')
+    if not os.path.exists(pyvista.FIGURE_PATH):
+        os.makedirs(pyvista.FIGURE_PATH)
     # Set up path to datafiles
     # try:
-    #     _ = os.environ['VTKI_OFF_SCREEN']
+    #     _ = os.environ['PYVISTA_OFF_SCREEN']
     #     travis = True
     # except KeyError
     #     travis = False

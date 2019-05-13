@@ -8,10 +8,10 @@ Temperature Data
 import gdc19
 
 ###############################################################################
-import vtki
+import pyvista
 import PVGeo
 import omf
-import omfvtk
+import omfvista
 import pandas as pd
 import numpy as np
 
@@ -48,7 +48,7 @@ temperature.validate()
 
 
 ###############################################################################
-temp = omfvtk.wrap(temperature)
+temp = omfvista.wrap(temperature)
 temp.plot()
 
 
@@ -59,11 +59,11 @@ temp.plot()
 # Prep temperature data for kriging in SGeMS
 
 # First, load the topography surface that was previously aggregated:
-surfaces = omfvtk.load_project(gdc19.get_project_path('surfaces.omf'))
+surfaces = omfvista.load_project(gdc19.get_project_path('surfaces.omf'))
 topo = surfaces['land_surface']
 
 
-p = vtki.Plotter()
+p = pyvista.Plotter()
 p.add_mesh(temp, cmap='coolwarm', point_size=10,
            render_points_as_spheres=True, stitle='Temperature')
 p.add_mesh(topo)
@@ -156,7 +156,7 @@ temp_model.validate()
 ###############################################################################
 # And one final sanity check
 
-omfvtk.wrap(temp_model).clip_box(gdc19.get_roi_bounds(), invert=False).plot(cmap='coolwarm')
+omfvista.wrap(temp_model).clip_box(gdc19.get_roi_bounds(), invert=False).plot(cmap='coolwarm')
 
 
 ###############################################################################

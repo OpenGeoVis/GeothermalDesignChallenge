@@ -12,7 +12,7 @@ and [Adam Kinard](https://github.com/akinard96)'s work on the
 ## Getting Started
 
 Be sure to regularly keep up with the project dependencies defined in the
-`requirements.txt` file as development of `PVGeo`, `vtki`, and `omfvtk` will be
+`requirements.txt` file as development of `PVGeo`, `pyvista`, and `omfvista` will be
 prioritized for this project:
 
 ```bash

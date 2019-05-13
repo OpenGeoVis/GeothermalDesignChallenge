@@ -1,7 +1,7 @@
 import datetime
-import vtki
+import pyvista
 import omf
-import omfvtk
+import omfvista
 import pandas as pd
 import PVGeo
 import warnings
@@ -15,14 +15,14 @@ def get_roi_bounds():
 
 
 def load_project():
-    return omfvtk.load_project(gdc19.get_omf_project_filename())
+    return omfvista.load_project(gdc19.get_omf_project_filename())
 
 
 def load_topo():
     proj = omf.OMFReader(gdc19.get_omf_project_filename()).get_project()
     for el in proj.elements:
         if el.name == 'land_surface':
-            return omfvtk.wrap(el)
+            return omfvista.wrap(el)
     raise RuntimeError('Topo is not in project file. Some one messed up.')
 
 

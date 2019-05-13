@@ -4,12 +4,12 @@ if sys.version_info >= (3, 0):
     import faulthandler
     faulthandler.enable()
 
-# -- vtki configuration ---------------------------------------------------
-import vtki
+# -- pyvista configuration ---------------------------------------------------
+import pyvista
 # Manage errors
-vtki.set_error_output_file('errors.txt')
+pyvista.set_error_output_file('errors.txt')
 # Ensure that offscreen rendering is used for docs generation
-vtki.OFF_SCREEN = True # Not necessary - simply an insurance policy
+pyvista.OFF_SCREEN = True # Not necessary - simply an insurance policy
 
 # -- gdc19 configuration ---------------------------------------------------
 sys.path.append('../')
@@ -177,8 +177,8 @@ sphinx_gallery_conf = {
     # directory where function granular galleries are stored
     "backreferences_dir": False,
     # Modules for which function level galleries are created.  In
-    "doc_module": "vtki",
-    "image_scrapers": (vtki.Scraper(), 'matplotlib'),
+    "doc_module": "pyvista",
+    "image_scrapers": (pyvista.Scraper(), 'matplotlib'),
     "thumbnail_size": (350, 350),
 }
 

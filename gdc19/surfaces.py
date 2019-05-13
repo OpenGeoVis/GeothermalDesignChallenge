@@ -1,5 +1,5 @@
 import PVGeo
-import vtki
+import pyvista
 import vtk
 import numpy as np
 import pandas as pd
@@ -22,7 +22,7 @@ def grid_surface(points):
     xx = xx[0:-2, :]
     yy = yy[0:-2, :]
     zz = zz[0:-2, :]
-    return vtki.StructuredGrid(xx, yy, zz).elevation()
+    return pyvista.StructuredGrid(xx, yy, zz).elevation()
 
 def read_surface_verts(filename, grid=False):
     surf = pd.read_csv(filename)
@@ -37,7 +37,7 @@ def delauney(polydata):
     alg.SetProjectionPlaneMode(vtk.VTK_BEST_FITTING_PLANE)
     alg.SetInputDataObject(polydata)
     alg.Update()
-    return vtki.wrap(alg.GetOutputDataObject(0))
+    return pyvista.wrap(alg.GetOutputDataObject(0))
 
 
 def surf_to_omf(filename, name, description, elevation=False):

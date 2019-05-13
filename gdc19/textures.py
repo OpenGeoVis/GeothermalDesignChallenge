@@ -1,5 +1,5 @@
 import vtk
-import vtki
+import pyvista
 import numpy as np
 import omf
 import properties
@@ -21,7 +21,7 @@ def load_texture_to_omf(filename, name, description):
         raise RuntimeError('No associated tif file to recover spatial reference.')
     # Now Grab the three corners of their bounding box
     #-- This guarantees we grab the right points
-    bounds = vtki.PolyData(points).bounds
+    bounds = pyvista.PolyData(points).bounds
     origin = np.array([bounds[0], bounds[2], bounds[4]]) # BOTTOM LEFT CORNER
     point_u = np.array([bounds[1], bounds[2], bounds[4]]) # BOTTOM RIGHT CORNER
     point_v = np.array([bounds[0], bounds[3], bounds[4]]) # TOP LEFT CORNER
@@ -41,12 +41,12 @@ def load_attach_texture(dataset, filename, name):
     import gdal
     # Load a raster
     ds = gdal.Open(filename)
-    texture = vtki.load_texture(filename)
+    texture = pyvista.load_texture(filename)
     # Grab the Groung Control Points
     points = np.array([get_point(gcp) for gcp in ds.GetGCPs()])
     # Now Grab the three corners of their bounding box
     #-- This guarantees we grab the right points
-    bounds = vtki.PolyData(points).bounds
+    bounds = pyvista.PolyData(points).bounds
     origin = [bounds[0], bounds[2], bounds[4]] # BOTTOM LEFT CORNER
     point_u = [bounds[1], bounds[2], bounds[4]] # BOTTOM RIGHT CORNER
     point_v = [bounds[0], bounds[3], bounds[4]] # TOP LEFT CORNER

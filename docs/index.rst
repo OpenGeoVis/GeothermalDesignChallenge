@@ -58,10 +58,10 @@ new data is added to a 3D scene.
 The tools used in this effort include tools made by Bane and other open-source
 software common in the geosciences:
 
-- vtki: http://docs.vtki.org (Bane Sullivan)
-- PVGeo: http://pvgeo.org (Bane Sullivan)
+- PyVista: http://docs.pyvista.org (Bane Sullivan & Alex Kaszynski)
+- PVGeo: http://pvgeo.org (Bane Sullivan & Whitney Trainor-Guitton)
 - The Open Mining Format: https://omf.readthedocs.io/en/latest/
-- omfvtk: https://github.com/OpenGeoVis/omfvtk (Bane Sullivan)
+- omfvista: https://github.com/OpenGeoVis/omfvista (Bane Sullivan)
 - ParaView: http://paraview.org
 - SGeMS: http://sgems.sourceforge.net
 - SimPEG: http://www.simpeg.xyz

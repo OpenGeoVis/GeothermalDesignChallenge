@@ -3,7 +3,7 @@ import numpy as np
 import omf
 
 import vtk
-import vtki
+import pyvista
 
 # sklearn's KDTree is fast: use it if available
 from sklearn.neighbors import KDTree as Tree
@@ -27,7 +27,7 @@ def _makeLineCell(idx0, idx1):
     return aLine
 
 def polygon_to_vtk(polygon, topo_points):
-    """Converts a polygon shape to a vtki.PolyData object.
+    """Converts a polygon shape to a pyvista.PolyData object.
     This assumes the points are ordered.
     """
     pts = np.array(polygon.points)
@@ -42,9 +42,9 @@ def polygon_to_vtk(polygon, topo_points):
     cells.InsertNextCell(cell)
     # Build the output
     pdo = vtk.vtkPolyData()
-    pdo.SetPoints(vtki.vtk_points(pts))
+    pdo.SetPoints(pyvista.vtk_points(pts))
     pdo.SetLines(cells)
-    return vtki.wrap(pdo)
+    return pyvista.wrap(pdo)
 
 
 def polygon_to_omf(polygon, topo_points, description='Line set polygon', name='polygon'):
@@ -74,11 +74,11 @@ VTK_CONVERTERS = {
 }
 
 def read_shape_file_to_vtk(filename, topo_points):
-    """Read all the features of a shapefile into vtki objects.
+    """Read all the features of a shapefile into pyvista objects.
     Use the topo_points argument to fill the Z component of 2D points
     """
     shp = shapefile.Reader(filename)
-    output = vtki.MultiBlock()
+    output = pyvista.MultiBlock()
     for i, feature in enumerate(shp.shapeRecords()):
         shape = feature.shape
         try:

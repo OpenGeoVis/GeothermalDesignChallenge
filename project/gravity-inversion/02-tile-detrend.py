@@ -11,11 +11,11 @@ import gdc19
 import numpy as np
 from discretize import TreeMesh
 from discretize.utils import meshutils
-import omfvtk
+import omfvista
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 from SimPEG.Utils import mkvc, modelutils, PlotUtils, plot2Ddata
-import vtki
+import pyvista
 
 
 ###############################################################################
@@ -24,9 +24,9 @@ import vtki
 #
 # Load the mesh and data from the previous example
 
-grav_data = vtki.read(gdc19.get_gravity_path('grav_obs.vtk'))
+grav_data = pyvista.read(gdc19.get_gravity_path('grav_obs.vtk'))
 xyz = grav_data.points
-survey = vtki.PolyData(xyz)
+survey = pyvista.PolyData(xyz)
 
 mesh = TreeMesh.readUBC(gdc19.get_gravity_path('mesh.msh'))
 actv = mesh.readModelUBC(gdc19.get_gravity_path('actv.mod'))

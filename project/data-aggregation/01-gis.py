@@ -17,9 +17,9 @@ import gdc19
 
 ###############################################################################
 
-import vtki
+import pyvista
 import omf
-import omfvtk
+import omfvista
 import pandas as pd
 import numpy as np
 
@@ -39,7 +39,7 @@ land_surface = gdc19.surf_to_omf(
     description
     )
 land_surface.validate()
-topo = omfvtk.wrap(land_surface)
+topo = omfvista.wrap(land_surface)
 
 ###############################################################################
 # Load the shape files
@@ -55,7 +55,7 @@ boundary.name = 'boundary'
 boundary.validate()
 
 ###############################################################################
-omfvtk.wrap(boundary).plot(show_edges=False)
+omfvista.wrap(boundary).plot(show_edges=False)
 
 
 ###############################################################################

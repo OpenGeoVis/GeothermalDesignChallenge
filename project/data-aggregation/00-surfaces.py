@@ -13,9 +13,9 @@ Here we load all the surface data and create `omf.SurfaceElement` objects.
 import gdc19
 
 ###############################################################################
-import vtki
+import pyvista
 import omf
-import omfvtk
+import omfvista
 import pandas as pd
 import numpy as np
 
@@ -34,7 +34,7 @@ top_granitoid = gdc19.surf_to_omf(
 top_granitoid.validate()
 
 ###############################################################################
-omfvtk.wrap(top_granitoid).plot(show_edges=False)
+omfvista.wrap(top_granitoid).plot(show_edges=False)
 
 ###############################################################################
 description='Negro Mag Fault used in the Phase 2B earth model. ' \
@@ -47,7 +47,7 @@ negro_mag_fault = gdc19.surf_to_omf(
     )
 negro_mag_fault.validate()
 ###############################################################################
-omfvtk.wrap(negro_mag_fault).plot(show_edges=False)
+omfvista.wrap(negro_mag_fault).plot(show_edges=False)
 
 ###############################################################################
 
@@ -63,7 +63,7 @@ opal_mound_fault = gdc19.surf_to_omf(
 opal_mound_fault.validate()
 
 ###############################################################################
-omfvtk.wrap(opal_mound_fault).plot(show_edges=False)
+omfvista.wrap(opal_mound_fault).plot(show_edges=False)
 
 ###############################################################################
 
@@ -87,7 +87,7 @@ temp_175c.data = [
 temp_175c.validate()
 ###############################################################################
 
-omfvtk.wrap(temp_175c).plot(show_edges=False)
+omfvista.wrap(temp_175c).plot(show_edges=False)
 
 ###############################################################################
 
@@ -111,7 +111,7 @@ temp_225c.validate()
 
 
 ###############################################################################
-omfvtk.wrap(temp_225c).plot(show_edges=False)
+omfvista.wrap(temp_225c).plot(show_edges=False)
 
 
 ###############################################################################
@@ -158,7 +158,7 @@ land_surface.textures = [geo_aer, topo_map, geo_no_aer]
 land_surface.validate()
 
 ###############################################################################
-topo = omfvtk.wrap(land_surface)
+topo = omfvista.wrap(land_surface)
 
 ###############################################################################
 

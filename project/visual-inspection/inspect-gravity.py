@@ -14,26 +14,26 @@ algorithm for rmeove parts of a mesh/model that are baove a topographic surface.
 import gdc19
 
 ###############################################################################
-import vtki
+import pyvista
 import PVGeo
-import omfvtk
+import omfvista
 import pandas as pd
 import numpy as np
 
 ###############################################################################
 #  Load all the datasets created in the data aggreagation section
 
-gis_data = omfvtk.load_project(gdc19.get_project_path('gis.omf'))
+gis_data = omfvista.load_project(gdc19.get_project_path('gis.omf'))
 print(gis_data.keys())
 
 ###############################################################################
-surfaces = omfvtk.load_project(gdc19.get_project_path('surfaces.omf'))
+surfaces = omfvista.load_project(gdc19.get_project_path('surfaces.omf'))
 print(surfaces.keys())
 
 ###############################################################################
 # load the gravity model
 gf = gdc19.get_gravity_path('forge_inverse_problem/RESULT_THRESHED.vtu')
-grav_model = vtki.read(gf)
+grav_model = pyvista.read(gf)
 grav_model.active_scalar_name = 'Magnitude'
 
 ###############################################################################
@@ -41,7 +41,7 @@ grav_model.active_scalar_name = 'Magnitude'
 topo = surfaces['land_surface']
 granitoid = surfaces['top_granitoid']
 
-p = vtki.Plotter()
+p = pyvista.Plotter()
 p.add_mesh(topo)
 p.add_mesh(granitoid, color=True)
 p.show()
@@ -62,7 +62,7 @@ granitoid = PVGeo.grids.ExtractTopography(
                 tolerance=10.0 # buffer around the topo surface
             ).apply(granitoid, topo)
 
-p = vtki.Plotter()
+p = pyvista.Plotter()
 p.add_mesh(topo)
 p.add_mesh(granitoid, color=True)
 p.show()
@@ -117,7 +117,7 @@ print('Gravity model Region is {:.2f} cubic kilometers.'.format(grav_roi.volume 
 temp_175c = surfaces['temp_175c']
 temp_225c = surfaces['temp_225c']
 
-p = vtki.Plotter()
+p = pyvista.Plotter()
 p.add_mesh(grav_roi, opacity=0.7, **grav_kwargs)
 p.add_mesh(temp_175c, **temp_kwargs)
 p.add_mesh(temp_225c, **temp_kwargs)
@@ -131,7 +131,7 @@ boundary = gis_data['boundary']
 boundary_tube = PVGeo.filters.AddCellConnToPoints(cell_type=4,
                     close_loop=True).apply(boundary).tube(radius=30)
 
-p = vtki.Plotter()
+p = pyvista.Plotter()
 p.add_mesh(topo, opacity=0.7)
 p.add_mesh(grav_roi, **grav_kwargs)
 p.add_mesh(granitoid, color=True)

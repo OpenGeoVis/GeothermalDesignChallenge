@@ -10,9 +10,9 @@ import gdc19
 import numpy as np
 from discretize import TreeMesh
 from discretize.utils import meshutils
-import omfvtk
+import omfvista
 from SimPEG.Utils import mkvc, modelutils
-import vtki
+import pyvista
 
 
 ###############################################################################
@@ -20,7 +20,7 @@ import vtki
 # +++++++++++++
 
 # Load the topography surface that was previously aggregated:
-surfaces = omfvtk.load_project(gdc19.get_project_path('surfaces.omf'))
+surfaces = omfvista.load_project(gdc19.get_project_path('surfaces.omf'))
 surface = surfaces['land_surface']
 surface = surface.elevation()
 surface.set_active_scalar('Elevation')
@@ -29,13 +29,13 @@ topo = surface.points
 
 ###############################################################################
 # Load the gravity data
-grav_data = vtki.read(gdc19.get_gravity_path('grav_obs.vtk'))
+grav_data = pyvista.read(gdc19.get_gravity_path('grav_obs.vtk'))
 xyz = grav_data.points
-survey = vtki.PolyData(xyz)
+survey = pyvista.PolyData(xyz)
 
 ###############################################################################
 # Visualize the survey on the topo
-plotter = vtki.Plotter()
+plotter = pyvista.Plotter()
 plotter.add_mesh(surface, color='grey')
 plotter.add_mesh(survey, color='k', point_size=5)
 plotter.show()
@@ -89,7 +89,7 @@ actv = modelutils.surface2ind_topo(mesh, topo, gridLoc='N')
 
 ###############################################################################
 
-def plot_vtki(mesh, model, actv, interactive=False, use_panel=True, clim=None):
+def plot_pyvista(mesh, model, actv, interactive=False, use_panel=True, clim=None):
     # Convert TreeMesh to VTK
     dataset = mesh.toVTK()
     dataset.cell_arrays['Magnitude'] = model
@@ -100,7 +100,7 @@ def plot_vtki(mesh, model, actv, interactive=False, use_panel=True, clim=None):
     threshed = dataset.threshold(0.5, scalars='Active')
 
     # Instantiate plotting window
-    plotter = vtki.Plotter(notebook=not interactive)
+    plotter = pyvista.Plotter(notebook=not interactive)
     # Show axes labels
     plotter.show_grid(all_edges=False,)
     # Add a bounding box of original mesh to see total extent
@@ -132,7 +132,7 @@ def plot_vtki(mesh, model, actv, interactive=False, use_panel=True, clim=None):
     plotter.camera_position = [-1,-1,1]
     return plotter.show()
 
-plot_vtki(mesh, np.log10(mesh.vol), actv, False, False)
+plot_pyvista(mesh, np.log10(mesh.vol), actv, False, False)
 
 ###############################################################################
 # Save the mesh for use in an inversion

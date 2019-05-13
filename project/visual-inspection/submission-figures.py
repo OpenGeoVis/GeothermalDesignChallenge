@@ -12,24 +12,24 @@ This notebook will recreate all of the figures for the competition submission.
 import gdc19
 
 ###############################################################################
-import vtki
+import pyvista
 import PVGeo
-import omfvtk
+import omfvista
 import pandas as pd
 import numpy as np
 
 ###############################################################################
 #  Load all the datasets created in the data aggreagation section
 
-gis_data = omfvtk.load_project(gdc19.get_project_path('gis.omf'))
+gis_data = omfvista.load_project(gdc19.get_project_path('gis.omf'))
 print(gis_data.keys())
 
 ###############################################################################
-surfaces = omfvtk.load_project(gdc19.get_project_path('surfaces.omf'))
+surfaces = omfvista.load_project(gdc19.get_project_path('surfaces.omf'))
 print(surfaces.keys())
 
 ###############################################################################
-temperature_data = omfvtk.load_project(gdc19.get_project_path('temperature.omf'))
+temperature_data = omfvista.load_project(gdc19.get_project_path('temperature.omf'))
 print(temperature_data.keys())
 
 ###############################################################################
@@ -73,7 +73,7 @@ well_locs = PVGeo.points_to_poly_data(well_locs[['x', 'y', 'z (land surface)']].
                     gdc19.get_roi_bounds(), invert=False)
 
 WELLS = gdc19.load_well_db()
-proposed = PVGeo.filters.AddCellConnToPoints().apply(WELLS.pop('well_new2'))#vtki.MultiBlock()
+proposed = PVGeo.filters.AddCellConnToPoints().apply(WELLS.pop('well_new2'))#pyvista.MultiBlock()
 
 well_5832 = PVGeo.filters.AddCellConnToPoints().apply(WELLS.pop('well_5832'))
 #well_5832.set_active_scalar('ECGR')
@@ -83,7 +83,7 @@ well_Acord1 = PVGeo.filters.AddCellConnToPoints().apply(WELLS.pop('well_Acord1')
 ###############################################################################
 # load the gravity model
 gf = gdc19.get_gravity_path('forge_inverse_problem/RESULT_THRESHED.vtu')
-grav_model = vtki.read(gf)
+grav_model = pyvista.read(gf)
 grav_model.active_scalar_name = 'Magnitude'
 
 
@@ -95,8 +95,8 @@ grav_model.active_scalar_name = 'Magnitude'
 
 POINT_SIZE = 15
 LINE_WIDTH = 15
-vtki.rcParams['window_size'] = np.array([1024, 768]) * 2
-legend_color = vtki.parse_color('lightgrey')
+pyvista.rcParams['window_size'] = np.array([1024, 768]) * 2
+legend_color = pyvista.parse_color('lightgrey')
 
 ###############################################################################
 
@@ -283,7 +283,7 @@ def fig_1(p, bounds=None):
     add_wells_with_data_solid(p, bounds)
     return
 
-p = vtki.Plotter()
+p = pyvista.Plotter()
 fig_1(p)
 p.camera_position = [(314607.07454842806, 4234127.240330922, 12678.810422767268),
                      (337504.84888541873, 4261501.390341784, 138.79188840111613),
@@ -310,7 +310,7 @@ def fig_2(p, bounds=None):
     add_temp_probes(p, bounds)
 #     add_temp_surfs(p, bounds)
 
-p = vtki.Plotter()
+p = pyvista.Plotter()
 fig_2(p)
 add_temp_model(p, None, False, .65)
 p.camera_position = [(319034.6767280643, 4229153.193113267, 2134.2689148357804),
@@ -338,11 +338,11 @@ ROI_BOX = [329924.98816, 344152.930125, 4252833.48213,
 
 def fig_3(p, bounds=None):
     fig_2(p, bounds)
-#     p.add_mesh(vtki.Box(gdc19.get_roi_bounds()).outline(), color='k')
-#     p.add_mesh(vtki.Box(ROI_BOX).outline(), color='k')
+#     p.add_mesh(pyvista.Box(gdc19.get_roi_bounds()).outline(), color='k')
+#     p.add_mesh(pyvista.Box(ROI_BOX).outline(), color='k')
 
 
-p = vtki.Plotter()
+p = pyvista.Plotter()
 fig_3(p, ROI_BOX)
 add_temp_model(p, ROI_BOX, False, .65)
 p.show_grid()
@@ -374,7 +374,7 @@ def fig_4(p, bounds=None):
 
 
 
-p = vtki.Plotter()
+p = pyvista.Plotter()
 fig_4(p, ROI_BOX)
 add_temp_model(p, ROI_BOX, opacity= .65)
 p.show_grid()
@@ -405,7 +405,7 @@ def fig_5(p, bounds=None):
 
 
 
-p = vtki.Plotter()
+p = pyvista.Plotter()
 fig_5(p, ROI_BOX)
 p.remove_actor('walls')
 p.show_grid()
@@ -424,13 +424,13 @@ p.close()
 #
 # Show an aerial view of the proposed well's location
 
-p = vtki.Plotter()
+p = pyvista.Plotter()
 fig_1(p)
 
 loc = proposed.points[0]
 # add_well_traj_proposed(p)
 loc[-1] = 1.8e3
-s = vtki.Sphere(radius=40, center=loc)
+s = pyvista.Sphere(radius=40, center=loc)
 p.add_mesh(s, label='Proposed Well', color=WELL_COLOR)
 
 p.camera_position = [(335111.21558935504, 4262955.412897479, 10111.108956611326),

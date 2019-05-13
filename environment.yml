@@ -1,4 +1,4 @@
-name: vtki-environment
+name: pyvista-environment
 channels:
   - bokeh/label/dev
   - pyviz/label/dev
@@ -10,10 +10,10 @@ dependencies:
   - gdal
   - numpy
   - pip:
-    - git+git://github.com/vtkiorg/vtki@master
+    - git+git://github.com/pyvista/pyvista@master
     - git+git://github.com/OpenGeoVis/PVGeo@master
     - discretize>=0.3.8
-    - omfvtk>=0.0.9
+    - omfvista>=0.2.0
     - xlrd>=1.1.0
     - lasio
     - pyshp

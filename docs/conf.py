@@ -169,7 +169,7 @@ sphinx_gallery_conf = {
     # path where to save gallery generated examples
     "gallery_dirs": ["project"],
     # Patter to search for example files
-    "filename_pattern": r"(?!\.py)", #'filename_pattern': '/plot_(?!long_examples)',
+    "filename_pattern": r"(?!long-)\.py", #'filename_pattern': '/plot_(?!long_examples)',
     # Remove the "Download all examples" button from the top level gallery
     "download_all_examples": False,
     # Sort gallery example by file name instead of number of lines (default)

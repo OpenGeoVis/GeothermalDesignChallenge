@@ -1,6 +1,6 @@
 git+git://github.com/pyvista/pyvista@master
 git+git://github.com/OpenGeoVis/PVGeo@master
-discretize>=0.4.1
+git+git://github.com/simpeg/discretize@vtk
 git+git://github.com/simpeg/simpeg@MagDev_DF_Dask
 omf==1.0.0
 omfvista>=0.2.0

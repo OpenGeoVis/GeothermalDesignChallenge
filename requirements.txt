@@ -20,3 +20,4 @@ git+git://github.com/rtfd/sphinx-notfound-page@master
 sphinx-copybutton
 sphinx-gallery
 nbval
+memory-profiler

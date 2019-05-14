@@ -180,6 +180,7 @@ sphinx_gallery_conf = {
     "doc_module": "pyvista",
     "image_scrapers": (pyvista.Scraper(), 'matplotlib'),
     "thumbnail_size": (350, 350),
+    'show_memory': True,
 }
 
 

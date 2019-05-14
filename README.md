@@ -1,7 +1,5 @@
 # Geothermal Design Challenge 2019
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/OpenGeoVis/GeothermalDesignChallenge/master)
-
 This repository hosts all the code for [Bane Sullivan](https://github.com/banesullivan)
 and [Adam Kinard](https://github.com/akinard96)'s work on the
 [2019 Utah FORGE Geothermal Design Challenge](https://utahforge.com/studentcomp/).
@@ -17,6 +15,7 @@ prioritized for this project:
 
 ```bash
 conda install -c conda-forge gdal
+conda install -c conda-forge dask
 conda install verde geopandas numpy matplotlib jupyter scikit-learn
 ```
 

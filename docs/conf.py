@@ -169,7 +169,7 @@ sphinx_gallery_conf = {
     # path where to save gallery generated examples
     "gallery_dirs": ["project"],
     # Patter to search for example files
-    "filename_pattern": "plot_(?!long)",
+    "filename_pattern": r"\.py",
     # Remove the "Download all examples" button from the top level gallery
     "download_all_examples": False,
     # Sort gallery example by file name instead of number of lines (default)
@@ -180,7 +180,7 @@ sphinx_gallery_conf = {
     "doc_module": "pyvista",
     "image_scrapers": (pyvista.Scraper(), 'matplotlib'),
     "thumbnail_size": (350, 350),
-    'show_memory': True,
+    # 'show_memory': True,
 }
 
 

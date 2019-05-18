@@ -240,6 +240,7 @@
 <span class="n">temp</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_02-temperature_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_02-temperature_001.png" />
 </div>
 <div class="section" id="geostatistical-model">
 <h2>Geostatistical Model<a class="headerlink" href="#geostatistical-model" title="Permalink to this headline">¶</a></h2>
@@ -257,6 +258,7 @@
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_02-temperature_002.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_02-temperature_002.png" />
 <p>Make tables of the temperature and topography data</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make pandas data frame of the temps</span>
 <span class="n">df_temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">temp</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">temp</span><span class="o">.</span><span class="n">point_arrays</span><span class="p">[</span><span class="s1">&#39;temperature (C)&#39;</span><span class="p">]],</span>
@@ -265,10 +267,28 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">df_temp</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>x           y       z  temp_c
+0  339385.01  4264212.99  1680.6   150.0
+1  339385.01  4264212.99   880.6   195.0
+2  339385.01  4264212.99  -119.4   195.0
+3  337709.02  4260660.00  1596.3   250.0
+4  337709.02  4260660.00   796.3   262.0
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># And of the topography surface</span>
 <span class="n">df_topo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">topo</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;z&#39;</span><span class="p">])</span>
 <span class="n">df_topo</span><span class="o">.</span><span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;Land Surface&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df_topo</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>x             y            z
+0  329924.988160  4.270951e+06  1493.691650
+1  329924.988160  4.270926e+06  1493.996460
+2  329949.993331  4.270926e+06  1493.786011
+3  329949.993331  4.270951e+06  1493.691650
+4  329974.998501  4.270926e+06  1493.790039
 </pre></div>
 </div>
 <p>Save these tabular data frames to GSLib formatted files for use in SGeMS</p>
@@ -297,6 +317,7 @@ Values from SGeMS:</p>
 <span class="n">grid</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_02-temperature_003.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_02-temperature_003.png" />
 <p>Lets quickly inspect the model</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bounds</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">get_roi_bounds</span><span class="p">()</span>
 <span class="n">clipped</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">clip_box</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="n">invert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -305,6 +326,7 @@ Values from SGeMS:</p>
 <span class="n">contours</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="n">clim</span><span class="o">=</span><span class="n">clipped</span><span class="o">.</span><span class="n">get_data_range</span><span class="p">())</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_02-temperature_004.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_02-temperature_004.png" />
 <p>Now we need to convert the model to the OMF files specification</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># MINUS ONE BECASE WE DEFINE CELL DATA</span>
 <span class="n">ncx</span><span class="p">,</span> <span class="n">ncy</span><span class="p">,</span> <span class="n">ncz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">dimensions</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
@@ -337,6 +359,7 @@ Values from SGeMS:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">omfvista</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">temp_model</span><span class="p">)</span><span class="o">.</span><span class="n">clip_box</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_roi_bounds</span><span class="p">(),</span> <span class="n">invert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_02-temperature_005.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_02-temperature_005.png" />
 </div>
 <div class="section" id="write-the-data">
 <h2>Write the data<a class="headerlink" href="#write-the-data" title="Permalink to this headline">¶</a></h2>
@@ -354,8 +377,7 @@ Values from SGeMS:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">omf</span><span class="o">.</span><span class="n">OMFWriter</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">get_project_path</span><span class="p">(</span><span class="s1">&#39;temperature.omf&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  0 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  27.294 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-project-data-aggregation-02-temperature-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/1a60b965420270e8c6b4cddb438e1d2f/02-temperature.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">02-temperature.py</span></code></a></p>

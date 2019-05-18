@@ -22,6 +22,11 @@ This notebook will recreate all of the figures for the competition submission.
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     import pyvista
@@ -29,6 +34,11 @@ This notebook will recreate all of the figures for the competition submission.
     import omfvista
     import pandas as pd
     import numpy as np
+
+
+
+
+
 
 
 Load all the datasets created in the data aggreagation section
@@ -42,6 +52,18 @@ Load all the datasets created in the data aggreagation section
 
 
 
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    ['boundary']
+
+
+
 .. code-block:: default
 
     surfaces = omfvista.load_project(gdc19.get_project_path('surfaces.omf'))
@@ -49,10 +71,34 @@ Load all the datasets created in the data aggreagation section
 
 
 
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    ['land_surface', 'temp_225c', 'temp_175c', 'opal_mound_fault', 'negro_mag_fault', 'top_granitoid']
+
+
+
 .. code-block:: default
 
     temperature_data = omfvista.load_project(gdc19.get_project_path('temperature.omf'))
     print(temperature_data.keys())
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    ['temperature', 'kriged_temperature_model']
 
 
 Grab data to be used
@@ -64,6 +110,11 @@ Grab data to be used
     granitoid = surfaces['top_granitoid']
     temp_175c = surfaces['temp_175c']
     temp_225c = surfaces['temp_225c']
+
+
+
+
+
 
 
 
@@ -79,6 +130,11 @@ Remove granite surface intereseting topography
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     boundary = gis_data['boundary']
@@ -86,6 +142,11 @@ Remove granite surface intereseting topography
                             close_loop=True).apply(boundary).tube(radius=30)
     walls = PVGeo.filters.BuildSurfaceFromPoints(
                     zcoords=[0., 4.5e3]).apply(boundary)
+
+
+
+
+
 
 
 
@@ -105,6 +166,11 @@ Remove granite surface intereseting topography
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     well_locs = pd.read_csv(gdc19.get_well_path('well_location_from_earth_model.csv'))
@@ -120,6 +186,11 @@ Remove granite surface intereseting topography
     #well_Acord1 = WELLS.set_active_scalar('GR_SPLICE (GAPI)')
 
 
+
+
+
+
+
 load the gravity model
 
 
@@ -128,6 +199,11 @@ load the gravity model
     gf = gdc19.get_gravity_path('forge_inverse_problem/RESULT_THRESHED.vtu')
     grav_model = pyvista.read(gf)
     grav_model.active_scalar_name = 'Magnitude'
+
+
+
+
+
 
 
 
@@ -144,6 +220,11 @@ Functions for adding datasets to a scene in a consistent manner
     LINE_WIDTH = 15
     pyvista.rcParams['window_size'] = np.array([1024, 768]) * 2
     legend_color = pyvista.parse_color('lightgrey')
+
+
+
+
+
 
 
 
@@ -317,6 +398,11 @@ Functions for adding datasets to a scene in a consistent manner
                             )
 
 
+
+
+
+
+
 Figure 1
 ++++++++
 
@@ -352,6 +438,14 @@ granite, FORGE site and well locations and data
     cpos
 
 
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-submission-figures_001.png
+    :class: sphx-glr-single-img
+
+
+
+
 Figure 2
 ++++++++
 
@@ -382,6 +476,14 @@ granite, FORGE site and well, well logs, and temperature locations and data
     p.screenshot('figure-02.png')
     p.close()
     cpos
+
+
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-submission-figures_002.png
+    :class: sphx-glr-single-img
+
+
 
 
 Figure 3
@@ -422,6 +524,14 @@ of the FORGE site to better view the subsurface within the FORGE boundary
     cpos
 
 
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-submission-figures_003.png
+    :class: sphx-glr-single-img
+
+
+
+
 Figure 4
 ++++++++
 
@@ -458,6 +568,14 @@ trajectory (red).
     cpos
 
 
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-submission-figures_004.png
+    :class: sphx-glr-single-img
+
+
+
+
 Figure 5
 ++++++++
 
@@ -487,6 +605,14 @@ gravity locations and data
     # p.export_vtkjs(gdc19.EXPORT_PATH.format('figure-05'))
     p.screenshot('figure-05.png')
     p.close()
+
+
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-submission-figures_005.png
+    :class: sphx-glr-single-img
+
+
 
 
 Figure 6
@@ -520,11 +646,17 @@ Show an aerial view of the proposed well's location
     cpos
 
 
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-submission-figures_006.png
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-**Estimated memory usage:**  0 MB
+   **Total running time of the script:** ( 1 minutes  13.139 seconds)
 
 
 .. _sphx_glr_download_project_visual-inspection_long-submission-figures.py:

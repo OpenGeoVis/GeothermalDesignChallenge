@@ -26,6 +26,11 @@ This creates a mesh for inverting the gravity data.
 
 
 
+
+
+
+
+
 Load the Data
 +++++++++++++
 
@@ -42,6 +47,11 @@ Load the Data
     topo = surface.points
 
 
+
+
+
+
+
 Load the gravity data
 
 
@@ -50,6 +60,11 @@ Load the gravity data
     grav_data = pyvista.read(gdc19.get_gravity_path('grav_obs.vtk'))
     xyz = grav_data.points
     survey = pyvista.PolyData(xyz)
+
+
+
+
+
 
 
 Visualize the survey on the topo
@@ -61,6 +76,14 @@ Visualize the survey on the topo
     plotter.add_mesh(surface, color='grey')
     plotter.add_mesh(survey, color='k', point_size=5)
     plotter.show()
+
+
+
+
+.. image:: /project/gravity-inversion/images/sphx_glr_01-gravity-mesh-refine_001.png
+    :class: sphx-glr-single-img
+
+
 
 
 Create a Mesh and Refine
@@ -83,6 +106,18 @@ Create a Mesh and Refine
 
     bounds = compute_bounds(surface.bounds, 0.1)
     print(bounds)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    [331347.7823565, 342730.13592850004, 4254645.243728001, 4269139.336511999, 1616.599389648, 2599.861303712]
 
 
 
@@ -115,6 +150,11 @@ Create a Mesh and Refine
                                      finalize=True)
 
     actv = modelutils.surface2ind_topo(mesh, topo, gridLoc='N')
+
+
+
+
+
 
 
 
@@ -167,6 +207,21 @@ Create a Mesh and Refine
     plot_pyvista(mesh, np.log10(mesh.vol), actv, False, False)
 
 
+
+
+.. image:: /project/gravity-inversion/images/sphx_glr_01-gravity-mesh-refine_002.png
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    <PIL.Image.Image image mode=RGB size=1024x768 at 0x1A3AB2C208>
+
+
 Save the mesh for use in an inversion
 
 
@@ -177,11 +232,14 @@ Save the mesh for use in an inversion
     mesh.writeUBC(gdc19.get_gravity_path('mesh.msh'), {model_fname:actv})
 
 
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-**Estimated memory usage:**  0 MB
+   **Total running time of the script:** ( 1 minutes  3.042 seconds)
 
 
 .. _sphx_glr_download_project_gravity-inversion_01-gravity-mesh-refine.py:

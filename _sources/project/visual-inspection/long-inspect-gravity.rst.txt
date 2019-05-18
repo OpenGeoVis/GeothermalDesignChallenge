@@ -23,6 +23,11 @@ algorithm for rmeove parts of a mesh/model that are baove a topographic surface.
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     import pyvista
@@ -30,6 +35,11 @@ algorithm for rmeove parts of a mesh/model that are baove a topographic surface.
     import omfvista
     import pandas as pd
     import numpy as np
+
+
+
+
+
 
 
 Load all the datasets created in the data aggreagation section
@@ -43,10 +53,34 @@ Load all the datasets created in the data aggreagation section
 
 
 
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    ['boundary']
+
+
+
 .. code-block:: default
 
     surfaces = omfvista.load_project(gdc19.get_project_path('surfaces.omf'))
     print(surfaces.keys())
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    ['land_surface', 'temp_225c', 'temp_175c', 'opal_mound_fault', 'negro_mag_fault', 'top_granitoid']
 
 
 load the gravity model
@@ -57,6 +91,11 @@ load the gravity model
     gf = gdc19.get_gravity_path('forge_inverse_problem/RESULT_THRESHED.vtu')
     grav_model = pyvista.read(gf)
     grav_model.active_scalar_name = 'Magnitude'
+
+
+
+
+
 
 
 Grab data from multi blocks for conveinance
@@ -71,6 +110,14 @@ Grab data from multi blocks for conveinance
     p.add_mesh(topo)
     p.add_mesh(granitoid, color=True)
     p.show()
+
+
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-inspect-gravity_001.png
+    :class: sphx-glr-single-img
+
+
 
 
 Note how the above figure has artificats from where the top of granite
@@ -98,6 +145,14 @@ surface - :class:`PVGeo.grids.ExtractTopography`
     p.show()
 
 
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-inspect-gravity_002.png
+    :class: sphx-glr-single-img
+
+
+
+
 Now both the topographic surface and the granitoid boundary can be rendered
 without arficats due to where they overlap.
 
@@ -123,6 +178,11 @@ model.
     )
 
 
+
+
+
+
+
 Now extract the topographic surface from the model to have a more realistic
 domain:
 
@@ -141,11 +201,27 @@ domain:
 
 
 
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-inspect-gravity_003.png
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. code-block:: default
 
 
     grav_roi = grav_model.threshold(0.07)
     grav_roi.plot(**grav_kwargs)
+
+
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-inspect-gravity_004.png
+    :class: sphx-glr-single-img
+
+
 
 
 And just out of curiosity, how big of a volume is that density range?
@@ -154,6 +230,18 @@ And just out of curiosity, how big of a volume is that density range?
 .. code-block:: default
 
     print('Gravity model Region is {:.2f} cubic kilometers.'.format(grav_roi.volume * 1e-9))
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    Gravity model Region is 167.14 cubic kilometers.
 
 
 How do the provided temperature surface contours look next to the inverted
@@ -171,6 +259,14 @@ gravity model?
     p.add_mesh(temp_175c, **temp_kwargs)
     p.add_mesh(temp_225c, **temp_kwargs)
     p.show()
+
+
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-inspect-gravity_005.png
+    :class: sphx-glr-single-img
+
+
 
 
 Now lets put this all together to gain insight on where that dense
@@ -192,11 +288,17 @@ body is in relation to the FRGE site
     p.show()
 
 
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-inspect-gravity_006.png
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-**Estimated memory usage:**  0 MB
+   **Total running time of the script:** ( 2 minutes  0.529 seconds)
 
 
 .. _sphx_glr_download_project_visual-inspection_long-inspect-gravity.py:

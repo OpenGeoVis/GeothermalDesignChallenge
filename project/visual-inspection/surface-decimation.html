@@ -209,6 +209,11 @@ in VTK.js</p>
 <span class="n">dec</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_surface-decimation_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_surface-decimation_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;PIL.Image.Image image mode=RGB size=2048x1536 at 0x1A5E562BE0&gt;
+</pre></div>
+</div>
 <p>Re-do the texture mapping</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">reader</span> <span class="o">=</span> <span class="n">omf</span><span class="o">.</span><span class="n">OMFReader</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_project_path</span><span class="p">(</span><span class="s1">&#39;surfaces.omf&#39;</span><span class="p">))</span>
 <span class="n">project</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">get_project</span><span class="p">()</span>
@@ -231,9 +236,24 @@ in VTK.js</p>
 <span class="n">dec</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_web_path</span><span class="p">(</span><span class="s1">&#39;topo.vtk&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_surface-decimation_002.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_surface-decimation_002.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>geo_aer
+</pre></div>
+</div>
 <p>Decimate Granite Surface</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gran</span> <span class="o">=</span> <span class="n">surfaces</span><span class="p">[</span><span class="s1">&#39;top_granitoid&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">gran</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>UnstructuredGrid (0x1a69c0b1c8)
+  N Cells:      205980
+  N Points:     103455
+  X Bounds:     3.300e+05, 3.442e+05
+  Y Bounds:     4.253e+06, 4.271e+06
+  Z Bounds:     -2.112e+03, 2.723e+03
+  N Scalars:    0
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dec</span> <span class="o">=</span> <span class="n">gran</span><span class="o">.</span><span class="n">extract_geometry</span><span class="p">()</span><span class="o">.</span><span class="n">decimate</span><span class="p">(</span><span class="mf">0.99</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -242,8 +262,12 @@ in VTK.js</p>
 <span class="n">dec</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_web_path</span><span class="p">(</span><span class="s1">&#39;granite.vtk&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  0 MB</p>
+<img alt="../../_images/sphx_glr_surface-decimation_003.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_surface-decimation_003.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;PIL.Image.Image image mode=RGB size=2048x1536 at 0x1A4E31FCC0&gt;
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  32.292 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-project-visual-inspection-surface-decimation-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/3a9cfdb1caaa828fff691b6f84de169c/surface-decimation.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">surface-decimation.py</span></code></a></p>

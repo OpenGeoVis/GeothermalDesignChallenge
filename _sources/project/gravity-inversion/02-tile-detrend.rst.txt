@@ -28,6 +28,11 @@ Tile the Inverse Problem and detrend the data
 
 
 
+
+
+
+
+
 Load the Data
 +++++++++++++
 
@@ -43,6 +48,11 @@ Load the mesh and data from the previous example
 
     mesh = TreeMesh.readUBC(gdc19.get_gravity_path('mesh.msh'))
     actv = mesh.readModelUBC(gdc19.get_gravity_path('actv.mod'))
+
+
+
+
+
 
 
 
@@ -86,6 +96,14 @@ Tile the Problem
 
 
 
+
+
+.. image:: /project/gravity-inversion/images/sphx_glr_02-tile-detrend_001.png
+    :class: sphx-glr-single-img
+
+
+
+
 Detrend the Data
 ++++++++++++++++
 
@@ -123,11 +141,17 @@ Remove regional trends from the gravity observations.
     plt.colorbar(im[0], orientation='horizontal')
 
 
+
+.. image:: /project/gravity-inversion/images/sphx_glr_02-tile-detrend_002.png
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-**Estimated memory usage:**  0 MB
+   **Total running time of the script:** ( 0 minutes  13.355 seconds)
 
 
 .. _sphx_glr_download_project_gravity-inversion_02-tile-detrend.py:

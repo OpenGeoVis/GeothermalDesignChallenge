@@ -27,11 +27,21 @@ in VTK.js
 
 
 
+
+
+
+
+
 .. code-block:: default
 
 
     surfaces = omfvista.load_project(gdc19.get_project_path('surfaces.omf'))
     topo = surfaces['land_surface']
+
+
+
+
+
 
 
 Decimate Topography Surface
@@ -42,6 +52,21 @@ Decimate Topography Surface
 
     dec = topo.extract_geometry().decimate(0.99, inplace=False)
     dec.plot(notebook=True, show_edges=True, color=True)
+
+
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_surface-decimation_001.png
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    <PIL.Image.Image image mode=RGB size=2048x1536 at 0x1A5E562BE0>
 
 
 Re-do the texture mapping
@@ -71,6 +96,21 @@ Re-do the texture mapping
 
 
 
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_surface-decimation_002.png
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    geo_aer
+
+
 Decimate Granite Surface
 
 
@@ -82,6 +122,24 @@ Decimate Granite Surface
 
 
 
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    UnstructuredGrid (0x1a69c0b1c8)
+      N Cells:      205980
+      N Points:     103455
+      X Bounds:     3.300e+05, 3.442e+05
+      Y Bounds:     4.253e+06, 4.271e+06
+      Z Bounds:     -2.112e+03, 2.723e+03
+      N Scalars:    0
+
+
+
 .. code-block:: default
 
     dec = gran.extract_geometry().decimate(0.99, inplace=False)
@@ -90,11 +148,24 @@ Decimate Granite Surface
     dec.save(gdc19.get_web_path('granite.vtk'))
 
 
+
+.. image:: /project/visual-inspection/images/sphx_glr_surface-decimation_003.png
+    :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    <PIL.Image.Image image mode=RGB size=2048x1536 at 0x1A4E31FCC0>
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-**Estimated memory usage:**  0 MB
+   **Total running time of the script:** ( 0 minutes  32.292 seconds)
 
 
 .. _sphx_glr_download_project_visual-inspection_surface-decimation.py:

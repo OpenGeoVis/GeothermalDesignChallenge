@@ -18,6 +18,11 @@ Temperature Data
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     import pyvista
@@ -26,6 +31,11 @@ Temperature Data
     import omfvista
     import pandas as pd
     import numpy as np
+
+
+
+
+
 
 
 
@@ -41,6 +51,11 @@ Temperature Probe Data
                 gdc19.get_temperature_path('well_based_temperature.csv')
                 )
     _temp.head()
+
+
+
+
+
 
 
 
@@ -68,10 +83,23 @@ Temperature Probe Data
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     temp = omfvista.wrap(temperature)
     temp.plot()
+
+
+
+
+
+.. image:: /project/data-aggregation/images/sphx_glr_02-temperature_001.png
+    :class: sphx-glr-single-img
+
 
 
 
@@ -97,6 +125,14 @@ Prep temperature data for kriging in SGeMS
     p.show()
 
 
+
+
+.. image:: /project/data-aggregation/images/sphx_glr_02-temperature_002.png
+    :class: sphx-glr-single-img
+
+
+
+
 Make tables of the temperature and topography data
 
 
@@ -111,6 +147,23 @@ Make tables of the temperature and topography data
 
 
 
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    x           y       z  temp_c
+    0  339385.01  4264212.99  1680.6   150.0
+    1  339385.01  4264212.99   880.6   195.0
+    2  339385.01  4264212.99  -119.4   195.0
+    3  337709.02  4260660.00  1596.3   250.0
+    4  337709.02  4260660.00   796.3   262.0
+
+
+
 .. code-block:: default
 
 
@@ -118,6 +171,23 @@ Make tables of the temperature and topography data
     df_topo = pd.DataFrame(data=topo.points, columns=['x','y','z'])
     df_topo.header = 'Land Surface'
     print(df_topo.head())
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    x             y            z
+    0  329924.988160  4.270951e+06  1493.691650
+    1  329924.988160  4.270926e+06  1493.996460
+    2  329949.993331  4.270926e+06  1493.786011
+    3  329949.993331  4.270951e+06  1493.691650
+    4  329974.998501  4.270926e+06  1493.790039
 
 
 Save these tabular data frames to GSLib formatted files for use in SGeMS
@@ -128,6 +198,11 @@ Save these tabular data frames to GSLib formatted files for use in SGeMS
 
     gdc19.save_gslib(gdc19.get_krig_path('temperature.gslib'), df_temp)
     gdc19.save_gslib(gdc19.get_krig_path('topography.gslib'), df_topo)
+
+
+
+
+
 
 
 Load the kriged temperature model from SGeMS
@@ -148,6 +223,11 @@ Load the kriged temperature model from SGeMS
     grid.cell_arrays['Temperature_var'] = grid_var.cell_arrays['Getherm_kriged_0_krig_var']
 
 
+
+
+
+
+
 Set the spatial reference of the grid
 Values from SGeMS:
 
@@ -158,6 +238,14 @@ Values from SGeMS:
     grid.spacing = (250, 250, 50)
 
     grid.plot(cmap='coolwarm')
+
+
+
+
+.. image:: /project/data-aggregation/images/sphx_glr_02-temperature_003.png
+    :class: sphx-glr-single-img
+
+
 
 
 Lets quickly inspect the model
@@ -171,6 +259,14 @@ Lets quickly inspect the model
 
     contours = clipped.cell_data_to_point_data().contour()
     contours.plot(cmap='coolwarm', clim=clipped.get_data_range())
+
+
+
+
+
+.. image:: /project/data-aggregation/images/sphx_glr_02-temperature_004.png
+    :class: sphx-glr-single-img
+
 
 
 
@@ -207,6 +303,11 @@ Now we need to convert the model to the OMF files specification
     temp_model.validate()
 
 
+
+
+
+
+
 And one final sanity check
 
 
@@ -214,6 +315,14 @@ And one final sanity check
 
 
     omfvista.wrap(temp_model).clip_box(gdc19.get_roi_bounds(), invert=False).plot(cmap='coolwarm')
+
+
+
+
+
+.. image:: /project/data-aggregation/images/sphx_glr_02-temperature_005.png
+    :class: sphx-glr-single-img
+
 
 
 
@@ -234,6 +343,11 @@ Write the data
     proj.validate()
 
 
+
+
+
+
+
 Save the temperature project file
 
 
@@ -243,11 +357,14 @@ Save the temperature project file
     omf.OMFWriter(proj, gdc19.get_project_path('temperature.omf'))
 
 
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-**Estimated memory usage:**  0 MB
+   **Total running time of the script:** ( 1 minutes  27.294 seconds)
 
 
 .. _sphx_glr_download_project_data-aggregation_02-temperature.py:

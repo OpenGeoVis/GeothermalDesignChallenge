@@ -209,12 +209,24 @@ algorithm for rmeove parts of a mesh/model that are baove a topographic surface.
 <span class="nb">print</span><span class="p">(</span><span class="n">gis_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;boundary&#39;]
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">surfaces</span> <span class="o">=</span> <span class="n">omfvista</span><span class="o">.</span><span class="n">load_project</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_project_path</span><span class="p">(</span><span class="s1">&#39;surfaces.omf&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">surfaces</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;land_surface&#39;, &#39;temp_225c&#39;, &#39;temp_175c&#39;, &#39;opal_mound_fault&#39;, &#39;negro_mag_fault&#39;, &#39;top_granitoid&#39;]
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temperature_data</span> <span class="o">=</span> <span class="n">omfvista</span><span class="o">.</span><span class="n">load_project</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_project_path</span><span class="p">(</span><span class="s1">&#39;temperature.omf&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">temperature_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;temperature&#39;, &#39;kriged_temperature_model&#39;]
 </pre></div>
 </div>
 <p>Grab data from multi blocks for conveinance</p>
@@ -227,6 +239,7 @@ algorithm for rmeove parts of a mesh/model that are baove a topographic surface.
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_long-inspect-temperature_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_long-inspect-temperature_001.png" />
 <p>Note how the above figure has artificats from where the top of granite
 surface boundary matches the topographic surface. To mitigate these effect,
 we can use a filtering technique that will remove parts of a mesh above or
@@ -246,6 +259,7 @@ surface - <code class="xref py py-class docutils literal notranslate"><span clas
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_long-inspect-temperature_002.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_long-inspect-temperature_002.png" />
 <p>Now both the topographic surface and the granitoid boundary can be rendered
 without arficats due to where they overlap.</p>
 <p>This type of topography extraction is often very useful with 3D models where
@@ -266,6 +280,7 @@ model.</p>
 <span class="n">temp_grid_cropped</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">**</span><span class="n">temp_kwargs</span><span class="p">)</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_long-inspect-temperature_003.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_long-inspect-temperature_003.png" />
 <p>Now extract the topographic surface from the model to have a more realistic
 domain:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove values above topography</span>
@@ -277,13 +292,19 @@ domain:</p>
 <span class="n">temp_grid_no_topo</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">**</span><span class="n">temp_kwargs</span><span class="p">)</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_long-inspect-temperature_004.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_long-inspect-temperature_004.png" />
 <p>Now lets find the temperature range of intereset: 175 to 225 degrees C</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temp_roi</span> <span class="o">=</span> <span class="n">temp_grid_no_topo</span><span class="o">.</span><span class="n">threshold</span><span class="p">([</span><span class="mf">175.</span><span class="p">,</span> <span class="mf">225.</span><span class="p">])</span>
 <span class="n">temp_roi</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">**</span><span class="n">temp_kwargs</span><span class="p">)</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_long-inspect-temperature_005.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_long-inspect-temperature_005.png" />
 <p>And just out of curiosity, how big of a volume is that temperature range?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Temperature Region is </span><span class="si">{:.2f}</span><span class="s1"> cubic kilometers.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">temp_roi</span><span class="o">.</span><span class="n">volume</span> <span class="o">*</span> <span class="mf">1e-9</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Temperature Region is 229.00 cubic kilometers.
 </pre></div>
 </div>
 <p>How do the provided temperature surfaces match our geostatisical model?</p>
@@ -297,6 +318,7 @@ domain:</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_long-inspect-temperature_006.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_long-inspect-temperature_006.png" />
 <p>Now lets put this all together to gain insight on where that temperature
 plume is in relation to the FRGE site</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">boundary</span> <span class="o">=</span> <span class="n">gis_data</span><span class="p">[</span><span class="s1">&#39;boundary&#39;</span><span class="p">]</span>
@@ -311,8 +333,8 @@ plume is in relation to the FRGE site</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  0 MB</p>
+<img alt="../../_images/sphx_glr_long-inspect-temperature_007.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_long-inspect-temperature_007.png" />
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  52.166 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-project-visual-inspection-long-inspect-temperature-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/6fb1b280897b2c06980f02ab4979f874/long-inspect-temperature.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">long-inspect-temperature.py</span></code></a></p>

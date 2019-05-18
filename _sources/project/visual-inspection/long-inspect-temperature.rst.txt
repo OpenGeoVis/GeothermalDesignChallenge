@@ -23,6 +23,11 @@ algorithm for rmeove parts of a mesh/model that are baove a topographic surface.
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     import pyvista
@@ -30,6 +35,11 @@ algorithm for rmeove parts of a mesh/model that are baove a topographic surface.
     import omfvista
     import pandas as pd
     import numpy as np
+
+
+
+
+
 
 
 Load all the datasets created in the data aggreagation section
@@ -43,6 +53,18 @@ Load all the datasets created in the data aggreagation section
 
 
 
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    ['boundary']
+
+
+
 .. code-block:: default
 
     surfaces = omfvista.load_project(gdc19.get_project_path('surfaces.omf'))
@@ -50,10 +72,34 @@ Load all the datasets created in the data aggreagation section
 
 
 
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    ['land_surface', 'temp_225c', 'temp_175c', 'opal_mound_fault', 'negro_mag_fault', 'top_granitoid']
+
+
+
 .. code-block:: default
 
     temperature_data = omfvista.load_project(gdc19.get_project_path('temperature.omf'))
     print(temperature_data.keys())
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    ['temperature', 'kriged_temperature_model']
 
 
 Grab data from multi blocks for conveinance
@@ -68,6 +114,14 @@ Grab data from multi blocks for conveinance
     p.add_mesh(topo)
     p.add_mesh(granitoid, color=True)
     p.show()
+
+
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-inspect-temperature_001.png
+    :class: sphx-glr-single-img
+
+
 
 
 Note how the above figure has artificats from where the top of granite
@@ -95,6 +149,14 @@ surface - :class:`PVGeo.grids.ExtractTopography`
     p.show()
 
 
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-inspect-temperature_002.png
+    :class: sphx-glr-single-img
+
+
+
+
 Now both the topographic surface and the granitoid boundary can be rendered
 without arficats due to where they overlap.
 
@@ -116,6 +178,11 @@ model.
     )
 
 
+
+
+
+
+
 First, crop the model down to the FORGE region:
 
 
@@ -124,6 +191,14 @@ First, crop the model down to the FORGE region:
 
     temp_grid_cropped = temp_grid.clip_box(gdc19.get_roi_bounds(), invert=False)
     temp_grid_cropped.plot(**temp_kwargs)
+
+
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-inspect-temperature_003.png
+    :class: sphx-glr-single-img
+
+
 
 
 Now extract the topographic surface from the model to have a more realistic
@@ -143,6 +218,14 @@ domain:
 
 
 
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-inspect-temperature_004.png
+    :class: sphx-glr-single-img
+
+
+
+
 Now lets find the temperature range of intereset: 175 to 225 degrees C
 
 
@@ -153,12 +236,32 @@ Now lets find the temperature range of intereset: 175 to 225 degrees C
     temp_roi.plot(**temp_kwargs)
 
 
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-inspect-temperature_005.png
+    :class: sphx-glr-single-img
+
+
+
+
 And just out of curiosity, how big of a volume is that temperature range?
 
 
 .. code-block:: default
 
     print('Temperature Region is {:.2f} cubic kilometers.'.format(temp_roi.volume * 1e-9))
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    Temperature Region is 229.00 cubic kilometers.
 
 
 How do the provided temperature surfaces match our geostatisical model?
@@ -175,6 +278,14 @@ How do the provided temperature surfaces match our geostatisical model?
     p.add_mesh(temp_175c, **temp_kwargs)
     p.add_mesh(temp_225c, **temp_kwargs)
     p.show()
+
+
+
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-inspect-temperature_006.png
+    :class: sphx-glr-single-img
+
+
 
 
 Now lets put this all together to gain insight on where that temperature
@@ -196,11 +307,17 @@ plume is in relation to the FRGE site
     p.show()
 
 
+
+.. image:: /project/visual-inspection/images/sphx_glr_long-inspect-temperature_007.png
+    :class: sphx-glr-single-img
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-**Estimated memory usage:**  0 MB
+   **Total running time of the script:** ( 0 minutes  52.166 seconds)
 
 
 .. _sphx_glr_download_project_visual-inspection_long-inspect-temperature.py:

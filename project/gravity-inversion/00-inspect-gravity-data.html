@@ -201,6 +201,13 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Index([&#39;FID&#39;, &#39;FID_&#39;, &#39;name&#39;, &#39;lon&#39;, &#39;lat&#39;, &#39;easting&#39;, &#39;northing&#39;, &#39;HAE&#39;,
+       &#39;NGVD29&#39;, &#39;obs&#39;, &#39;errg&#39;, &#39;iztc&#39;, &#39;oztc&#39;, &#39;gFA&#39;, &#39;gSBGA&#39;, &#39;gCBGA&#39;,
+       &#39;Source&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
 <p>Make a mapping between scalar names and their descriptions</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">field_desc</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;the individual gravity station name.&quot;</span><span class="p">,</span>
@@ -233,9 +240,20 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">grav_obs</span><span class="p">)</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>UnstructuredGrid (0x1a30da5f48)
+  N Cells:      786
+  N Points:     781
+  X Bounds:     3.301e+05, 3.441e+05
+  Y Bounds:     4.253e+06, 4.271e+06
+  Z Bounds:     1.488e+03, 2.706e+03
+  N Scalars:    14
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grav_obs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">scalars</span><span class="o">=</span><span class="s1">&#39;gCBGA&#39;</span><span class="p">,</span> <span class="n">stitle</span><span class="o">=</span><span class="n">field_desc</span><span class="p">[</span><span class="s1">&#39;gCBGA&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_00-inspect-gravity-data_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_00-inspect-gravity-data_001.png" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the topography surface that was previously aggregated:</span>
 <span class="n">surfaces</span> <span class="o">=</span> <span class="n">omfvista</span><span class="o">.</span><span class="n">load_project</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_project_path</span><span class="p">(</span><span class="s1">&#39;surfaces.omf&#39;</span><span class="p">))</span>
 <span class="n">topo</span> <span class="o">=</span> <span class="n">surfaces</span><span class="p">[</span><span class="s1">&#39;land_surface&#39;</span><span class="p">]</span>
@@ -248,12 +266,12 @@
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_00-inspect-gravity-data_002.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_00-inspect-gravity-data_002.png" />
 <p>Save gravity data for processing in next example</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grav_obs</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_gravity_path</span><span class="p">(</span><span class="s1">&#39;grav_obs.vtk&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  0 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  31.630 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-project-gravity-inversion-00-inspect-gravity-data-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/c48351cf81cf1c1577c5d5f95833ce4d/00-inspect-gravity-data.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">00-inspect-gravity-data.py</span></code></a></p>

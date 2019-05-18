@@ -18,10 +18,20 @@ Proposed Well
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     import numpy as np
     import pyvista
+
+
+
+
+
 
 
 
@@ -31,6 +41,11 @@ Proposed Well
 
     # GET THE WELLS DATABASE
     WELLS = gdc19.load_well_db()
+
+
+
+
+
 
 
 
@@ -51,6 +66,11 @@ Depth: 2200 m
     start_z = 1698
 
     WELLS['well_new1'] = gdc19.build_well_trajectory(depth, start_x, start_y, start_z)
+
+
+
+
+
 
 
 
@@ -77,11 +97,14 @@ Depth: 2200 m
     gdc19.save_well_db(WELLS)
 
 
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-**Estimated memory usage:**  0 MB
+   **Total running time of the script:** ( 0 minutes  0.696 seconds)
 
 
 .. _sphx_glr_download_project_data-aggregation_03-well-proposed.py:

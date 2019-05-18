@@ -25,6 +25,11 @@ Be sure to install ``gdal``::
 
 
 
+
+
+
+
+
 .. code-block:: default
 
 
@@ -33,6 +38,11 @@ Be sure to install ``gdal``::
     import omfvista
     import pandas as pd
     import numpy as np
+
+
+
+
+
 
 
 
@@ -57,6 +67,11 @@ the topography.
     topo = omfvista.wrap(land_surface)
 
 
+
+
+
+
+
 Load the shape files
 
 
@@ -69,6 +84,11 @@ Load the shape files
 
 
 
+
+
+
+
+
 .. code-block:: default
 
 
@@ -78,9 +98,22 @@ Load the shape files
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     omfvista.wrap(boundary).plot(show_edges=False)
+
+
+
+
+
+.. image:: /project/data-aggregation/images/sphx_glr_01-gis_001.png
+    :class: sphx-glr-single-img
+
 
 
 
@@ -100,6 +133,11 @@ Now save out the GIS data to an OMF project file
     proj.validate()
 
 
+
+
+
+
+
 Save the GIS project file
 
 
@@ -109,11 +147,14 @@ Save the GIS project file
     omf.OMFWriter(proj, gdc19.get_project_path('gis.omf'))
 
 
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-**Estimated memory usage:**  0 MB
+   **Total running time of the script:** ( 0 minutes  32.281 seconds)
 
 
 .. _sphx_glr_download_project_data-aggregation_01-gis.py:

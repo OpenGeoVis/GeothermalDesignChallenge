@@ -228,6 +228,7 @@
 <span class="n">plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_01-gravity-mesh-refine_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_01-gravity-mesh-refine_001.png" />
 </div>
 <div class="section" id="create-a-mesh-and-refine">
 <h2>Create a Mesh and Refine<a class="headerlink" href="#create-a-mesh-and-refine" title="Permalink to this headline">¶</a></h2>
@@ -244,6 +245,10 @@
 
 <span class="n">bounds</span> <span class="o">=</span> <span class="n">compute_bounds</span><span class="p">(</span><span class="n">surface</span><span class="o">.</span><span class="n">bounds</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[331347.7823565, 342730.13592850004, 4254645.243728001, 4269139.336511999, 1616.599389648, 2599.861303712]
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a mesh based on data extent</span>
@@ -320,13 +325,17 @@
 <span class="n">plot_pyvista</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">vol</span><span class="p">),</span> <span class="n">actv</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
+<img alt="../../_images/sphx_glr_01-gravity-mesh-refine_002.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_01-gravity-mesh-refine_002.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;PIL.Image.Image image mode=RGB size=1024x768 at 0x1A3AB2C208&gt;
+</pre></div>
+</div>
 <p>Save the mesh for use in an inversion</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model_fname</span> <span class="o">=</span> <span class="n">gdc19</span><span class="o">.</span><span class="n">get_gravity_path</span><span class="p">(</span><span class="s1">&#39;actv.mod&#39;</span><span class="p">)</span>
 <span class="n">mesh</span><span class="o">.</span><span class="n">writeUBC</span><span class="p">(</span><span class="n">gdc19</span><span class="o">.</span><span class="n">get_gravity_path</span><span class="p">(</span><span class="s1">&#39;mesh.msh&#39;</span><span class="p">),</span> <span class="p">{</span><span class="n">model_fname</span><span class="p">:</span><span class="n">actv</span><span class="p">})</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  0 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  3.042 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-project-gravity-inversion-01-gravity-mesh-refine-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/c2f7ed5890da0a8c04c5e20ad9662a19/01-gravity-mesh-refine.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">01-gravity-mesh-refine.py</span></code></a></p>

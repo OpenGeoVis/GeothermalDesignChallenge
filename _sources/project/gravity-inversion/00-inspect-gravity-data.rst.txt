@@ -23,10 +23,30 @@ Here we take a look at what gravity data is available for the FORGE site
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     df = pd.read_csv(gdc19.get_gravity_path('Utah_FORGE_Gravity_Data.txt'))
     print(df.keys())
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    Index(['FID', 'FID_', 'name', 'lon', 'lat', 'easting', 'northing', 'HAE',
+           'NGVD29', 'obs', 'errg', 'iztc', 'oztc', 'gFA', 'gSBGA', 'gCBGA',
+           'Source'],
+          dtype='object')
 
 
 Make a mapping between scalar names and their descriptions
@@ -54,6 +74,11 @@ Make a mapping between scalar names and their descriptions
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     ref = ['easting', 'northing', 'HAE']
@@ -69,9 +94,35 @@ Make a mapping between scalar names and their descriptions
 
 
 
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    UnstructuredGrid (0x1a30da5f48)
+      N Cells:      786
+      N Points:     781
+      X Bounds:     3.301e+05, 3.441e+05
+      Y Bounds:     4.253e+06, 4.271e+06
+      Z Bounds:     1.488e+03, 2.706e+03
+      N Scalars:    14
+
+
+
 .. code-block:: default
 
     grav_obs.plot(scalars='gCBGA', stitle=field_desc['gCBGA'])
+
+
+
+
+.. image:: /project/gravity-inversion/images/sphx_glr_00-inspect-gravity-data_001.png
+    :class: sphx-glr-single-img
+
+
 
 
 
@@ -84,6 +135,11 @@ Make a mapping between scalar names and their descriptions
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     p = pyvista.Plotter()
@@ -91,6 +147,14 @@ Make a mapping between scalar names and their descriptions
     p.add_mesh(grav_obs, scalars='gCBGA', point_size=10.0,
               render_points_as_spheres=True, stitle=field_desc['gCBGA'])
     p.show()
+
+
+
+
+.. image:: /project/gravity-inversion/images/sphx_glr_00-inspect-gravity-data_002.png
+    :class: sphx-glr-single-img
+
+
 
 
 Save gravity data for processing in next example
@@ -101,11 +165,14 @@ Save gravity data for processing in next example
     grav_obs.save(gdc19.get_gravity_path('grav_obs.vtk'))
 
 
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-**Estimated memory usage:**  0 MB
+   **Total running time of the script:** ( 0 minutes  31.630 seconds)
 
 
 .. _sphx_glr_download_project_gravity-inversion_00-inspect-gravity-data.py:

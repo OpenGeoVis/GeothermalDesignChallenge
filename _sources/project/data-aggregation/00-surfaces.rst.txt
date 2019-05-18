@@ -23,6 +23,11 @@ Here we load all the surface data and create `omf.SurfaceElement` objects.
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     import pyvista
@@ -30,6 +35,11 @@ Here we load all the surface data and create `omf.SurfaceElement` objects.
     import omfvista
     import pandas as pd
     import numpy as np
+
+
+
+
+
 
 
 
@@ -50,9 +60,22 @@ Here we load all the surface data and create `omf.SurfaceElement` objects.
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     omfvista.wrap(top_granitoid).plot(show_edges=False)
+
+
+
+
+.. image:: /project/data-aggregation/images/sphx_glr_00-surfaces_001.png
+    :class: sphx-glr-single-img
+
+
 
 
 
@@ -69,9 +92,22 @@ Here we load all the surface data and create `omf.SurfaceElement` objects.
     negro_mag_fault.validate()
 
 
+
+
+
+
+
 .. code-block:: default
 
     omfvista.wrap(negro_mag_fault).plot(show_edges=False)
+
+
+
+
+.. image:: /project/data-aggregation/images/sphx_glr_00-surfaces_002.png
+    :class: sphx-glr-single-img
+
+
 
 
 
@@ -91,9 +127,22 @@ Here we load all the surface data and create `omf.SurfaceElement` objects.
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     omfvista.wrap(opal_mound_fault).plot(show_edges=False)
+
+
+
+
+.. image:: /project/data-aggregation/images/sphx_glr_00-surfaces_003.png
+    :class: sphx-glr-single-img
+
+
 
 
 
@@ -120,10 +169,23 @@ Here we load all the surface data and create `omf.SurfaceElement` objects.
     temp_175c.validate()
 
 
+
+
+
+
+
 .. code-block:: default
 
 
     omfvista.wrap(temp_175c).plot(show_edges=False)
+
+
+
+
+.. image:: /project/data-aggregation/images/sphx_glr_00-surfaces_004.png
+    :class: sphx-glr-single-img
+
+
 
 
 
@@ -151,9 +213,22 @@ Here we load all the surface data and create `omf.SurfaceElement` objects.
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     omfvista.wrap(temp_225c).plot(show_edges=False)
+
+
+
+
+
+.. image:: /project/data-aggregation/images/sphx_glr_00-surfaces_005.png
+    :class: sphx-glr-single-img
+
 
 
 
@@ -173,6 +248,11 @@ land_surface: 'land_surface_vertices.csv'
         description
         )
     land_surface.validate()
+
+
+
+
+
 
 
 
@@ -208,9 +288,19 @@ land_surface: 'land_surface_vertices.csv'
 
 
 
+
+
+
+
+
 .. code-block:: default
 
     topo = omfvista.wrap(land_surface)
+
+
+
+
+
 
 
 
@@ -218,6 +308,14 @@ land_surface: 'land_surface_vertices.csv'
 
 
     topo.plot(show_edges=False, texture=True)
+
+
+
+
+.. image:: /project/data-aggregation/images/sphx_glr_00-surfaces_006.png
+    :class: sphx-glr-single-img
+
+
 
 
 And now create an OMF project file for the surfaces
@@ -242,6 +340,11 @@ And now create an OMF project file for the surfaces
     proj.validate()
 
 
+
+
+
+
+
 Save the GIS project file
 
 
@@ -251,11 +354,14 @@ Save the GIS project file
     omf.OMFWriter(proj, gdc19.get_project_path('surfaces.omf'))
 
 
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-**Estimated memory usage:**  0 MB
+   **Total running time of the script:** ( 0 minutes  44.785 seconds)
 
 
 .. _sphx_glr_download_project_data-aggregation_00-surfaces.py:

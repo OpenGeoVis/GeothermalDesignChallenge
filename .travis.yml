@@ -34,9 +34,8 @@ before_install:
 
 install:
   - conda install --quiet --yes pip
-  - conda install --quiet --yes -c conda-forge gdal
+  - conda install --quiet --yes -c conda-forge "gdal=2.4.2"
   - conda install --quiet --yes dask
-  - conda install --quiet --yes "poppler<0.62"
   - python -c "import gdal; print(gdal.VersionInfo(''))"
   - pip install -r requirements.txt
   - pip install -U doctr

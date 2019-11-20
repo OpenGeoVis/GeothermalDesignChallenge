@@ -9,6 +9,8 @@ This notebook will recreate all of the figures for the competition submission.
 # sphinx_gallery_thumbnail_number = 5
 
 # Import project package
+import sys
+sys.path.append('../..')
 import gdc19
 
 ###############################################################################
@@ -288,9 +290,9 @@ fig_1(p)
 p.camera_position = [(314607.07454842806, 4234127.240330922, 12678.810422767268),
                      (337504.84888541873, 4261501.390341784, 138.79188840111613),
                      (0.22757507410880431, 0.24175047512873185, 0.9432742408331761)]
-p.show_grid()
+# p.show_grid()
 
-p.add_legend(bcolor=legend_color, border=True, )
+# p.add_legend(bcolor=legend_color, border=True, )
 cpos = p.show(auto_close=False)
 # p.export_vtkjs(gdc19.EXPORT_PATH.format('figure-01'))
 p.screenshot('figure-01.png')
@@ -310,18 +312,18 @@ def fig_2(p, bounds=None):
     add_temp_probes(p, bounds)
 #     add_temp_surfs(p, bounds)
 
-p = pyvista.Plotter()
+p = pyvista.Plotter()#notebook=False)
 fig_2(p)
 add_temp_model(p, None, False, .65)
 p.camera_position = [(319034.6767280643, 4229153.193113267, 2134.2689148357804),
  (337792.27022585954, 4262182.34857588, -528.1616734381239),
  (0.03428354122002461, 0.060941228582444995, 0.9975524073753104)]
 
-p.show_grid()
-p.add_legend(bcolor=legend_color, border=True, )
+# p.show_grid()
+# p.add_legend(bcolor=legend_color, border=True, )
 cpos = p.show(auto_close=False)
 # p.export_vtkjs(gdc19.EXPORT_PATH.format('figure-02'))
-p.screenshot('figure-02.png')
+p.screenshot('figure.png')
 p.close()
 cpos
 
@@ -342,11 +344,11 @@ def fig_3(p, bounds=None):
 #     p.add_mesh(pyvista.Box(ROI_BOX).outline(), color='k')
 
 
-p = pyvista.Plotter()
+p = pyvista.Plotter(notebook=False)
 fig_3(p, ROI_BOX)
 add_temp_model(p, ROI_BOX, False, .65)
-p.show_grid()
-p.add_legend(bcolor=legend_color, border=True, )
+# p.show_grid()
+# p.add_legend(bcolor=legend_color, border=True, )
 # p.camera_position = [(343748.9865580256, 4274071.829819304, -45.893656221421054),
 #      (335873.1170201431, 4261751.962920492, -297.42280206922646),
 #      (-0.02664145165280376, -0.0033777827209346117, 0.9996393467834896)]

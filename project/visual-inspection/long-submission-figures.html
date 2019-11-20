@@ -202,6 +202,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 5</span>
 
 <span class="c1"># Import project package</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;../..&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">gdc19</span>
 </pre></div>
 </div>
@@ -486,9 +488,9 @@ granite, FORGE site and well locations and data</p>
 <span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">314607.07454842806</span><span class="p">,</span> <span class="mf">4234127.240330922</span><span class="p">,</span> <span class="mf">12678.810422767268</span><span class="p">),</span>
                      <span class="p">(</span><span class="mf">337504.84888541873</span><span class="p">,</span> <span class="mf">4261501.390341784</span><span class="p">,</span> <span class="mf">138.79188840111613</span><span class="p">),</span>
                      <span class="p">(</span><span class="mf">0.22757507410880431</span><span class="p">,</span> <span class="mf">0.24175047512873185</span><span class="p">,</span> <span class="mf">0.9432742408331761</span><span class="p">)]</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show_grid</span><span class="p">()</span>
+<span class="c1"># p.show_grid()</span>
 
-<span class="n">p</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">bcolor</span><span class="o">=</span><span class="n">legend_color</span><span class="p">,</span> <span class="n">border</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="p">)</span>
+<span class="c1"># p.add_legend(bcolor=legend_color, border=True, )</span>
 <span class="n">cpos</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">auto_close</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="c1"># p.export_vtkjs(gdc19.EXPORT_PATH.format(&#39;figure-01&#39;))</span>
 <span class="n">p</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="s1">&#39;figure-01.png&#39;</span><span class="p">)</span>
@@ -508,18 +510,18 @@ granite, FORGE site and well, well logs, and temperature locations and data</p>
     <span class="n">add_temp_probes</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
 <span class="c1">#     add_temp_surfs(p, bounds)</span>
 
-<span class="n">p</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span><span class="c1">#notebook=False)</span>
 <span class="n">fig_2</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 <span class="n">add_temp_model</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="o">.</span><span class="mi">65</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">319034.6767280643</span><span class="p">,</span> <span class="mf">4229153.193113267</span><span class="p">,</span> <span class="mf">2134.2689148357804</span><span class="p">),</span>
  <span class="p">(</span><span class="mf">337792.27022585954</span><span class="p">,</span> <span class="mf">4262182.34857588</span><span class="p">,</span> <span class="o">-</span><span class="mf">528.1616734381239</span><span class="p">),</span>
  <span class="p">(</span><span class="mf">0.03428354122002461</span><span class="p">,</span> <span class="mf">0.060941228582444995</span><span class="p">,</span> <span class="mf">0.9975524073753104</span><span class="p">)]</span>
 
-<span class="n">p</span><span class="o">.</span><span class="n">show_grid</span><span class="p">()</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">bcolor</span><span class="o">=</span><span class="n">legend_color</span><span class="p">,</span> <span class="n">border</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="p">)</span>
+<span class="c1"># p.show_grid()</span>
+<span class="c1"># p.add_legend(bcolor=legend_color, border=True, )</span>
 <span class="n">cpos</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">auto_close</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="c1"># p.export_vtkjs(gdc19.EXPORT_PATH.format(&#39;figure-02&#39;))</span>
-<span class="n">p</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="s1">&#39;figure-02.png&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="s1">&#39;figure.png&#39;</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="n">cpos</span>
 </pre></div>
@@ -540,11 +542,11 @@ of the FORGE site to better view the subsurface within the FORGE boundary</p>
 <span class="c1">#     p.add_mesh(pyvista.Box(ROI_BOX).outline(), color=&#39;k&#39;)</span>
 
 
-<span class="n">p</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">pyvista</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">fig_3</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">ROI_BOX</span><span class="p">)</span>
 <span class="n">add_temp_model</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">ROI_BOX</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="o">.</span><span class="mi">65</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show_grid</span><span class="p">()</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">bcolor</span><span class="o">=</span><span class="n">legend_color</span><span class="p">,</span> <span class="n">border</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="p">)</span>
+<span class="c1"># p.show_grid()</span>
+<span class="c1"># p.add_legend(bcolor=legend_color, border=True, )</span>
 <span class="c1"># p.camera_position = [(343748.9865580256, 4274071.829819304, -45.893656221421054),</span>
 <span class="c1">#      (335873.1170201431, 4261751.962920492, -297.42280206922646),</span>
 <span class="c1">#      (-0.02664145165280376, -0.0033777827209346117, 0.9996393467834896)]</span>
@@ -645,16 +647,16 @@ gravity locations and data</p>
 </pre></div>
 </div>
 <img alt="../../_images/sphx_glr_long-submission-figures_006.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_long-submission-figures_006.png" />
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  13.139 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  1.413 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-project-visual-inspection-long-submission-figures-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/33abf3bb3450b2ff9760f9082b3cc03d/long-submission-figures.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">long-submission-figures.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/ae5bfc2505cd2eb2babe43c90c7a65df/long-submission-figures.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">long-submission-figures.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/cb1feb267b0852d7496c0997f0084ca6/long-submission-figures.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">long-submission-figures.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/b8a286e9f48b12a4a085787ad64da121/long-submission-figures.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">long-submission-figures.ipynb</span></code></a></p>
 </div>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 </div>
 

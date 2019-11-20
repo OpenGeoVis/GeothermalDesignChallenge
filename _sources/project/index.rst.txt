@@ -12,7 +12,7 @@ Here is a gallery of our project's workflow.
 
 .. raw:: html
 
-    <div style='clear:both'></div>
+    <div class="sphx-glr-clear"></div>
 
 
 
@@ -29,9 +29,9 @@ OMF Data Collection
 
 .. only:: html
 
-    .. figure:: /project/data-aggregation/images/thumb/sphx_glr_00-surfaces_thumb.png
+ .. figure:: /project/data-aggregation/images/thumb/sphx_glr_00-surfaces_thumb.png
 
-        :ref:`sphx_glr_project_data-aggregation_00-surfaces.py`
+     :ref:`sphx_glr_project_data-aggregation_00-surfaces.py`
 
 .. raw:: html
 
@@ -49,9 +49,9 @@ OMF Data Collection
 
 .. only:: html
 
-    .. figure:: /project/data-aggregation/images/thumb/sphx_glr_01-gis_thumb.png
+ .. figure:: /project/data-aggregation/images/thumb/sphx_glr_01-gis_thumb.png
 
-        :ref:`sphx_glr_project_data-aggregation_01-gis.py`
+     :ref:`sphx_glr_project_data-aggregation_01-gis.py`
 
 .. raw:: html
 
@@ -69,9 +69,9 @@ OMF Data Collection
 
 .. only:: html
 
-    .. figure:: /project/data-aggregation/images/thumb/sphx_glr_02-temperature_thumb.png
+ .. figure:: /project/data-aggregation/images/thumb/sphx_glr_02-temperature_thumb.png
 
-        :ref:`sphx_glr_project_data-aggregation_02-temperature.py`
+     :ref:`sphx_glr_project_data-aggregation_02-temperature.py`
 
 .. raw:: html
 
@@ -89,9 +89,9 @@ OMF Data Collection
 
 .. only:: html
 
-    .. figure:: /project/data-aggregation/images/thumb/sphx_glr_03-well-proposed_thumb.png
+ .. figure:: /project/data-aggregation/images/thumb/sphx_glr_03-well-proposed_thumb.png
 
-        :ref:`sphx_glr_project_data-aggregation_03-well-proposed.py`
+     :ref:`sphx_glr_project_data-aggregation_03-well-proposed.py`
 
 .. raw:: html
 
@@ -104,7 +104,7 @@ OMF Data Collection
    /project/data-aggregation/03-well-proposed
 .. raw:: html
 
-    <div style='clear:both'></div>
+    <div class="sphx-glr-clear"></div>
 
 
 
@@ -121,9 +121,9 @@ Gravity Inversion
 
 .. only:: html
 
-    .. figure:: /project/gravity-inversion/images/thumb/sphx_glr_00-inspect-gravity-data_thumb.png
+ .. figure:: /project/gravity-inversion/images/thumb/sphx_glr_00-inspect-gravity-data_thumb.png
 
-        :ref:`sphx_glr_project_gravity-inversion_00-inspect-gravity-data.py`
+     :ref:`sphx_glr_project_gravity-inversion_00-inspect-gravity-data.py`
 
 .. raw:: html
 
@@ -141,9 +141,9 @@ Gravity Inversion
 
 .. only:: html
 
-    .. figure:: /project/gravity-inversion/images/thumb/sphx_glr_01-gravity-mesh-refine_thumb.png
+ .. figure:: /project/gravity-inversion/images/thumb/sphx_glr_01-gravity-mesh-refine_thumb.png
 
-        :ref:`sphx_glr_project_gravity-inversion_01-gravity-mesh-refine.py`
+     :ref:`sphx_glr_project_gravity-inversion_01-gravity-mesh-refine.py`
 
 .. raw:: html
 
@@ -161,9 +161,9 @@ Gravity Inversion
 
 .. only:: html
 
-    .. figure:: /project/gravity-inversion/images/thumb/sphx_glr_02-tile-detrend_thumb.png
+ .. figure:: /project/gravity-inversion/images/thumb/sphx_glr_02-tile-detrend_thumb.png
 
-        :ref:`sphx_glr_project_gravity-inversion_02-tile-detrend.py`
+     :ref:`sphx_glr_project_gravity-inversion_02-tile-detrend.py`
 
 .. raw:: html
 
@@ -176,7 +176,7 @@ Gravity Inversion
    /project/gravity-inversion/02-tile-detrend
 .. raw:: html
 
-    <div style='clear:both'></div>
+    <div class="sphx-glr-clear"></div>
 
 
 
@@ -193,9 +193,9 @@ Visual Inspection
 
 .. only:: html
 
-    .. figure:: /project/visual-inspection/images/thumb/sphx_glr_long-inspect-gravity_thumb.png
+ .. figure:: /project/visual-inspection/images/thumb/sphx_glr_long-inspect-gravity_thumb.png
 
-        :ref:`sphx_glr_project_visual-inspection_long-inspect-gravity.py`
+     :ref:`sphx_glr_project_visual-inspection_long-inspect-gravity.py`
 
 .. raw:: html
 
@@ -213,9 +213,9 @@ Visual Inspection
 
 .. only:: html
 
-    .. figure:: /project/visual-inspection/images/thumb/sphx_glr_long-inspect-temperature_thumb.png
+ .. figure:: /project/visual-inspection/images/thumb/sphx_glr_long-inspect-temperature_thumb.png
 
-        :ref:`sphx_glr_project_visual-inspection_long-inspect-temperature.py`
+     :ref:`sphx_glr_project_visual-inspection_long-inspect-temperature.py`
 
 .. raw:: html
 
@@ -233,9 +233,9 @@ Visual Inspection
 
 .. only:: html
 
-    .. figure:: /project/visual-inspection/images/thumb/sphx_glr_long-submission-figures_thumb.png
+ .. figure:: /project/visual-inspection/images/thumb/sphx_glr_long-submission-figures_thumb.png
 
-        :ref:`sphx_glr_project_visual-inspection_long-submission-figures.py`
+     :ref:`sphx_glr_project_visual-inspection_long-submission-figures.py`
 
 .. raw:: html
 
@@ -253,9 +253,9 @@ Visual Inspection
 
 .. only:: html
 
-    .. figure:: /project/visual-inspection/images/thumb/sphx_glr_surface-decimation_thumb.png
+ .. figure:: /project/visual-inspection/images/thumb/sphx_glr_surface-decimation_thumb.png
 
-        :ref:`sphx_glr_project_visual-inspection_surface-decimation.py`
+     :ref:`sphx_glr_project_visual-inspection_surface-decimation.py`
 
 .. raw:: html
 
@@ -268,7 +268,7 @@ Visual Inspection
    /project/visual-inspection/surface-decimation
 .. raw:: html
 
-    <div style='clear:both'></div>
+    <div class="sphx-glr-clear"></div>
 
 
 
@@ -276,4 +276,4 @@ Visual Inspection
 
  .. rst-class:: sphx-glr-signature
 
-    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.readthedocs.io>`_
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_
